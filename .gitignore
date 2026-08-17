@@ -12,3 +12,8 @@ __pycache__/
 .venv/
 ml/artifacts/
 .env.example
+# Raw goldset and the token mapping never get committed
+data/model/*.xlsx
+data/model/*.xls
+data/model/*.mapping.json
+data/model/*.review.txt
