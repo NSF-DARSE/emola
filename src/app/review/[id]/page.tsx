@@ -36,7 +36,7 @@ export default function ReviewPage({ params }: { params: { id: string } }) {
       </div>
 
       <div className="flex-1 min-h-0 overflow-y-auto">
-        <div className="px-8 py-7 max-w-[860px]">
+        <div className="px-4 sm:px-8 py-7 max-w-[860px]">
           <div className="flex items-start gap-3">
             <span
               className="w-[3px] self-stretch rounded-full shrink-0"

@@ -33,7 +33,7 @@ export default function DetailPanel({
   );
 
   return (
-    <aside className="w-[520px] shrink-0 border-l border-border bg-surface flex flex-col min-h-0 anim-slide">
+    <aside className="w-full lg:w-[520px] xl:w-[560px] shrink-0 lg:border-l border-border bg-surface flex flex-col min-h-0 anim-slide">
       <div className="h-14 shrink-0 border-b border-border flex items-center gap-2.5 px-4">
         <span
           className="w-[3px] h-5 rounded-full"
@@ -47,7 +47,7 @@ export default function DetailPanel({
         </div>
       </div>
 
-      <div className="flex-1 min-h-0 overflow-y-auto px-6 py-5">
+      <div className="flex-1 min-h-0 overflow-y-auto px-4 sm:px-6 py-5">
         <h2 className="text-[17px] font-semibold leading-snug tracking-[-0.01em] text-fg">
           {subjectFor(n)}
         </h2>
@@ -89,10 +89,7 @@ export default function DetailPanel({
         <div className="mt-5 pt-5 border-t border-border">
           <GenerateBar
             notificationId={n.id}
-            initial={{
-              infographic: getArtifact(n.id, 'infographic') ?? undefined,
-              exec_summary: getArtifact(n.id, 'exec_summary') ?? undefined,
-            }}
+            initial={{ infographic: getArtifact(n.id, 'infographic') ?? undefined }}
           />
         </div>
 

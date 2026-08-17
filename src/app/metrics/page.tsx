@@ -39,7 +39,7 @@ export default function MetricsPage() {
             score measures how well the rules were fitted, not how the system would do on an unseen
             notice.
           </Note>
-          <div className="grid grid-cols-3 gap-2.5 mt-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
             <Stat
               label="Category"
               value={`${m.holdout.categoryRate}%`}
@@ -93,7 +93,7 @@ export default function MetricsPage() {
           title="Human override rate"
           hint="Measured on decisions actually recorded in the review queue. A high rate is a signal about the engine, not about the reviewers."
         >
-          <div className="grid grid-cols-4 gap-2.5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
             <Stat label="Decisions" value={String(m.overrides.decisions)} />
             <Stat
               label="Overridden"
@@ -111,7 +111,7 @@ export default function MetricsPage() {
         </Section>
 
         <Section title="Routing split">
-          <div className="grid grid-cols-4 gap-2.5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
             <Stat label="Ingested" value={String(m.routing.total)} />
             <Stat label="Auto-sent" value={String(m.routing.autoSend)} />
             <Stat label="Held" value={String(m.routing.humanReview)} />

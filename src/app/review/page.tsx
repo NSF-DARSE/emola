@@ -31,19 +31,19 @@ export default function ReviewQueuePage() {
           {queue.map((n) => (
             <Link key={n.id} href={`/review/${n.id}`} className="trow h-auto py-2.5">
               <span className="trow-bar" style={{ background: SIGNAL_VAR[eventSignal(n)] }} />
-              <span className="font-mono text-[11px] text-faint w-[64px] shrink-0">{n.id}</span>
-              <span className="w-[60px] shrink-0">
+              <span className="hidden md:block w-[104px] shrink-0">
                 <CategoryLabel value={n.model.primary} />
               </span>
               <span className="flex-1 min-w-0">
-                <span className="block text-[13px] font-medium text-fg truncate">
+                <span className="block text-[13.5px] font-medium text-fg truncate">
                   {subjectFor(n)}
                 </span>
-                <span className="block text-[11.5px] text-faint truncate mt-0.5">
+                <span className="block text-[12px] text-faint truncate mt-0.5">
+                  <span className="md:hidden">{n.model.primary} · </span>
                   {n.routeReasons.join(' · ')}
                 </span>
               </span>
-              <span className="shrink-0 font-mono text-[11px] text-faint w-[62px] text-right">
+              <span className="shrink-0 text-[12.5px] text-faint w-[64px] text-right">
                 {shortDate(n.receivedAt)}
               </span>
             </Link>
@@ -57,17 +57,16 @@ export default function ReviewQueuePage() {
             {decided.map((n) => (
               <Link key={n.id} href={`/?selected=${n.id}`} className="trow">
                 <span className="trow-bar" style={{ background: SIGNAL_VAR[eventSignal(n)] }} />
-                <span className="font-mono text-[11px] text-faint w-[64px] shrink-0">{n.id}</span>
                 <span className="shrink-0">
                   <Badge signal={n.reviewState === 'approved' ? 'green' : 'red'}>
                     <Dot signal={n.reviewState === 'approved' ? 'green' : 'red'} size={6} />
                     {n.reviewState}
                   </Badge>
                 </span>
-                <span className="flex-1 min-w-0 text-[13px] text-muted truncate">
+                <span className="flex-1 min-w-0 text-[13.5px] text-muted truncate">
                   {subjectFor(n)}
                 </span>
-                <span className="shrink-0 font-mono text-[11px] text-faint w-[62px] text-right">
+                <span className="hidden sm:block shrink-0 text-[12.5px] text-faint w-[64px] text-right">
                   {shortDate(n.receivedAt)}
                 </span>
               </Link>

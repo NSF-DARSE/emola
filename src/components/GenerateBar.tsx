@@ -2,22 +2,23 @@
 
 import { useState } from 'react';
 
-import ExecSummary from '@/components/ExecSummary';
 import Icon from '@/components/Icon';
 import Infographic from '@/components/Infographic';
 import { Badge } from '@/components/ui';
-import type { ExecSummaryPayload, InfographicPayload } from '@/lib/artifacts';
+import type { InfographicPayload } from '@/lib/artifacts';
 import type { ArtifactKind, ArtifactRecord } from '@/lib/types';
 
-const LABEL: Record<ArtifactKind, string> = {
-  infographic: 'Infographic',
-  exec_summary: 'Summary',
-};
+/**
+ * Per-notice generation is the INFOGRAPHIC only. An employee needs "your
+ * maintenance is Thursday", which is inherently about one event.
+ *
+ * The executive summary moved to Reports, where it covers a selected period —
+ * leadership reads a month, not an email.
+ */
+const KINDS: ArtifactKind[] = ['infographic'];
 
-const AUDIENCE: Record<ArtifactKind, string> = {
-  infographic: 'For employees',
-  exec_summary: 'For leadership',
-};
+const LABEL: Record<string, string> = { infographic: 'Infographic' };
+const AUDIENCE: Record<string, string> = { infographic: 'For employees' };
 
 export default function GenerateBar({
   notificationId,
@@ -27,8 +28,11 @@ export default function GenerateBar({
   initial: Partial<Record<ArtifactKind, ArtifactRecord>>;
 }) {
   const [artifacts, setArtifacts] = useState(initial);
+  // Only kinds this component still renders. A stale exec_summary artifact
+  // from before that moved to Reports must never be opened here — it would be
+  // handed to the infographic template and crash.
   const [open, setOpen] = useState<ArtifactKind | null>(
-    initial.infographic ? 'infographic' : initial.exec_summary ? 'exec_summary' : null,
+    initial.infographic ? 'infographic' : null,
   );
   const [busy, setBusy] = useState<ArtifactKind | null>(null);
   const [approver, setApprover] = useState('');
@@ -80,7 +84,7 @@ export default function GenerateBar({
   return (
     <div>
       <div className="flex flex-wrap items-center gap-2">
-        {(['infographic', 'exec_summary'] as ArtifactKind[]).map((kind) => {
+        {KINDS.map((kind) => {
           const existing = artifacts[kind];
           const isOpen = activeKind === kind;
           return (
@@ -140,11 +144,7 @@ export default function GenerateBar({
             </span>
           </div>
 
-          {activeKind === 'infographic' ? (
-            <Infographic data={payload as InfographicPayload} />
-          ) : (
-            <ExecSummary data={payload as ExecSummaryPayload} />
-          )}
+          <Infographic data={payload as InfographicPayload} />
 
           <div className="card mt-2.5 px-3.5 py-3">
             {current.approvalState === 'draft' ? (

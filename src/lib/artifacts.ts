@@ -46,6 +46,10 @@ export interface ExecSummaryPayload {
   decisions: string[];
   governanceNote: string;
   generatedAt: string;
+  /** Which engine wrote this. Shown in the UI — provenance is not optional. */
+  source?: 'ai' | 'template';
+  /** The exact anonymised text that was sent, so a reviewer can audit it. */
+  outbound?: string;
 }
 
 function windowLine(n: NotificationRecord): string {

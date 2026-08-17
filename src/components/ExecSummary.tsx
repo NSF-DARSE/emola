@@ -25,7 +25,12 @@ export default function ExecSummary({ data }: { data: ExecSummaryPayload }) {
         </h3>
         <div className="mt-2 flex flex-wrap items-center gap-2.5">
           <span className={`badge badge-${signal}`}>{data.riskLevel} risk</span>
-          <span className="font-mono text-[11px] text-muted">{data.window}</span>
+          {data.source && (
+            <span className="badge">
+              {data.source === 'ai' ? 'Written by Claude on Bedrock' : 'Template'}
+            </span>
+          )}
+          <span className="text-[12px] text-muted">{data.window}</span>
         </div>
       </div>
 
@@ -65,6 +70,17 @@ export default function ExecSummary({ data }: { data: ExecSummaryPayload }) {
           </ol>
         </div>
       </div>
+
+      {data.outbound && (
+        <details className="px-5 py-3 border-t border-border">
+          <summary className="text-[12.5px] text-muted hover:text-fg">
+            Exactly what was sent to AWS — no host names, IP addresses or contacts
+          </summary>
+          <pre className="mt-2.5 whitespace-pre-wrap font-mono text-[11.5px] leading-relaxed bg-elevated border border-border rounded-md p-3 text-muted max-h-64 overflow-y-auto">
+            {data.outbound}
+          </pre>
+        </details>
+      )}
 
       <footer className="px-5 py-2.5 border-t border-border bg-elevated text-[11px] text-faint">
         {data.governanceNote}

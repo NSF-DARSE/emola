@@ -221,7 +221,7 @@ export default function ReviewClient({
       <div className="card px-4 py-4 space-y-4">
         <div className="label">Your call</div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <label className="block">
             <div className="text-[11.5px] text-faint mb-1.5">Primary category</div>
             <select value={primary} onChange={(e) => setPrimary(e.target.value as Category)}>
@@ -275,7 +275,7 @@ export default function ReviewClient({
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-end">
           <label className="block">
             <div className="text-[11.5px] text-faint mb-1.5">Reviewer</div>
             <input

@@ -82,7 +82,7 @@ export function Panel({
   children: ReactNode;
 }) {
   return (
-    <div className="px-8 py-7 max-w-[940px]">
+    <div className="px-4 sm:px-8 py-7 max-w-[940px]">
       <h1 className="text-[19px] font-semibold tracking-[-0.01em] text-fg">{title}</h1>
       {description && <p className="mt-1.5 text-[13px] text-muted max-w-[72ch]">{description}</p>}
       <div className="mt-6">{children}</div>

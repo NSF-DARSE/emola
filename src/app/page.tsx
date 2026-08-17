@@ -53,15 +53,17 @@ export default function EventsPage({
 
   return (
     <div className="flex-1 flex min-h-0">
-      <div className="flex-1 min-w-0 flex flex-col">
+      {/* Below lg the panel takes the whole pane, so the list steps aside —
+          master/detail rather than two columns squeezed together. */}
+      <div className={`flex-1 min-w-0 flex-col ${selected ? 'hidden lg:flex' : 'flex'}`}>
         {/* header */}
-        <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-6">
+        <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-4 sm:px-6">
           <h1 className="text-[15px] font-semibold tracking-[-0.01em]">Notifications</h1>
           <span className="text-[13px] text-faint">{rows.length}</span>
         </div>
 
         {/* filters */}
-        <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-6 overflow-x-auto">
+        <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-4 sm:px-6 overflow-x-auto">
           <div className="seg shrink-0">
             {FILTERS.map((f) => (
               <Link
@@ -114,14 +116,14 @@ export default function EventsPage({
                 style={{ animationDelay: `${Math.min(i, 10) * 22}ms` }}
               >
                 <span className="trow-bar" style={{ background: SIGNAL_VAR[eventSignal(n)] }} />
-                <span className="w-[104px] shrink-0">
+                <span className="hidden md:block w-[104px] shrink-0">
                   <CategoryLabel value={n.model.primary} />
                 </span>
                 <span className="flex-1 min-w-0 flex items-baseline gap-2.5">
-                  <span className="text-[14px] font-medium text-fg truncate max-w-[54%]">
+                  <span className="text-[14px] font-medium text-fg truncate lg:max-w-[54%]">
                     {subjectFor(n)}
                   </span>
-                  <span className="text-[13px] text-faint truncate">
+                  <span className="hidden lg:block text-[13px] text-faint truncate">
                     {n.extracted.affectedSystems.join(', ')}
                   </span>
                 </span>
@@ -130,11 +132,13 @@ export default function EventsPage({
                     Example
                   </span>
                 )}
-                <span className="shrink-0 flex items-center gap-2 w-[118px]">
+                <span className="shrink-0 flex items-center gap-2 sm:w-[118px]">
                   <Dot signal={review.signal} />
-                  <span className="text-[13px] text-muted truncate">{review.label}</span>
+                  <span className="hidden sm:block text-[13px] text-muted truncate">
+                    {review.label}
+                  </span>
                 </span>
-                <span className="shrink-0 text-[13px] text-faint w-[74px] text-right">
+                <span className="hidden sm:block shrink-0 text-[13px] text-faint w-[74px] text-right">
                   {shortDate(n.receivedAt)}
                 </span>
               </Link>
