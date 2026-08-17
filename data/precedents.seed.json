@@ -1,0 +1,72 @@
+[
+  {
+    "notification_id": "EVT-001",
+    "phrase": "known issue with the printers, anything printed will likely print directly, no secure or stored print options may be available",
+    "human_primary": "Outage",
+    "human_status": "active",
+    "decision": "approve",
+    "reason": "Loss of secure print is a live degradation, not planned work — file it as an Outage even though nothing is fully down. Secure-print loss has a confidentiality angle, but it is a service defect rather than a Security event, so Security stays off the tags.",
+    "reviewer": "S. Whitfield",
+    "created_at": "2025-04-09T14:20:00.000Z"
+  },
+  {
+    "notification_id": "EVT-021",
+    "phrase": "currently experiencing a system issue affecting legacy applications that use Oracle databases",
+    "human_primary": "Outage",
+    "human_status": "active",
+    "decision": "approve",
+    "reason": "\"System issue\" with no window and no scope is an active outage, not maintenance. Application is the right secondary because the blast radius is the legacy apps, not the database platform itself. Always route these to a human — we cannot tell production exposure from the text alone.",
+    "reviewer": "S. Whitfield",
+    "created_at": "2025-02-24T09:05:00.000Z"
+  },
+  {
+    "notification_id": "EVT-024",
+    "phrase": "Multiple state agencies are not able to connect to SSL/VPN resources. DTI is actively working to restore service.",
+    "human_primary": "Outage",
+    "human_status": "active",
+    "decision": "approve",
+    "reason": "Multi-agency connectivity loss. Primary is Outage with Network secondary — the failure is in the remote access path, so Network alone would understate it for leadership. Expect a paired resolution notice; thread the two together rather than publishing them as separate events.",
+    "reviewer": "M. Okafor",
+    "created_at": "2025-03-11T10:40:00.000Z"
+  },
+  {
+    "notification_id": "EVT-007",
+    "phrase": "SSL/VPN resources have been restored. If you are still experiencing an issue or have any questions, please contact the State of Delaware Service Desk",
+    "human_primary": "Outage",
+    "human_status": "resolved",
+    "decision": "approve",
+    "reason": "Resolution of the earlier SSL/VPN incident. Keep the primary category identical to the parent so the thread reads as one event moving to resolved; do not reclassify a closure notice on its own wording.",
+    "reviewer": "M. Okafor",
+    "created_at": "2025-03-11T17:15:00.000Z"
+  },
+  {
+    "notification_id": "EVT-030",
+    "phrase": "vendor on site performing maintenance to the electrical infrastructure at the Biggs Data Center. While no outage is anticipated, there is a risk of power loss",
+    "human_primary": "Maintenance",
+    "human_status": "scheduled",
+    "decision": "approve",
+    "reason": "Planned work, so Maintenance is right — but an acknowledged risk of power loss at a data center is never low-risk. Tag Infrastructure and Vendor, and the infographic must lead with the contingency, not the schedule. Notices that state a risk of unplanned impact always go to a human regardless of confidence.",
+    "reviewer": "S. Whitfield",
+    "created_at": "2025-09-22T11:00:00.000Z"
+  },
+  {
+    "notification_id": "EVT-002",
+    "phrase": "UPDATE: This maintenance has been extended until Friday, April 4, 2025 at 8:00 PM",
+    "human_primary": "Maintenance",
+    "human_status": "updated",
+    "decision": "approve",
+    "reason": "Notices that open with UPDATE restate the original window before revising it, so the parser will read the old dates first. The published artifact must show the extended end date, not the superseded one. Where no parent notice exists in our records, say so on the artifact rather than implying continuity we cannot evidence.",
+    "reviewer": "M. Okafor",
+    "created_at": "2025-04-02T16:30:00.000Z"
+  },
+  {
+    "notification_id": null,
+    "phrase": "unrecognized product or cluster name appearing in a change notice",
+    "human_primary": "Maintenance",
+    "human_status": "scheduled",
+    "decision": "reject",
+    "reason": "Standing rule: if the notice names a system that is not on the known-terms list, do not publish a generated artifact until the owning team confirms what it is. Forward the original email instead. Guessing an expansion in an employee-facing infographic is worse than saying nothing.",
+    "reviewer": "S. Whitfield",
+    "created_at": "2026-01-05T08:00:00.000Z"
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "id": "EVT-001",
+    "received_at": "2025-04-09",
+    "synthetic": false,
+    "body": "Please be advised that there is a known issue with the printers, anything printed will likely print directly, no secure or stored print options may be available. DTI is aware of the issue and is actively working to resolve it. A notification will be sent once the issue has been resolved.",
+    "gold": { "primary": "Outage", "secondary": ["Infrastructure"], "status": "active" }
+  },
+  {
+    "id": "EVT-002",
+    "received_at": "2025-04-02",
+    "synthetic": false,
+    "body": "UPDATE: This maintenance has been extended until Friday, April 4, 2025 at 8:00 PM. We appreciate your patience as our teams work through issues with this migration. On Wednesday, March 26, 2025, from 0900 until 1100, DTI and Advantech will be performing maintenance on the Enterprise ProWatch System. All security features will work as expected; however, administrators will be unable to make changes to the ProWatch System while this work is being performed.",
+    "gold": { "primary": "Maintenance", "secondary": ["Vendor", "Application"], "status": "updated" }
+  },
+  {
+    "id": "EVT-003",
+    "received_at": "2025-01-31",
+    "synthetic": false,
+    "body": "On Thursday, February 6, 2025, from 1700 until 0200 the following morning, DTI will be performing maintenance on multiple servers.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-004",
+    "received_at": "2026-01-14",
+    "synthetic": false,
+    "body": "On Tuesday, January 20, 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline.\n• CI/CD Servers: Tuesday 1200 until 1300\n• SFTP Server: Tuesday 1630 until 1700\n• Production Servers: Tuesday 20:00 until Wednesday 05:00\n• FirstMap Reboot: Wednesday between 00:00 and 05:00\nFake.Fake.PDF",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure", "Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-005",
+    "received_at": "2025-07-28",
+    "synthetic": false,
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, August 3rd, 2025 starting at 6:00 am until 10:00 am.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-006",
+    "received_at": "2025-07-18",
+    "synthetic": false,
+    "body": "On Thursday, July 24, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-007",
+    "received_at": "2025-03-11",
+    "synthetic": false,
+    "body": "SSL/VPN resources have been restored. If you are still experiencing and issue or have any questions, please contact the State of Delaware Service Desk by phone at 302-739-9560",
+    "gold": { "primary": "Outage", "secondary": ["Network"], "status": "resolved" }
+  },
+  {
+    "id": "EVT-008",
+    "received_at": "2025-01-17",
+    "synthetic": false,
+    "body": "On Thursday, January 23, 2025, from 1800 until 0430 the following morning, DTI will perform maintenance to the DTI-managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10-to-15-minute outages as maintenance is performed.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-009",
+    "received_at": "2026-04-16",
+    "synthetic": false,
+    "body": "On Thursday, April 23, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers. To see the services impacted by this event, please click on the following link: Fake.Fake.PDF\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at ExampleEmail@delaware.gov.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-010",
+    "received_at": "2025-06-12",
+    "synthetic": false,
+    "body": "On Tuesday, June 17, 2025, from 2000 until 0430 the following morning, DTI will perform maintenance to the DTI managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10 to 15 minute outages as maintenance is performed. To see the services impacted by this event, please click on the following link:",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-011",
+    "received_at": "2025-06-13",
+    "synthetic": false,
+    "body": "On Wednesday, June 18, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-012",
+    "received_at": "2025-09-11",
+    "synthetic": false,
+    "body": "On Tuesday, September 16, 2025, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux Production servers at the William Penn Data Center.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-013",
+    "received_at": "2025-04-21",
+    "synthetic": false,
+    "body": "On Monday, April 28, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications….",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure", "Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-014",
+    "received_at": "2025-01-13",
+    "synthetic": false,
+    "body": "On Tuesday, January 14, 2025, from 0900 until 1700, DTI will be performing maintenance on the FirstMap 2.0 TEST ArcGIS system, which will make it unavailable. The below link contains a list of test applications that might be impacted by this work.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-015",
+    "received_at": "2025-07-28",
+    "synthetic": false,
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Thursday, July 31st, from 7:00 pm to 10:00 pm.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-016",
+    "received_at": "2025-10-09",
+    "synthetic": false,
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Thursday, October 9th, from 6:00 pm to 8:00 pm.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-017",
+    "received_at": "2026-07-13",
+    "synthetic": false,
+    "body": "The network issue impacting multiple agencies is resolved. Crown Castle has repaired the broken fiber. If you are still experiencing an issue or have any questions, please contact the State of Delaware Service Desk by phone at 302-739-9560 or email at ExampleEmail@delaware.gov",
+    "gold": { "primary": "Outage", "secondary": ["Network", "Vendor"], "status": "resolved" }
+  },
+  {
+    "id": "EVT-018",
+    "received_at": "2025-02-20",
+    "synthetic": false,
+    "body": "On Thursday, February 27, 2025, from 1700 until 0100 the following morning, DTI will be performing maintenance on multiple servers.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-019",
+    "received_at": "2026-07-16",
+    "synthetic": false,
+    "body": "Please be advised that the IRAS Production and Portal systems will be undergoing essential maintenance on Thursday, July 23, 2026, from 6:00 pm to 8:00 pm est.\n\nAll end users should be out of the applications by 5:45 pm, in anticipation of system developments.\n\nIf you have any questions or concerns regarding this scheduled maintenance, feel free to reach out to the DOF IT Support Team at ExampleEmail@delaware.gov.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-020",
+    "received_at": "2025-03-24",
+    "synthetic": false,
+    "body": "Today, Monday, March 24, 2025, between 12:00 PM and 12:30 PM, DTI will be performing necessary maintenance to the mainframe TN3270 application. A brief outage to TN3270 connections will occur as the services are recycled.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application", "Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-021",
+    "received_at": "2025-02-24",
+    "synthetic": false,
+    "body": "We are currently experiencing a system issue affecting legacy applications that use Oracle databases. DTI is aware of the issue and is working to resolve it.",
+    "gold": { "primary": "Outage", "secondary": ["Application"], "status": "active" }
+  },
+  {
+    "id": "EVT-022",
+    "received_at": "2025-12-29",
+    "synthetic": false,
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, January 4, 2026 starting at 6:00 am until 10:00 am.\nAll end users should be out of application by 5:45 am, in anticipation of system developments.\nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at ExampleEmail@delaware.gov.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-023",
+    "received_at": "2026-03-16",
+    "synthetic": false,
+    "body": "On Thursday, March 19, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers. To see the services impacted by this event, please click on the following link: Fake.Fake.PDF\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at ExampleEmail@delaware.gov.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-024",
+    "received_at": "2025-03-11",
+    "synthetic": false,
+    "body": "Multiple state agencies are not able to connect to SSL/VPN resources. DTI is actively working to restore service. A notification will be sent once the issue has been resolved.",
+    "gold": { "primary": "Outage", "secondary": ["Network"], "status": "active" }
+  },
+  {
+    "id": "EVT-025",
+    "received_at": "2025-08-20",
+    "synthetic": false,
+    "body": "On Sunday, August 24, 2025, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications:",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure", "Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-026",
+    "received_at": "2025-01-07",
+    "synthetic": false,
+    "body": "On Sunday, January 12, 2025, from 0700 until 0900, DTI will be performing maintenance on the ERP Production Linux servers that will impact the availability of the PHRST, FSF and Pension applications.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure", "Application"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-027",
+    "received_at": "2026-02-06",
+    "synthetic": false,
+    "body": "On Tuesday, February 10, 2026, from 0500 until 1630, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: Fake.Fake.PDF\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at ExampleEmail@delaware.gov.\nView Abnormal Events",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-028",
+    "received_at": "2025-01-24",
+    "synthetic": false,
+    "body": "On Thursday, January 30, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-029",
+    "received_at": "2025-11-17",
+    "synthetic": false,
+    "body": "Good Morning,\nOn Thursday, November 20, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: Fake.Fake.PDF\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at ExampleEmail@delaware.gov.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "EVT-030",
+    "received_at": "2025-09-22",
+    "synthetic": false,
+    "body": "This Saturday, September 27, 2025, from 0600 until 2000, DTI will have a vendor on site performing maintenance to the electrical infrastructure at the Biggs Data Center. While no outage is anticipated, there is a risk of power loss that comes with this maintenance.",
+    "gold": { "primary": "Maintenance", "secondary": ["Infrastructure", "Vendor"], "status": "scheduled" }
+  },
+
+  {
+    "id": "SYN-001",
+    "received_at": "2026-05-04",
+    "synthetic": true,
+    "synthetic_reason": "No Security-category examples exist in the real 30-notice sample. Written to exercise the redaction path (bare IPs + host naming convention).",
+    "body": "SECURITY ADVISORY: DTI has identified anomalous authentication traffic targeting the Citrix gateway. Affected hosts wpdc-ctx-prd-04 and wpdc-ctx-prd-05 (10.42.18.211, 10.42.18.212) have been isolated pending forensic review. All agency staff must re-authenticate and should report any unexpected MFA prompts to the Service Desk immediately. Do not forward this notice outside the State network.",
+    "gold": { "primary": "Security", "secondary": ["Network", "Infrastructure"], "status": "active" }
+  },
+  {
+    "id": "SYN-002",
+    "received_at": "2026-05-18",
+    "synthetic": true,
+    "synthetic_reason": "No Compliance-category examples exist in the real sample.",
+    "body": "In advance of the annual IRS Publication 1075 assessment, DOF systems handling FTI will be subject to a configuration freeze from Monday, June 1, 2026, from 0000 until 2359. No change requests touching IRAS Production, the Portal, or associated database servers will be approved during the freeze window. Agency ISOs must confirm attestation completion to the DOF IT Support Team by May 29, 2026.",
+    "gold": { "primary": "Compliance", "secondary": ["Application"], "status": "scheduled" }
+  },
+  {
+    "id": "SYN-003",
+    "received_at": "2026-06-02",
+    "synthetic": true,
+    "synthetic_reason": "Vendor-led emergency change; the real sample has only vendor-assisted planned work.",
+    "body": "Emergency vendor change: Advantech will apply an out-of-band firmware update to the Enterprise ProWatch controllers on Wednesday, June 3, 2026, from 2200 until 0200 the following morning. Badge readers will fail open at 172.16.4.30 during the cutover. This change was approved outside the normal CAB cycle.",
+    "gold": { "primary": "Vendor", "secondary": ["Security", "Infrastructure"], "status": "scheduled" }
+  },
+  {
+    "id": "SYN-004",
+    "received_at": "2026-06-20",
+    "synthetic": true,
+    "synthetic_reason": "Unrecognized terminology case, used to demo the unknown-term flag.",
+    "body": "The KRONOS-BRIDGE reconciliation job will be repointed to the new HALON cluster on Friday, June 26, 2026, from 1900 until 0300 the following morning. Downstream consumers of the nightly PHRST extract may observe delayed file delivery.",
+    "gold": { "primary": "Maintenance", "secondary": ["Application"], "status": "scheduled" }
+  }
+]

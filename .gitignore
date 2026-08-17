@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.local
+data/*.db
+data/*.db-journal
+__pycache__/
+*.pyc
+.venv/
+ml/artifacts/
+.env.example
