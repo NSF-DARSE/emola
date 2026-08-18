@@ -26,7 +26,10 @@ CREATE TABLE IF NOT EXISTS notifications (
   route             TEXT NOT NULL,
   route_reasons     TEXT NOT NULL DEFAULT '[]',
   review_state      TEXT NOT NULL DEFAULT 'pending',
-  thread_parent_id  TEXT REFERENCES notifications(id)
+  thread_parent_id  TEXT REFERENCES notifications(id),
+  -- The Titan embedding this notice was classified from. Kept so a decision
+  -- can inherit it as a precedent vector without a second network call.
+  embedding         BLOB
 );
 
 CREATE TABLE IF NOT EXISTS decisions (
@@ -58,7 +61,7 @@ CREATE TABLE IF NOT EXISTS precedents (
   reviewer        TEXT NOT NULL,
   created_at      TEXT NOT NULL,
   seeded          INTEGER NOT NULL DEFAULT 0,
-  -- Reserved for the embedding vector once a model is chosen.
+  -- Inherited from the notice the ruling was made on.
   embedding       BLOB
 );
 

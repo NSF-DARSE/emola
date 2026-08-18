@@ -1,8 +1,11 @@
 import Link from 'next/link';
 
 import DetailPanel from '@/components/DetailPanel';
+import IngestTheatre from '@/components/IngestTheatre';
+import Tabs from '@/components/Tabs';
 import { CategoryLabel, Dot, Empty } from '@/components/ui';
 import { getNotification, listNotifications } from '@/lib/db';
+import { listInbox } from '@/lib/inbox';
 import { shortDate, subjectFor } from '@/lib/mail';
 import { eventSignal, reviewSignal, SIGNAL_VAR } from '@/lib/severity';
 import { CATEGORIES, isCategory } from '@/lib/taxonomy';
@@ -51,15 +54,31 @@ export default function EventsPage({
     sent: all.filter((n) => n.route === 'auto_send').length,
   };
 
+  if (all.length === 0) {
+    return (
+      <div className="flex-1 flex flex-col min-h-0">
+        <Tabs counts={{ inbox: listInbox().length, abnormal: 0 }} />
+        <IngestTheatre mailbox="DOF IT Support" />
+      </div>
+    );
+  }
+
   return (
-    <div className="flex-1 flex min-h-0">
+    <div className="flex-1 flex flex-col min-h-0">
+      <Tabs counts={{ inbox: listInbox().length, abnormal: all.length }} />
+      <div className="flex-1 flex min-h-0">
       {/* Below lg the panel takes the whole pane, so the list steps aside —
           master/detail rather than two columns squeezed together. */}
       <div className={`flex-1 min-w-0 flex-col ${selected ? 'hidden lg:flex' : 'flex'}`}>
         {/* header */}
         <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-4 sm:px-6">
-          <h1 className="text-[15px] font-semibold tracking-[-0.01em]">Notifications</h1>
+          <h1 className="text-[15px] font-semibold tracking-[-0.01em]">
+            Relayed to staff
+          </h1>
           <span className="text-[13px] text-faint">{rows.length}</span>
+          <span className="hidden md:block text-[12.5px] text-faint ml-auto">
+            Classified into categories, then routed
+          </span>
         </div>
 
         {/* filters */}
@@ -148,12 +167,13 @@ export default function EventsPage({
         </div>
       </div>
 
-      {selected && (
-        <DetailPanel
-          notification={selected}
-          closeHref={href({ filter, category })}
-        />
-      )}
+        {selected && (
+          <DetailPanel
+            notification={selected}
+            closeHref={href({ filter, category })}
+          />
+        )}
+      </div>
     </div>
   );
 }

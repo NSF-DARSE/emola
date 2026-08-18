@@ -17,3 +17,4 @@ data/model/*.xlsx
 data/model/*.xls
 data/model/*.mapping.json
 data/model/*.review.txt
+data/model/*.mapping.json

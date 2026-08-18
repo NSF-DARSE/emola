@@ -1,5 +1,12 @@
 import { Note, Panel, Section } from '@/components/ui';
+import {
+  categoriesTooRareToJudge,
+  categoriesWithoutRealExamples,
+  readEvaluation,
+  triageScore,
+} from '@/lib/evaluation';
 import { computeMetrics } from '@/lib/metrics';
+import { CATEGORIES } from '@/lib/taxonomy';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,8 +22,19 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
   );
 }
 
+/** "a, b and c" — an Oxford-comma-free list, because these read as prose. */
+function list(items: string[]): string {
+  if (items.length <= 1) return items[0] ?? '';
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
+
 export default function MetricsPage() {
   const m = computeMetrics();
+  const evaluation = readEvaluation();
+  const triage = triageScore();
+  const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
+  const unseen = categoriesWithoutRealExamples(CATEGORIES);
+  const tooRare = categoriesTooRareToJudge();
 
   return (
     <div className="flex-1 min-h-0 overflow-y-auto">
@@ -25,19 +43,113 @@ export default function MetricsPage() {
         description={`Agreement against labelled notices, plus how often reviewers overrule the engine. Current engine: ${m.engine}.`}
       >
         <Note tone="amber" icon="flask">
-          <strong>These numbers score a placeholder rules engine, not a trained classifier.</strong>{' '}
-          They exist so the harness is in place — treat them as a baseline to beat, not a result.
+          <strong>Every label here was produced by models, not people.</strong> The classifier was
+          trained on notices three models agreed on, and scored against 226 real notices those same
+          models labelled. Until a person labels a sample independently, this measures models
+          agreeing with models — a real number, but not yet a validated one.
         </Note>
 
         <Section
-          title="Holdout agreement"
-          hint={`${m.holdout.n} labelled real notices held out. Synthetic notices are excluded — they were written to exercise the pipeline and would flatter the score.`}
+          title="Stage 1 — finding abnormal events in the mailbox"
+          hint={`Subject-line rules over all ${triage.total} emails in the export. A false alarm is the expensive mistake here: it puts routine mail in front of a reviewer.`}
         >
-          <Note tone="red" icon="alert">
-            <strong>Not yet a generalisation estimate.</strong> The placeholder rules were
-            hand-written with all 30 labels visible, so the holdout was never truly held out. A high
-            score measures how well the rules were fitted, not how the system would do on an unseen
-            notice.
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+            <Stat label="Emails" value={String(triage.total)} sub="in the export" />
+            <Stat
+              label="Abnormal events"
+              value={String(triage.abnormal)}
+              sub={`${pct(triage.prevalence)} of the mailbox`}
+            />
+            <Stat
+              label="Found"
+              value={`${triage.found}/${triage.abnormal}`}
+              sub={triage.missed === 0 ? 'none missed' : `${triage.missed} missed`}
+            />
+            <Stat
+              label="False alarms"
+              value={String(triage.falseAlarms)}
+              sub={`out of ${triage.total - triage.abnormal} routine`}
+            />
+          </div>
+        </Section>
+
+        {evaluation && (
+          <Section
+            title="Stage 2 — the trained classifier"
+            hint={`Trained on ${evaluation.trainedOn} synthetic notices, then scored once on ${evaluation.testedOn} real ones it had never seen.`}
+          >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+              <Stat
+                label="Accuracy"
+                value={pct(evaluation.accuracy)}
+                sub={`${evaluation.testedOn} real notices`}
+              />
+              <Stat
+                label="Baseline to beat"
+                value={pct(evaluation.baseline)}
+                sub={`always "${evaluation.baselineLabel}"`}
+              />
+              <Stat
+                label="Any defensible label"
+                value={pct(evaluation.lenientAccuracy)}
+                sub="dual-natured notices allowed"
+              />
+              <Stat
+                label="Macro F1"
+                value={evaluation.macroF1.toFixed(2)}
+                sub="all categories equally"
+              />
+            </div>
+
+            <Note tone="amber" icon="warning">
+              <strong>Read the per-category numbers, not the accuracy.</strong> 88.9% of real
+              notices are Maintenance, so a model that says &ldquo;Maintenance&rdquo; every time
+              scores {pct(evaluation.baseline)}. Macro F1 is low for the same reason — it averages
+              categories that barely occur in real mail.
+            </Note>
+
+            <div className="mt-3 card overflow-x-auto">
+              <table className="w-full text-[12.5px] min-w-[440px]">
+                <thead>
+                  <tr className="bg-elevated border-b border-border">
+                    <th className="text-left px-3 py-2 label">Category</th>
+                    <th className="text-right px-3 py-2 label">Real notices</th>
+                    <th className="text-right px-3 py-2 label">Precision</th>
+                    <th className="text-right px-3 py-2 label">Recall</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {evaluation.perCategory.map((c) => (
+                    <tr key={c.category} className="border-b border-border last:border-0">
+                      <td className="px-3 py-2 font-medium">{c.category}</td>
+                      <td className="px-3 py-2 text-right tabular-nums text-muted">{c.support}</td>
+                      <td className="px-3 py-2 text-right tabular-nums">
+                        {c.support === 0 ? '—' : c.precision.toFixed(2)}
+                      </td>
+                      <td className="px-3 py-2 text-right tabular-nums">
+                        {c.support === 0 ? '—' : c.recall.toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-2 text-[12.5px] text-muted leading-relaxed">
+              A category with one or two real notices tells you nothing reliable — a single
+              decision moves its score by half. Only Maintenance and Outage have enough real
+              examples to judge.
+            </p>
+          </Section>
+        )}
+
+        <Section
+          title="Demo corpus agreement"
+          hint={`Only ${m.holdout.n} notices, so each one is worth ${(100 / Math.max(m.holdout.n, 1)).toFixed(0)} percentage points. This shows the pipeline working end to end; it is not an evaluation.`}
+        >
+          <Note tone="amber" icon="warning">
+            <strong>Do not quote these numbers.</strong> With {m.holdout.n} notices they land on
+            round figures that look more precise than they are. The evaluation above is the one
+            that means something.
           </Note>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
             <Stat
@@ -122,10 +234,19 @@ export default function MetricsPage() {
         <Section title="Data coverage caveat">
           <Note tone="red" icon="warning">
             <div>
-              <strong>No real examples exist for: {m.syntheticOnlyCategories.join(', ')}.</strong>{' '}
-              The {m.syntheticCount} synthetic notices were written by us to exercise the classifier
-              and the redaction path, and are excluded from every accuracy number above. Any claim
-              about performance on those categories is unsupported until DOF supplies real examples.
+              <strong>
+                {unseen.length > 0
+                  ? `${unseen.length} categories never appear in the real corpus: ${list(unseen)}.`
+                  : 'Every category appears at least once in the real corpus.'}
+              </strong>{' '}
+              {tooRare.length > 0 && (
+                <>
+                  {list(tooRare)} {tooRare.length === 1 ? 'appears' : 'appear'} only a handful of
+                  times, which is too few to conclude anything from.{' '}
+                </>
+              )}
+              The classifier can be trained on those categories but not validated on them, so any
+              claim about how it performs there is unsupported until DOF supplies real examples.
             </div>
           </Note>
         </Section>

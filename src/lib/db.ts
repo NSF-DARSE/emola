@@ -2,9 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Database from 'better-sqlite3';
 
-import { classify, extract } from './classifier';
+import { classify, classifyFromVector, extract } from './classifier';
 import { findSimilar } from './precedents';
 import { scanForSensitiveContent } from './redaction';
+import { fromBlob, toBlob } from './vectors';
 import { routeNotification } from './routing';
 import type { Category, Status } from './taxonomy';
 import type {
@@ -20,6 +21,13 @@ import type {
 const DB_PATH = path.join(process.cwd(), 'data', 'pipeline.db');
 const SCHEMA_PATH = path.join(process.cwd(), 'src', 'lib', 'schema.sql');
 const EVENTS_PATH = path.join(process.cwd(), 'data', 'events.json');
+/**
+ * Embeddings for the demo corpus, produced by scripts/embed-events.ts.
+ * Precomputed because seeding runs inside a synchronous better-sqlite3
+ * transaction and cannot await a network call. Absent means the keyword
+ * fallback is used instead — the app still runs, it just classifies worse.
+ */
+const VECTORS_PATH = path.join(process.cwd(), 'data', 'events.vectors.json');
 const SEED_PRECEDENTS_PATH = path.join(process.cwd(), 'data', 'precedents.seed.json');
 
 /** Notices held out of the demo's accuracy number. ~1/3 of the real sample. */
@@ -47,10 +55,43 @@ export function getDb(): Database.Database {
   db.pragma('foreign_keys = ON');
   db.exec(fs.readFileSync(SCHEMA_PATH, 'utf8'));
 
-  const count = db.prepare('SELECT COUNT(*) AS n FROM notifications').get() as { n: number };
-  if (count.n === 0) seed(db);
-
   return db;
+}
+
+/**
+ * The app starts empty on purpose.
+ *
+ * A demo that opens with data already in it hides the part worth watching —
+ * mail arriving, being triaged, classified and routed. Ingest is therefore an
+ * explicit action, and it can be run again from scratch.
+ */
+export function notificationCount(): number {
+  return (getDb().prepare('SELECT COUNT(*) AS n FROM notifications').get() as { n: number }).n;
+}
+
+export function ingestMailbox(): number {
+  const conn = getDb();
+  if (notificationCount() > 0) return 0;
+  seed(conn);
+  return notificationCount();
+}
+
+/** Clears everything the demo produced, so it can be run again from empty. */
+export function resetMailbox(): void {
+  const conn = getDb();
+  conn
+    .transaction(() => {
+      conn.prepare('DELETE FROM artifacts').run();
+      conn.prepare('DELETE FROM decisions').run();
+      // Seeded rulings are reference data that predate the demo, so they stay.
+      conn.prepare('DELETE FROM precedents WHERE seeded = 0').run();
+      // Six of the seeded rulings cite the notice they were made on. Once that
+      // notice is gone the citation is dangling, and leaving it in place makes
+      // the foreign key reject the delete and roll the whole reset back. The
+      // ruling is the part worth keeping, so drop the reference and keep it.
+      conn.prepare('UPDATE precedents SET notification_id = NULL').run();
+      conn.prepare('DELETE FROM notifications').run();
+    })();
 }
 
 // ---------------------------------------------------------------------------
@@ -69,26 +110,38 @@ interface RawEvent {
 function seed(conn: Database.Database): void {
   const events: RawEvent[] = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf8'));
 
+  const vectors: Record<string, number[]> = fs.existsSync(VECTORS_PATH)
+    ? JSON.parse(fs.readFileSync(VECTORS_PATH, 'utf8'))
+    : {};
+  if (Object.keys(vectors).length === 0) {
+    console.warn(
+      'No embeddings found, so the keyword fallback will classify the corpus. ' +
+        'Run: npx tsx scripts/embed-events.ts',
+    );
+  }
+
   const insert = conn.prepare(`
     INSERT INTO notifications (
       id, received_at, body, synthetic, synthetic_reason,
       gold_primary, gold_secondary, gold_status, holdout,
       model_primary, model_secondary, model_status, model_confidence,
       model_reasoning, model_engine,
-      extracted_json, safety_json, route, route_reasons, review_state
+      extracted_json, safety_json, route, route_reasons, review_state, embedding
     ) VALUES (
       @id, @received_at, @body, @synthetic, @synthetic_reason,
       @gold_primary, @gold_secondary, @gold_status, @holdout,
       @model_primary, @model_secondary, @model_status, @model_confidence,
       @model_reasoning, @model_engine,
-      @extracted_json, @safety_json, @route, @route_reasons, 'pending'
+      @extracted_json, @safety_json, @route, @route_reasons, 'pending', @embedding
     )
   `);
 
   const run = conn.transaction((rows: RawEvent[]) => {
     for (const e of rows) {
-      // Stages 1–3.
-      const model = classify(e.body);
+      // Stages 1–3. The trained model when we have an embedding for this
+      // notice, the keyword fallback when we do not.
+      const vector = vectors[e.id];
+      const model = vector ? classifyFromVector(e.body, vector) : classify(e.body);
       const extracted = extract(e.body, e.received_at);
       const safety = scanForSensitiveContent(e.body);
       const routing = routeNotification(model, extracted, safety);
@@ -113,6 +166,7 @@ function seed(conn: Database.Database): void {
         safety_json: JSON.stringify(safety),
         route: routing.route,
         route_reasons: JSON.stringify(routing.reasons),
+        embedding: vector ? toBlob(vector) : null,
       });
     }
   });
@@ -280,6 +334,7 @@ export function listPrecedents(): PrecedentRecord[] {
       reviewer: r.reviewer,
       createdAt: r.created_at,
       seeded: Boolean(r.seeded),
+      embedding: r.embedding ? fromBlob(r.embedding) : null,
     }),
   );
 }
@@ -294,7 +349,13 @@ export function precedentsFor(n: NotificationRecord, limit = 3): PrecedentMatch[
   // back as a "similar past case", which is circular and reads as false
   // corroboration. Seeded rulings genuinely predate the review and stay.
   const others = listPrecedents().filter((p) => p.seeded || p.notificationId !== n.id);
-  return findSimilar(query, others, limit);
+
+  // The notice was already embedded to classify it, so retrieval is free.
+  const row = getDb()
+    .prepare('SELECT embedding FROM notifications WHERE id = ?')
+    .get(n.id) as { embedding: Buffer | null } | undefined;
+
+  return findSimilar(query, others, limit, row?.embedding ? fromBlob(row.embedding) : null);
 }
 
 export function listDecisions(): DecisionRecord[] {
@@ -385,8 +446,8 @@ export function submitDecision(input: SubmitDecisionInput): DecisionRecord {
       .prepare(
         `INSERT INTO precedents (
            notification_id, phrase, human_primary, human_status,
-           decision, reason, reviewer, created_at, seeded
-         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)`,
+           decision, reason, reviewer, created_at, seeded, embedding
+         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?)`,
       )
       .run(
         input.notificationId,
@@ -397,6 +458,10 @@ export function submitDecision(input: SubmitDecisionInput): DecisionRecord {
         reason,
         input.reviewer,
         now,
+        // Inherit the notice's vector so this ruling is retrievable by meaning
+        // from the moment it is written, with no extra embedding call.
+        (conn.prepare('SELECT embedding FROM notifications WHERE id = ?')
+          .get(input.notificationId) as { embedding: Buffer | null } | undefined)?.embedding ?? null,
       );
   });
 

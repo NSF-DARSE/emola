@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "tsx scripts/seed.ts",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "node scripts/test.mjs",
     "audit:ui": "node scripts/audit-ui.cjs",
     "inspect": "node scripts/inspect.cjs"
   },

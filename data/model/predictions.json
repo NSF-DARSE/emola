@@ -1,0 +1,2050 @@
+[
+  {
+    "id": "GS-0001",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5333641767501831,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0002",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7565945386886597,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0003",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8254771828651428,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0004",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6037421226501465,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0005",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5243842005729675,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0006",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7817341089248657,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0007",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7053105235099792,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0008",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7198939919471741,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0009",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5585393309593201,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0010",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4672028124332428,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0011",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.42310038208961487,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0012",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5655853748321533,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0013",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5689700841903687,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0014",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5597326755523682,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0015",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7735685706138611,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0016",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5503488779067993,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0017",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5579552054405212,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0018",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8081589341163635,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0019",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5421242713928223,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0020",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.6218828558921814,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0021",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.5054925084114075,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0022",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.5922497510910034,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0023",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7674059867858887,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0024",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5397167801856995,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0025",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.43461376428604126,
+    "acceptable": [
+      "Outage",
+      "Application"
+    ]
+  },
+  {
+    "id": "GS-0026",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.2584909200668335,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0027",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7877536416053772,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0028",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.529950737953186,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0029",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.28206101059913635,
+    "acceptable": [
+      "Outage",
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0030",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8043529391288757,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0031",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7952308058738708,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0032",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.48804476857185364,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0033",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.40959644317626953,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0034",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7556301951408386,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0035",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5757763981819153,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0036",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.6250767111778259,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0037",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.5202178955078125,
+    "acceptable": [
+      "Outage",
+      "Network"
+    ]
+  },
+  {
+    "id": "GS-0038",
+    "truth": "Outage",
+    "predicted": "Security",
+    "confidence": 0.3116333484649658,
+    "acceptable": [
+      "Network",
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0039",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6487768292427063,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0040",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7095714807510376,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0041",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7525588274002075,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0042",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6466827988624573,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0043",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7843098044395447,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0044",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7955303192138672,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0045",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7051243782043457,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0046",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7884679436683655,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0047",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6522877812385559,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0048",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.3892109990119934,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0049",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6209879517555237,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0050",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7589637041091919,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0051",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6353983283042908,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0052",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6804021000862122,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0053",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6448770761489868,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0054",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5405057668685913,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0055",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7999598979949951,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0056",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.31163015961647034,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0057",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7473860383033752,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0058",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5262148380279541,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0059",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.2586769163608551,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0060",
+    "truth": "Maintenance",
+    "predicted": "Application",
+    "confidence": 0.21477730572223663,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0061",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6505236625671387,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0062",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7090564966201782,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0063",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7819186449050903,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0064",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7846786379814148,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0065",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7435657382011414,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0066",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5305697917938232,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0067",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7929911017417908,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0068",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7574081420898438,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0069",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5344944596290588,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0070",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.58559650182724,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0071",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6704726815223694,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0072",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7755296230316162,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0073",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5288662314414978,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0074",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7820780277252197,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0075",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.743470311164856,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0076",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5358682870864868,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0077",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.2372252643108368,
+    "acceptable": [
+      "Maintenance",
+      "Application"
+    ]
+  },
+  {
+    "id": "GS-0078",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5795756578445435,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0079",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6602793335914612,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0080",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6655095219612122,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0081",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6506890654563904,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0082",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7655776143074036,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0083",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6814826726913452,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0084",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7224545478820801,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0085",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6272724866867065,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0086",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7518768906593323,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0087",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6739569902420044,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0088",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6338477730751038,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0089",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7288610339164734,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0090",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.3917670249938965,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0091",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6608820557594299,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0092",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7762673497200012,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0093",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7615500092506409,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0094",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6136713624000549,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0095",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7636488080024719,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0096",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.566796600818634,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0097",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5730479955673218,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0098",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5713548064231873,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0099",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.48955026268959045,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0100",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5644237995147705,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0101",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7619026303291321,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0102",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7721473574638367,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0103",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6765889525413513,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0104",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7630245089530945,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0105",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7713059186935425,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0106",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5653238892555237,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0107",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.43039780855178833,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0108",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.579184889793396,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0109",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5750792026519775,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0110",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.766768753528595,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0111",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7287918329238892,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0112",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7806289792060852,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0113",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.3166177570819855,
+    "acceptable": [
+      "Maintenance",
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0114",
+    "truth": "Outage",
+    "predicted": "Maintenance",
+    "confidence": 0.36236050724983215,
+    "acceptable": [
+      "Maintenance",
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0115",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7682132720947266,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0116",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6037620306015015,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0117",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7316833734512329,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0118",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5766243934631348,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0119",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5757622122764587,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0120",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.5633286237716675,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0121",
+    "truth": "Outage",
+    "predicted": "Network",
+    "confidence": 0.24239017069339752,
+    "acceptable": [
+      "Outage",
+      "Network"
+    ]
+  },
+  {
+    "id": "GS-0122",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5414712429046631,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0123",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5087355375289917,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0124",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5838016867637634,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0125",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7234328389167786,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0126",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5813195705413818,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0127",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.731469988822937,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0128",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7605055570602417,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0129",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4609811305999756,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0130",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4375479817390442,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0131",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.47867390513420105,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0132",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6523871421813965,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0133",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5119526982307434,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0134",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4725742042064667,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0135",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6919132471084595,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0136",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5228396654129028,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0137",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6936028599739075,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0138",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7080286145210266,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0139",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7389991283416748,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0140",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7006384134292603,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0141",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6911087036132812,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0142",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.49502643942832947,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0143",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.5934871435165405,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0144",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.3441760241985321,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0145",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6991208791732788,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0146",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6540576219558716,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0147",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7457777261734009,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0148",
+    "truth": "Application",
+    "predicted": "Outage",
+    "confidence": 0.2586807608604431,
+    "acceptable": [
+      "Vendor",
+      "Application"
+    ]
+  },
+  {
+    "id": "GS-0149",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5139436721801758,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0150",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7604738473892212,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0151",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5183427333831787,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0152",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6978991031646729,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0153",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7112938165664673,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0154",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6387578845024109,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0155",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.49169835448265076,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0156",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5982367992401123,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0157",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6556150317192078,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0158",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.501979649066925,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0159",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7730884552001953,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0160",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4704788029193878,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0161",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6713940501213074,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0162",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5049269199371338,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0163",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7367905974388123,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0164",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5045425295829773,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0165",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7425431609153748,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0166",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6282199025154114,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0167",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.23888474702835083,
+    "acceptable": [
+      "Security",
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0168",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7910208702087402,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0169",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8115460276603699,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0170",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5152295827865601,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0171",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7329735159873962,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0172",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7953083515167236,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0173",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4775443971157074,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0174",
+    "truth": "Security",
+    "predicted": "Security",
+    "confidence": 0.32392555475234985,
+    "acceptable": [
+      "Security",
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0175",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7778692245483398,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0176",
+    "truth": "Security",
+    "predicted": "Security",
+    "confidence": 0.3111937344074249,
+    "acceptable": [
+      "Security"
+    ]
+  },
+  {
+    "id": "GS-0177",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8038276433944702,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0178",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6479055881500244,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0179",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4976682960987091,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0180",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5055817365646362,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0181",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6972241997718811,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0182",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6677558422088623,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0183",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7843136191368103,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0184",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7919037342071533,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0185",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6528245806694031,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0186",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7788982391357422,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0187",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6073490381240845,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0188",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6804835796356201,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0189",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7408661842346191,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0190",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5345385670661926,
+    "acceptable": [
+      "Maintenance",
+      "Vendor"
+    ]
+  },
+  {
+    "id": "GS-0191",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8035199642181396,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0192",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7357746958732605,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0193",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.48441216349601746,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0194",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4773375689983368,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0195",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7830067276954651,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0196",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.6736024618148804,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0197",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.6517740488052368,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0198",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6554529070854187,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0199",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6746699213981628,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0200",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.46037307381629944,
+    "acceptable": [
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0201",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8055428266525269,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0202",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7223218083381653,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0203",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6480904221534729,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0204",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4935774803161621,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0205",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.595528781414032,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0206",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6634518504142761,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0207",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6418808698654175,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0208",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7874346375465393,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0209",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.517575204372406,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0210",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5091425776481628,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0211",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.4566519260406494,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0212",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.7827121019363403,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0213",
+    "truth": "Outage",
+    "predicted": "Outage",
+    "confidence": 0.6148778200149536,
+    "acceptable": [
+      "Outage",
+      "Network"
+    ]
+  },
+  {
+    "id": "GS-0214",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6827865839004517,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0215",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5098710060119629,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0216",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.75674968957901,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0217",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6437668800354004,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0218",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6601790189743042,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0219",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.33186274766921997,
+    "acceptable": [
+      "Maintenance",
+      "Outage"
+    ]
+  },
+  {
+    "id": "GS-0220",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.787691593170166,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0221",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6165288686752319,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0222",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.6823490858078003,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0223",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.34101158380508423,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0224",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.5875239968299866,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0225",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.616395890712738,
+    "acceptable": [
+      "Maintenance"
+    ]
+  },
+  {
+    "id": "GS-0226",
+    "truth": "Maintenance",
+    "predicted": "Maintenance",
+    "confidence": 0.8063157796859741,
+    "acceptable": [
+      "Maintenance"
+    ]
+  }
+]

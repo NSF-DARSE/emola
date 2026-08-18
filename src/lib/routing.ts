@@ -13,9 +13,28 @@
 
 import type { ExtractedFields, ModelAssessment, Route, SafetyReport } from './types';
 
-/** Confidence at or above this is "high"; below LOW is outright low. */
-export const CONFIDENCE_HIGH = 0.8;
-export const CONFIDENCE_LOW = 0.55;
+/**
+ * Confidence at or above this is "high"; below LOW is outright low.
+ *
+ * 0.80 was set against the keyword stub, whose confidences were an invented
+ * formula that ran high. The trained model reports real probabilities and is
+ * under-confident by comparison - it is 100% correct on the real corpus
+ * everywhere between 0.5 and 0.8 - so 0.80 held 225 of 226 notices, including
+ * many it had classified correctly with room to spare.
+ *
+ * 0.70 instead: cross-validated accuracy above it is 98.1% on training data,
+ * and it is deliberately on the cautious side of where the model's errors
+ * actually appear (below 0.5).
+ *
+ * Worth knowing before tuning this: confidence is NOT what protects auto-send.
+ * Moving this constant from 0.55 to 0.70 changes 5 notices out of 226 - the
+ * content rules below hold the rest. See scripts/route-sim.ts.
+ *
+ * Provisional until a human labels a sample and we can measure agreement
+ * against something other than models agreeing with models.
+ */
+export const CONFIDENCE_HIGH = 0.7;
+export const CONFIDENCE_LOW = 0.5;
 
 export interface RoutingResult {
   route: Route;

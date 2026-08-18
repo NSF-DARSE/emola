@@ -1,79 +1,74 @@
 import Link from 'next/link';
 
-import { Badge, CategoryLabel, Dot, Empty, Note } from '@/components/ui';
+import SwipeDeck, { type BlindCard } from '@/components/SwipeDeck';
+import { Note } from '@/components/ui';
 import { getReviewQueue, listNotifications } from '@/lib/db';
-import { shortDate, subjectFor } from '@/lib/mail';
-import { eventSignal, SIGNAL_VAR } from '@/lib/severity';
+import { subjectFor } from '@/lib/mail';
+import { formatDuration, formatWindowPoint } from '@/lib/time';
 
 export const dynamic = 'force-dynamic';
 
+/**
+ * The queue is rendered as a deck rather than a table, and the projection
+ * below is the reason it stays blind-first: only these fields cross to the
+ * client. The model's category, confidence and reasoning are never serialised
+ * into the page, so no amount of poking at the DOM reveals them early.
+ */
 export default function ReviewQueuePage() {
   const queue = getReviewQueue();
   const decided = listNotifications().filter((n) => n.reviewState !== 'pending');
 
+  const cards: BlindCard[] = queue.map((n) => ({
+    id: n.id,
+    subject: subjectFor(n),
+    body: n.body,
+    receivedAt: n.receivedAt,
+    systems: n.extracted.affectedSystems,
+    // Format server-side: the card is a plain string so the deck never has
+    // to know about window shapes, timezones or cross-midnight cases.
+    window: n.extracted.window
+      ? `${formatWindowPoint(n.extracted.window.start)} — ${formatWindowPoint(
+          n.extracted.window.end,
+        )} ${n.extracted.window.timezone} (${formatDuration(n.extracted.window.durationMinutes)})`
+      : null,
+  }));
+
   return (
     <div className="flex-1 flex flex-col min-h-0">
-      <div className="h-11 shrink-0 border-b border-border flex items-center gap-3 px-5">
-        <h1 className="text-[13px] font-semibold tracking-[-0.01em]">Review queue</h1>
-        <span className="font-mono text-[11px] text-faint">{queue.length}</span>
-      </div>
-
-      <div className="flex-1 min-h-0 overflow-y-auto">
-        <div className="px-5 pt-5 max-w-[900px]">
-          <Note tone="blue" icon="eyeOff">
-            <strong>Blind-first.</strong> Opening an item shows the notice and the extracted fields
-            only — the engine&apos;s category, confidence and redaction flags stay hidden until
-            after you record your own call.
-          </Note>
-        </div>
-
-        <div className="mt-4">
-          {queue.map((n) => (
-            <Link key={n.id} href={`/review/${n.id}`} className="trow h-auto py-2.5">
-              <span className="trow-bar" style={{ background: SIGNAL_VAR[eventSignal(n)] }} />
-              <span className="hidden md:block w-[104px] shrink-0">
-                <CategoryLabel value={n.model.primary} />
-              </span>
-              <span className="flex-1 min-w-0">
-                <span className="block text-[13.5px] font-medium text-fg truncate">
-                  {subjectFor(n)}
-                </span>
-                <span className="block text-[12px] text-faint truncate mt-0.5">
-                  <span className="md:hidden">{n.model.primary} · </span>
-                  {n.routeReasons.join(' · ')}
-                </span>
-              </span>
-              <span className="shrink-0 text-[12.5px] text-faint w-[64px] text-right">
-                {shortDate(n.receivedAt)}
-              </span>
-            </Link>
-          ))}
-          {queue.length === 0 && <Empty>Queue is clear.</Empty>}
-        </div>
-
+      <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-4 sm:px-6">
+        <h1 className="text-[15px] font-semibold tracking-[-0.01em]">Review</h1>
+        <span className="text-[13px] text-faint tabular-nums">{queue.length} waiting</span>
         {decided.length > 0 && (
-          <div className="mt-8">
-            <div className="px-5 pb-2 label">Already decided</div>
-            {decided.map((n) => (
-              <Link key={n.id} href={`/?selected=${n.id}`} className="trow">
-                <span className="trow-bar" style={{ background: SIGNAL_VAR[eventSignal(n)] }} />
-                <span className="shrink-0">
-                  <Badge signal={n.reviewState === 'approved' ? 'green' : 'red'}>
-                    <Dot signal={n.reviewState === 'approved' ? 'green' : 'red'} size={6} />
-                    {n.reviewState}
-                  </Badge>
-                </span>
-                <span className="flex-1 min-w-0 text-[13.5px] text-muted truncate">
-                  {subjectFor(n)}
-                </span>
-                <span className="hidden sm:block shrink-0 text-[12.5px] text-faint w-[64px] text-right">
-                  {shortDate(n.receivedAt)}
-                </span>
-              </Link>
-            ))}
-          </div>
+          <Link
+            href="/precedents"
+            className="ml-auto text-[13px] text-muted hover:text-fg transition-colors"
+          >
+            {decided.length} already decided
+          </Link>
         )}
       </div>
+
+      {queue.length === 0 ? (
+        <div className="flex-1 grid place-items-center p-8">
+          <div className="text-center max-w-[40ch]">
+            <div className="text-[15px] font-semibold">Nothing waiting</div>
+            <p className="text-[13.5px] text-muted mt-1.5 leading-relaxed">
+              Every notice has been through a person.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="shrink-0 px-4 sm:px-6 pt-5 mx-auto w-full max-w-[720px]">
+            <Note tone="blue" icon="eyeOff">
+              <strong>You go first.</strong> The card shows the notice and nothing else. What the
+              model thought is not in this page — it arrives only after your decision is written,
+              so it cannot colour your read.
+            </Note>
+          </div>
+          <SwipeDeck cards={cards} />
+        </>
+      )}
     </div>
   );
 }

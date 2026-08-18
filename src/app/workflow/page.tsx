@@ -1,3 +1,4 @@
+import ResetDemo from '@/components/ResetDemo';
 import { Badge, Note, Panel, Section } from '@/components/ui';
 
 export const dynamic = 'force-dynamic';
@@ -12,8 +13,8 @@ const STAGES: Array<{ n: string; title: string; body: string; state: 'built' | '
   {
     n: '02',
     title: 'Classify + extract',
-    body: 'One pass producing primary category, secondary tags, status, structured fields, a safety score, and a confidence score.',
-    state: 'stub',
+    body: 'The trained classifier reads the category and its confidence; rules read status and the structured fields. 97.8% on 226 real notices against an 88.9% baseline.',
+    state: 'built',
   },
   {
     n: '03',
@@ -122,16 +123,39 @@ export default function WorkflowPage() {
           </ul>
         </Section>
 
-        <Section title="What is a placeholder right now">
+        <Section
+          title="Run the demo"
+          hint="The app starts empty. Ingest is an explicit action so the pipeline can be watched rather than arrived at."
+        >
+          <ResetDemo />
+        </Section>
+
+        <Section title="What is real and what is not">
+          <Note tone="blue" icon="check">
+            <div>
+              <strong>The category classifier is trained and running.</strong> Logistic regression
+              over Amazon Titan embeddings, learned from 458 synthetic notices labelled by a
+              three-model panel, then scored once on 226 real ones: 97.8% against an 88.9%
+              majority-class baseline. It ships as{' '}
+              <code className="font-mono">weights.json</code> — eight rows of numbers — so there is
+              no model server to host and no Python at runtime.
+            </div>
+          </Note>
           <Note tone="amber" icon="warning">
             <div>
-              Classification, extraction and precedent similarity run on deterministic rules so the
-              workflow is demonstrable end to end with nothing to host. Each sits behind a stable
-              function signature — <code className="font-mono">classify()</code>,{' '}
+              <strong>Status, extraction and precedent similarity are still rules.</strong> We
+              trained a category model and nothing else, so a status shown here comes from wording,
+              not from a model. Each sits behind a stable signature —{' '}
               <code className="font-mono">extract()</code>,{' '}
-              <code className="font-mono">findSimilar()</code> — so swapping in a trained model
-              touches those files and nothing else. Model choice, hosting and training data are
-              still open; see <code className="font-mono">docs/MODEL-NOTES.md</code>.
+              <code className="font-mono">findSimilar()</code> — so replacing one touches that file
+              and nothing else.
+            </div>
+          </Note>
+          <Note tone="amber" icon="warning">
+            <div>
+              <strong>No human has labelled anything yet.</strong> Both the training labels and the
+              answer key came from models. Until a person labels a stratified sample and we compute
+              Cohen&rsquo;s kappa, every accuracy figure in this app is models agreeing with models.
             </div>
           </Note>
         </Section>

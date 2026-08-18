@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Icon, { type IconName } from '@/components/Icon';
 import { SIGNAL_VAR, type Signal } from '@/lib/severity';
 import type { Category, Status } from '@/lib/taxonomy';
+import { CONFIDENCE_HIGH, CONFIDENCE_LOW } from '@/lib/routing';
 
 /**
  * The category, spelled out. It stays colourless — colour is reserved for
@@ -111,7 +112,11 @@ export function Field({ label, children }: { label: string; children: ReactNode 
 
 export function Meter({ value }: { value: number }) {
   const pct = Math.round(value * 100);
-  const signal: Signal = value >= 0.8 ? 'green' : value >= 0.55 ? 'amber' : 'red';
+  // Read the routing thresholds rather than repeating them: a meter that
+  // turns green below the auto-send gate tells the reviewer the opposite of
+  // what the router just decided.
+  const signal: Signal =
+    value >= CONFIDENCE_HIGH ? 'green' : value >= CONFIDENCE_LOW ? 'amber' : 'red';
   return (
     <span className="inline-flex items-center gap-2">
       <span className="w-[56px] h-[3px] rounded-full bg-border overflow-hidden inline-block">

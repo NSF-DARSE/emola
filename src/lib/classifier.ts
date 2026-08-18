@@ -1,24 +1,36 @@
 /**
- * ============================================================================
- * PLACEHOLDER CLASSIFIER — not the real model.
- * ============================================================================
+ * Stage 2 — what kind of event is this.
  *
- * This is a deterministic keyword/rule pass that exists so the UI has
- * plausible data to render. It is intentionally simple and intentionally
- * fallible: on several notices it returns a low confidence or the wrong label,
- * which is exactly what the review queue is there to catch.
+ * Two implementations behind one shape:
  *
- * The real implementation swaps out `classify()` behind this same signature.
- * Nothing else in the app reads keywords directly. Open questions to settle
- * before that swap (model choice, hosting, training data) are in
- * docs/MODEL-NOTES.md.
+ *   classifyFromVector()  the trained model. Logistic regression over Titan
+ *                         embeddings, 97.8% on the 226 real notices against an
+ *                         88.9% majority-class baseline. Needs an embedding,
+ *                         so it needs the network.
+ *
+ *   classify()            a keyword pass. Used only when no embedding is
+ *                         available — no Bedrock key, or the call failed. It
+ *                         is deliberately fallible and reports a low
+ *                         confidence, which sends the notice to a human.
+ *
+ * Both return the same ModelAssessment, and both mark which engine produced
+ * it, so a reviewer can always tell what they are looking at.
+ *
+ * Neither predicts STATUS. We trained a category model and nothing else, so
+ * status comes from the rules below in both paths. Dressing a rule up as a
+ * model output would put an unearned number in front of a reviewer.
  */
 
+import { predictCategory, WEIGHTS } from './model/logreg';
 import { CATEGORIES, type Category, type Status } from './taxonomy';
 import { normalizeSchedule } from './time';
 import type { ExtractedFields, ModelAssessment } from './types';
 
+/** Marks an assessment as coming from the keyword fallback, not the model. */
 export const ENGINE_ID = 'stub-rules-v0';
+
+/** Marks an assessment as coming from the trained model. */
+export const MODEL_ENGINE_ID = WEIGHTS.engine;
 
 /**
  * The two axes are not symmetric. What *kind of event* this is (the primary
@@ -161,7 +173,7 @@ function detectStatus(body: string): { status: Status; confident: boolean } {
   return { status: 'scheduled', confident: false };
 }
 
-/** PLACEHOLDER. Same signature the trained classifier will implement. */
+/** Keyword fallback. Same shape as the model, used when there is no embedding. */
 export function classify(body: string): ModelAssessment {
   const intents = rank(scoreCategories(body, INTENT_CATEGORIES));
   const subjects = rank(scoreCategories(body, SUBJECT_CATEGORIES));
@@ -315,3 +327,42 @@ export function extract(body: string, receivedAt: string): ExtractedFields {
 }
 
 export const ALL_CATEGORIES = CATEGORIES;
+
+/**
+ * The trained classifier. `vector` is a Titan embedding of the notice, which
+ * the caller obtains through model/embed — that module anonymises the text
+ * before it goes anywhere, and this one never sees the raw body except to read
+ * its status wording locally.
+ *
+ * Confidence is the model's own probability for the winning category, not a
+ * score we invented. Routing depends on it meaning something.
+ */
+export function classifyFromVector(body: string, vector: number[]): ModelAssessment {
+  const prediction = predictCategory(vector);
+  const { status, confident: statusConfident } = detectStatus(body);
+
+  const runnerUp = Object.entries(prediction.probabilities)
+    .filter(([category]) => category !== prediction.primary)
+    .sort((a, b) => b[1] - a[1])[0];
+
+  const pct = (p: number) => `${Math.round(p * 100)}%`;
+
+  // Say what the model actually did. A reviewer reads this before deciding
+  // whether to trust it, so a vague sentence here is worse than none.
+  let reasoning =
+    `Trained model reads this as ${prediction.primary} (${pct(prediction.confidence)})`;
+  if (runnerUp && runnerUp[1] >= 0.15) {
+    reasoning += `, with ${runnerUp[0]} close behind (${pct(runnerUp[1])})`;
+  }
+  reasoning += `. Status "${status}" comes from wording, not the model`;
+  reasoning += statusConfident ? '.' : ' — and the notice does not clearly say.';
+
+  return {
+    primary: prediction.primary,
+    secondary: prediction.secondary,
+    status,
+    confidence: Math.round(prediction.confidence * 100) / 100,
+    reasoning,
+    engine: MODEL_ENGINE_ID,
+  };
+}

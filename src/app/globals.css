@@ -385,3 +385,179 @@ details > summary {
 details > summary::-webkit-details-marker {
   display: none;
 }
+
+
+/* --- primary tabs ------------------------------------------------------ */
+/* An underline rather than a pill: these two sit above the content they
+   filter, so the mark should point down at it. */
+.tab {
+  position: relative;
+  padding: 0 2px 11px;
+  margin-right: 22px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color 140ms ease;
+}
+.tab:hover { color: var(--fg); }
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--fg);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.tab-active { color: var(--fg); font-weight: 600; }
+.tab-active::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .tab::after { transition: none; }
+}
+
+/* A flagged row in the all-email list. The point of that view is that seven
+   rows matter and 596 do not, so the routine ones recede rather than the
+   flagged ones shouting. */
+.trow-flagged { background: color-mix(in srgb, var(--sig-amber) 6%, transparent); }
+.trow-flagged:hover { background: color-mix(in srgb, var(--sig-amber) 10%, transparent); }
+
+/* --- review deck ------------------------------------------------------- */
+.card-deck {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 0 0 / 0.12);
+  touch-action: pan-y;
+  user-select: none;
+}
+.card-grab { cursor: grab; }
+.card-grab:active { cursor: grabbing; }
+
+/* The stamp reads as the consequence of releasing here, so it sits where the
+   thumb is dragging towards rather than centred. */
+.card-stamp {
+  position: absolute;
+  top: 16px;
+  padding: 4px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.stamp-relay {
+  right: 18px;
+  color: var(--sig-green);
+  border: 1.5px solid var(--sig-green);
+  background: color-mix(in srgb, var(--sig-green) 10%, var(--surface));
+}
+.stamp-hold {
+  left: 18px;
+  color: var(--sig-amber);
+  border: 1.5px solid var(--sig-amber);
+  background: color-mix(in srgb, var(--sig-amber) 10%, var(--surface));
+}
+
+.reveal {
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+/* --- chips and fields --------------------------------------------------- */
+.chip {
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.chip:hover { background: var(--hover); color: var(--fg); }
+.chip-active {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.field {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 11px;
+  font-size: 13.5px;
+  color: var(--fg);
+  font-family: inherit;
+}
+.field::placeholder { color: var(--faint); }
+.field:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: -1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-deck { transition: none !important; }
+}
+
+/* --- ingest theatre ---------------------------------------------------- */
+.stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--faint);
+  font-size: 12.5px;
+  white-space: nowrap;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+.stage-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.stage-done { color: var(--fg); border-color: var(--border-strong); }
+.stage-live {
+  color: var(--fg);
+  border-color: var(--fg);
+  background: var(--hover);
+}
+/* Only the live stage pulses. Everything pulsing at once reads as a page that
+   has not loaded rather than a process that is running. */
+.stage-live .stage-dot { animation: stage-pulse 1s ease-in-out infinite; }
+@keyframes stage-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+.stage-link {
+  width: 14px;
+  height: 1px;
+  background: var(--border-strong);
+  display: inline-block;
+}
+
+/* Rows arrive from the right, the direction mail comes in from. */
+.anim-land { animation: land 320ms cubic-bezier(0.32, 0.72, 0, 1) both; }
+@keyframes land {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-land { animation: none; }
+  .stage-live .stage-dot { animation: none; }
+}

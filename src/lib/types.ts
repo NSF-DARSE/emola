@@ -100,11 +100,19 @@ export interface PrecedentRecord {
   reviewer: string;
   createdAt: string;
   seeded: boolean;
+  /** Inherited from the notice this ruling was made on. Null for seed data. */
+  embedding: number[] | null;
 }
 
 export interface PrecedentMatch {
   precedent: PrecedentRecord;
   similarity: number;
+  /**
+   * How the match was found. Surfaced so the interface can distinguish a real
+   * embedding match from the token-overlap fallback rather than showing both
+   * as one number.
+   */
+  method: 'embedding' | 'tokens';
 }
 
 export type ArtifactKind = 'infographic' | 'exec_summary';

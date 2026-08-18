@@ -7,7 +7,7 @@ import Icon, { type IconName } from '@/components/Icon';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const ITEMS: Array<{ href: string; icon: IconName; label: string; match: (p: string) => boolean }> = [
-  { href: '/', icon: 'events', label: 'Events', match: (p) => p === '/' },
+  { href: '/inbox', icon: 'events', label: 'Mail', match: (p) => p === '/' || p.startsWith('/inbox') },
   { href: '/review', icon: 'queue', label: 'Review queue', match: (p) => p.startsWith('/review') },
   { href: '/reports', icon: 'metrics', label: 'Reports', match: (p) => p.startsWith('/reports') },
   { href: '/precedents', icon: 'precedents', label: 'Precedents', match: (p) => p.startsWith('/precedents') },

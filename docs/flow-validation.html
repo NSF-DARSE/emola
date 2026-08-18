@@ -1,0 +1,482 @@
+<title>How Abnormal Events Flow</title>
+<style>
+  :root {
+    --ground: #f7f8fa;
+    --surface: #ffffff;
+    --ink: #16202e;
+    --muted: #5a6472;
+    --faint: #8b93a1;
+    --rule: #dde1e8;
+    --rule-strong: #c3cad5;
+    --accent: #1c5c8c;
+    --accent-soft: #e8f0f7;
+    --inbox: #1c5c8c;
+    --inbox-soft: #e8f0f7;
+    --relay: #8a5a10;
+    --relay-soft: #fbf1de;
+    --confirm: #1d6b45;
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #10151c;
+      --surface: #171e27;
+      --ink: #e8ecf1;
+      --muted: #a2acba;
+      --faint: #757f8d;
+      --rule: #262f3a;
+      --rule-strong: #3a4552;
+      --accent: #7db4dd;
+      --accent-soft: #17293a;
+      --inbox: #7db4dd;
+      --inbox-soft: #17293a;
+      --relay: #d9a95c;
+      --relay-soft: #2c2314;
+      --confirm: #63bd8e;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #10151c;
+    --surface: #171e27;
+    --ink: #e8ecf1;
+    --muted: #a2acba;
+    --faint: #757f8d;
+    --rule: #262f3a;
+    --rule-strong: #3a4552;
+    --accent: #7db4dd;
+    --accent-soft: #17293a;
+    --inbox: #7db4dd;
+    --inbox-soft: #17293a;
+    --relay: #d9a95c;
+    --relay-soft: #2c2314;
+    --confirm: #63bd8e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 56px 28px 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  .col { max-width: 68ch; display: flex; flex-direction: column; gap: 18px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 0;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 650;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+  strong { font-weight: 650; }
+
+  .lede { font-size: 18px; color: var(--muted); }
+
+  section { display: flex; flex-direction: column; gap: 20px; }
+
+  hr { border: 0; height: 1px; background: var(--rule); margin: 0; }
+
+  /* --- diagram ------------------------------------------------------- */
+  figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .figframe {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 22px 18px;
+    overflow-x: auto;
+  }
+  .figframe svg { display: block; min-width: 720px; max-width: 100%; height: auto; }
+  figcaption { font-size: 14px; color: var(--muted); max-width: 68ch; }
+
+  /* --- checklist ----------------------------------------------------- */
+  .claims { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--rule); }
+  .claim {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .box {
+    width: 15px; height: 15px;
+    border: 1.5px solid var(--rule-strong);
+    border-radius: 2px;
+    margin-top: 5px;
+  }
+  .claim-body { display: flex; flex-direction: column; gap: 5px; }
+  .claim p { font-size: 15px; }
+  .basis { font-size: 13.5px; color: var(--muted); }
+  .basis code {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+
+  .uncertain .box { border-color: var(--relay); border-style: dashed; }
+
+  /* --- data tiles ---------------------------------------------------- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .tile {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule-strong);
+    border-radius: 3px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tile.inbox { border-left-color: var(--inbox); }
+  .tile.relay { border-left-color: var(--relay); }
+  .tile dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 13.5px; }
+  .tile dt { color: var(--muted); }
+  .tile dd { margin: 0; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  /* --- questions ----------------------------------------------------- */
+  ol.q { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
+  ol.q li { font-size: 15.5px; }
+  ol.q li::marker { color: var(--faint); font-family: var(--mono); font-size: 13px; }
+
+  .note {
+    background: var(--relay-soft);
+    border-left: 3px solid var(--relay);
+    padding: 14px 18px;
+    font-size: 14.5px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  footer { font-size: 13.5px; color: var(--faint); max-width: 68ch; }
+
+  @media (max-width: 620px) {
+    .wrap { padding: 36px 18px 72px; gap: 34px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="col">
+    <p class="eyebrow">Department of Finance &middot; for confirmation</p>
+    <h1>How abnormal events flow</h1>
+    <p class="lede">
+      This is our understanding of the abnormal-event process and the two spreadsheets,
+      written down so you can correct it. Everything below is inferred from the data
+      itself &mdash; please tell us where we have it wrong.
+    </p>
+  </header>
+
+  <figure>
+    <div class="figframe">
+      <svg viewBox="0 0 900 430" role="img"
+           aria-label="A notification from DTI arrives in the shared DOF IT Support mailbox, where roughly 603 emails land each week and only about 7 are abnormal events. A person reads the abnormal-event notice and relays it to agency staff, quoting the original content. Dataset 2 covers the mailbox; dataset 1 covers the relayed notices. Three pipeline stages attach: a rule detects abnormal events at the mailbox, a classifier types them at the relay point, and a routing rule decides whether a human reviews before sending.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="currentColor"></path>
+          </marker>
+          <marker id="ah-inbox" viewBox="0 0 10 10" refX="9" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--inbox)"></path>
+          </marker>
+        </defs>
+
+        <!-- lane labels -->
+        <text x="10" y="24" font-family="ui-monospace, monospace" font-size="11"
+              fill="var(--faint)" letter-spacing="1.2">THE PROCESS TODAY</text>
+        <text x="10" y="238" font-family="ui-monospace, monospace" font-size="11"
+              fill="var(--faint)" letter-spacing="1.2">WHAT EACH SPREADSHEET COVERS</text>
+        <text x="10" y="342" font-family="ui-monospace, monospace" font-size="11"
+              fill="var(--faint)" letter-spacing="1.2">WHERE OUR SYSTEM ATTACHES</text>
+
+        <!-- ROW 1: the process -->
+        <rect x="10" y="42" width="150" height="62" rx="3" fill="var(--surface)"
+              stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="85" y="68" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">DTI</text>
+        <text x="85" y="86" text-anchor="middle" font-size="11.5" fill="var(--muted)">IT Support Center</text>
+
+        <line x1="163" y1="73" x2="238" y2="73" stroke="currentColor" stroke-width="1.2"
+              marker-end="url(#ah)"></line>
+        <text x="200" y="66" text-anchor="middle" font-size="11" fill="var(--muted)">notifies</text>
+
+        <rect x="241" y="42" width="196" height="62" rx="3" fill="var(--inbox-soft)"
+              stroke="var(--inbox)" stroke-width="1.6"></rect>
+        <text x="339" y="66" text-anchor="middle" font-size="13" font-weight="600" fill="var(--inbox)">Shared mailbox</text>
+        <text x="339" y="84" text-anchor="middle" font-size="11.5" fill="var(--inbox)">&ldquo;DOF IT Support&rdquo;</text>
+
+        <line x1="440" y1="73" x2="512" y2="73" stroke="currentColor" stroke-width="1.2"
+              marker-end="url(#ah)"></line>
+        <text x="476" y="66" text-anchor="middle" font-size="11" fill="var(--muted)">reads</text>
+
+        <rect x="515" y="42" width="160" height="62" rx="3" fill="var(--relay-soft)"
+              stroke="var(--relay)" stroke-width="1.6"></rect>
+        <text x="595" y="66" text-anchor="middle" font-size="13" font-weight="600" fill="var(--relay)">A person relays</text>
+        <text x="595" y="84" text-anchor="middle" font-size="11.5" fill="var(--relay)">quoting the original</text>
+
+        <line x1="678" y1="73" x2="748" y2="73" stroke="currentColor" stroke-width="1.2"
+              marker-end="url(#ah)"></line>
+        <text x="713" y="66" text-anchor="middle" font-size="11" fill="var(--muted)">sends</text>
+
+        <rect x="751" y="42" width="139" height="62" rx="3" fill="var(--surface)"
+              stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="820" y="68" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">Agency staff</text>
+        <text x="820" y="86" text-anchor="middle" font-size="11.5" fill="var(--muted)">recipients</text>
+
+        <!-- volume annotations -->
+        <text x="339" y="128" text-anchor="middle" font-family="ui-monospace, monospace"
+              font-size="11.5" fill="var(--inbox)">~603 emails arrive per week</text>
+        <text x="339" y="146" text-anchor="middle" font-family="ui-monospace, monospace"
+              font-size="11.5" fill="var(--inbox)">~2&ndash;10 of them are abnormal events</text>
+        <text x="595" y="128" text-anchor="middle" font-family="ui-monospace, monospace"
+              font-size="11.5" fill="var(--relay)">~2.7 notices relayed per week</text>
+
+        <!-- ROW 2: dataset coverage -->
+        <path d="M 241 258 L 241 250 L 437 250 L 437 258" fill="none"
+              stroke="var(--inbox)" stroke-width="1.4"></path>
+        <rect x="241" y="262" width="196" height="48" rx="3" fill="var(--inbox-soft)"
+              stroke="var(--inbox)" stroke-width="1.2"></rect>
+        <text x="339" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--inbox)">Spreadsheet 2</text>
+        <text x="339" y="298" text-anchor="middle" font-size="11" fill="var(--inbox)">603 rows &middot; 1 week &middot; tagged</text>
+
+        <path d="M 515 258 L 515 250 L 890 250 L 890 258" fill="none"
+              stroke="var(--relay)" stroke-width="1.4"></path>
+        <rect x="515" y="262" width="375" height="48" rx="3" fill="var(--relay-soft)"
+              stroke="var(--relay)" stroke-width="1.2"></rect>
+        <text x="702" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--relay)">Spreadsheet 1</text>
+        <text x="702" y="298" text-anchor="middle" font-size="11" fill="var(--relay)">226 notices &middot; Jan 2025 &ndash; Aug 2026 &middot; full text, no subject lines</text>
+
+        <!-- ROW 3: pipeline -->
+        <rect x="241" y="358" width="196" height="52" rx="3" fill="var(--surface)"
+              stroke="var(--rule-strong)" stroke-width="1.2"></rect>
+        <text x="339" y="378" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">1 &middot; Is it abnormal?</text>
+        <text x="339" y="395" text-anchor="middle" font-size="11" fill="var(--muted)">a rule &mdash; 6 of 7, no false alarms</text>
+
+        <rect x="461" y="358" width="196" height="52" rx="3" fill="var(--surface)"
+              stroke="var(--rule-strong)" stroke-width="1.2"></rect>
+        <text x="559" y="378" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">2 &middot; What kind?</text>
+        <text x="559" y="395" text-anchor="middle" font-size="11" fill="var(--muted)">a classifier &mdash; 98% on 226</text>
+
+        <rect x="681" y="358" width="209" height="52" rx="3" fill="var(--surface)"
+              stroke="var(--rule-strong)" stroke-width="1.2"></rect>
+        <text x="785" y="378" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">3 &middot; Human first?</text>
+        <text x="785" y="395" text-anchor="middle" font-size="11" fill="var(--muted)">a rule &mdash; 71% held for review</text>
+
+        <line x1="440" y1="384" x2="458" y2="384" stroke="currentColor" stroke-width="1.2"
+              marker-end="url(#ah)"></line>
+        <line x1="660" y1="384" x2="678" y2="384" stroke="currentColor" stroke-width="1.2"
+              marker-end="url(#ah)"></line>
+
+        <!-- dotted ties from pipeline up to the process -->
+        <line x1="339" y1="356" x2="339" y2="314" stroke="var(--rule-strong)"
+              stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="559" y1="356" x2="559" y2="314" stroke="var(--rule-strong)"
+              stroke-width="1" stroke-dasharray="3 3"></line>
+      </svg>
+    </div>
+    <figcaption>
+      The two spreadsheets describe different halves of the same process, which is why
+      their volumes look so different: one is a week of a busy shared mailbox, the other is
+      nineteen months of the notices that came out of it.
+    </figcaption>
+  </figure>
+
+  <hr>
+
+  <section class="col">
+    <h2>What we think each spreadsheet is</h2>
+    <div class="tiles">
+      <div class="tile inbox">
+        <h3>Additional Data Hackathon 2026</h3>
+        <dl>
+          <dt>Rows</dt><dd>603</dd>
+          <dt>Period</dt><dd>26 Jul &ndash; 1 Aug 2026</dd>
+          <dt>Columns</dt><dd>From, Subject, Received, Size, Categories</dd>
+          <dt>Body text</dt><dd>none &mdash; subjects only</dd>
+          <dt>Abnormal</dt><dd>7 of 603</dd>
+        </dl>
+        <p class="basis">
+          Read as one week of the shared mailbox. Top sender is the IT Support Center
+          (420 emails), and the <code>Categories</code> column carries tags applied at DOF.
+        </p>
+      </div>
+      <div class="tile relay">
+        <h3>goldsetdataset</h3>
+        <dl>
+          <dt>Rows</dt><dd>226 unique</dd>
+          <dt>Period</dt><dd>Jan 2025 &ndash; Aug 2026</dd>
+          <dt>Columns</dt><dd>Date, Info, Sender</dd>
+          <dt>Body text</dt><dd>full &mdash; median 279 chars</dd>
+          <dt>Abnormal</dt><dd>all 226</dd>
+        </dl>
+        <p class="basis">
+          Read as the notices themselves. 296 blank rows and 70 duplicates were removed
+          from the original 592.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="col">
+    <h2>Please confirm or correct</h2>
+    <div class="claims">
+
+      <div class="claim">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p>DTI, as the <strong>State of Delaware IT Support Center</strong>, sends abnormal-event
+            notifications into the shared <strong>DOF IT Support</strong> mailbox.</p>
+          <p class="basis">420 of 603 emails come from that sender, and 6 of the 7 abnormal
+            events share the subject <code>Abnormal Events Notification</code>.</p>
+        </div>
+      </div>
+
+      <div class="claim">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p>A person reads each one and <strong>relays it onward to agency staff</strong>,
+            quoting the original content rather than rewriting it.</p>
+          <p class="basis">Confirmed by you &mdash; &ldquo;outgoing but include the email
+            content&rdquo;.</p>
+        </div>
+      </div>
+
+      <div class="claim">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p>Roughly <strong>2 to 10 abnormal events a week</strong>, against about 600 total
+            emails into the mailbox.</p>
+          <p class="basis">Both spreadsheets agree: 7 in the sampled week, and 226 over 589
+            days works out at about 2.7 a week.</p>
+        </div>
+      </div>
+
+      <div class="claim">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p>The <code>Categories</code> tags &mdash; Incident Monitoring, JAMS Monitoring, IRAS,
+            RDP, Equipment &mdash; are <strong>your operational buckets for the whole mailbox</strong>,
+            not a classification of abnormal events.</p>
+          <p class="basis">Only 7 of 15 tag values relate to abnormal events at all.</p>
+        </div>
+      </div>
+
+      <div class="claim uncertain">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p><strong>Least certain.</strong> In the 226, does <code>Sender</code> mean the person
+            who <em>wrote and sent</em> the notice, or the person who <em>relayed or logged</em> it?</p>
+          <p class="basis">One name accounts for 159 of 226, which reads more like a single
+            relayer than an even split of authorship. It does not change what we built, but it
+            changes how we describe it.</p>
+        </div>
+      </div>
+
+      <div class="claim uncertain">
+        <div class="box" aria-hidden="true"></div>
+        <div class="claim-body">
+          <p><strong>Also unconfirmed.</strong> Was one person applying the <code>Categories</code>
+            tags, or is it a shared convention across the team?</p>
+          <p class="basis">We use them as ground truth, so whether they represent one person&rsquo;s
+            judgement or several changes how much weight they carry.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="col">
+    <h2>Two things worth knowing</h2>
+    <div class="note">
+      <p><strong>Abnormal events are about 1% of the mailbox.</strong> Seven notices hidden in
+      603 is a strong argument that they are easy to miss &mdash; and the clearest reason to
+      automate the sorting rather than the writing.</p>
+    </div>
+    <div class="note">
+      <p><strong>One subject line reads &ldquo;Scheduled IRAS Outage &mdash; Sunday, August 2,
+      2926&rdquo;.</strong> A thousand-year typo in live mail. We are keeping it as the example of
+      why a person still approves anything that goes out.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="col">
+    <h2>Open questions</h2>
+    <ol class="q">
+      <li>Are there notices that <em>should</em> have been tagged abnormal but were not? Six
+        emails in that week mention outages or things being down but are tagged
+        <code>Incident Monitoring</code> or <code>RDP</code> instead.</li>
+      <li>Is the week of 26 July typical, or unusually busy?</li>
+      <li>Do the 226 notices ever carry a subject line anywhere? The spreadsheet has none,
+        so we currently generate them.</li>
+      <li>Who decides today whether a notice needs a second pair of eyes before it goes out,
+        and on what basis?</li>
+    </ol>
+  </section>
+
+  <footer>
+    Everything above was derived from the two spreadsheets. Personal names, email addresses,
+    links and phone numbers were replaced with placeholders locally before any processing,
+    and the originals never left the machine.
+  </footer>
+
+</div>
