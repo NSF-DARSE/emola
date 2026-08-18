@@ -1,0 +1,24 @@
+160 generation jobs x ~3 notices = up to 480 rows
+
+  10/160 jobs  20/160 jobs  30/160 jobs  40/160 jobs  50/160 jobs  60/160 jobs  70/160 jobs  80/160 jobs  90/160 jobs  100/160 jobs  110/160 jobs  120/160 jobs  130/160 jobs  140/160 jobs  150/160 jobs  160/160 jobs
+
+generated 480, kept 474 after dedupe
+
+per family:
+  Anthropic    95   failed jobs: 0
+  Meta         91   failed jobs: 0
+  Amazon       96   failed jobs: 0
+  Mistral      96   failed jobs: 0
+  Z.AI         96   failed jobs: 0
+
+per category:
+  Maintenance     58
+  Security        60
+  Outage          60
+  Infrastructure  56
+  Compliance      60
+  Vendor          60
+  Application     60
+  Network         60
+
+written to data/model/synthetic.json

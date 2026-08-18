@@ -27,6 +27,30 @@ const MODELS = [
   { key: 'nova', id: 'us.amazon.nova-pro-v1:0', label: 'Nova Pro' },
 ];
 
+// Fail fast on a dead key. Without this an expired token costs a full run of
+// doomed requests before anyone notices - which is exactly what happened.
+async function preflight() {
+  const probeId = (typeof MODELS !== 'undefined' ? MODELS[0].id : GENERATORS[0].id);
+  const r = await fetch(
+    `https://bedrock-runtime.${REGION}.amazonaws.com/model/${encodeURIComponent(probeId)}/converse`,
+    { method: 'POST',
+      headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: [{ text: 'ok' }] }],
+                             inferenceConfig: { maxTokens: 5 } }) });
+  if (!r.ok) {
+    const body = await r.text();
+    if (/expired/i.test(body)) {
+      console.error('STOPPING: your Bedrock key has expired.');
+      console.error('Generate a new one (AWS Console > Bedrock > API keys, us-west-2)');
+      console.error('and put it in .env as AWS_BEARER_TOKEN_BEDROCK.');
+    } else {
+      console.error(`STOPPING: Bedrock rejected the key (${r.status}): ${body.slice(0, 200)}`);
+    }
+    process.exit(1);
+  }
+}
+await preflight();
+
 const CATEGORIES = ['Maintenance', 'Security', 'Outage', 'Infrastructure', 'Compliance', 'Vendor', 'Application', 'Network'];
 const STATUSES = ['scheduled', 'active', 'updated', 'resolved'];
 
@@ -118,7 +142,16 @@ async function classify(model, body) {
 // ---------------------------------------------------------------------------
 const rows = JSON.parse(fs.readFileSync('data/model/synthetic.json', 'utf8'));
 const limit = Number(process.argv[2] || rows.length);
-const work = rows.slice(0, limit);
+const all = rows.slice(0, limit);
+
+// Resume: anything already labelled in a previous (possibly interrupted) run
+// is kept, so a suspended laptop costs minutes rather than the whole job.
+const OUT = 'data/model/synthetic.labelled.json';
+let prior = [];
+try { prior = JSON.parse(fs.readFileSync(OUT, 'utf8')); } catch {}
+const doneIds = new Set(prior.filter(r => r.labels?.claude?.primary || r.labels?.llama?.primary).map(r => r.id));
+const work = all.filter(r => !doneIds.has(r.id));
+console.log(`${doneIds.size} already labelled, ${work.length} remaining`);
 
 console.log(`labelling ${work.length} notices with ${MODELS.length} models\n`);
 
@@ -167,8 +200,10 @@ async function handle(row) {
   });
 
   done += 1;
-  if (done % 10 === 0 || done === work.length) {
-    process.stdout.write(`\r  ${done}/${work.length}`);
+  // Persist as we go: a suspended laptop should cost seconds, not the run.
+  if (done % 5 === 0 || done === work.length) {
+    fs.writeFileSync(OUT, JSON.stringify([...prior, ...results], null, 2));
+    console.log(`  ${done}/${work.length} saved`);
   }
 }
 
@@ -179,8 +214,9 @@ await Promise.all(
   }),
 );
 
-results.sort((a, b) => a.id.localeCompare(b.id));
-fs.writeFileSync('data/model/synthetic.labelled.json', JSON.stringify(results, null, 2));
+const merged = [...prior, ...results].sort((a, b) => a.id.localeCompare(b.id));
+fs.writeFileSync(OUT, JSON.stringify(merged, null, 2));
+results.length = 0; results.push(...merged);
 
 // ---- report ---------------------------------------------------------------
 const agree = { unanimous: 0, majority: 0, split: 0 };

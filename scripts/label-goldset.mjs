@@ -27,6 +27,30 @@ const MODELS = [
   { key: 'nova', id: 'us.amazon.nova-pro-v1:0', label: 'Nova Pro' },
 ];
 
+// Fail fast on a dead key. Without this an expired token costs a full run of
+// doomed requests before anyone notices - which is exactly what happened.
+async function preflight() {
+  const probeId = (typeof MODELS !== 'undefined' ? MODELS[0].id : GENERATORS[0].id);
+  const r = await fetch(
+    `https://bedrock-runtime.${REGION}.amazonaws.com/model/${encodeURIComponent(probeId)}/converse`,
+    { method: 'POST',
+      headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: [{ text: 'ok' }] }],
+                             inferenceConfig: { maxTokens: 5 } }) });
+  if (!r.ok) {
+    const body = await r.text();
+    if (/expired/i.test(body)) {
+      console.error('STOPPING: your Bedrock key has expired.');
+      console.error('Generate a new one (AWS Console > Bedrock > API keys, us-west-2)');
+      console.error('and put it in .env as AWS_BEARER_TOKEN_BEDROCK.');
+    } else {
+      console.error(`STOPPING: Bedrock rejected the key (${r.status}): ${body.slice(0, 200)}`);
+    }
+    process.exit(1);
+  }
+}
+await preflight();
+
 const CATEGORIES = ['Maintenance', 'Security', 'Outage', 'Infrastructure', 'Compliance', 'Vendor', 'Application', 'Network'];
 const STATUSES = ['scheduled', 'active', 'updated', 'resolved'];
 

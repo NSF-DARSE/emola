@@ -29,18 +29,48 @@ const GENERATORS = [
   { key:'glm',    id:'zai.glm-4.7',                                  family:'Z.AI' },
 ];
 
+// Fail fast on a dead key. Without this an expired token costs a full run of
+// doomed requests before anyone notices - which is exactly what happened.
+async function preflight() {
+  const probeId = (typeof MODELS !== 'undefined' ? MODELS[0].id : GENERATORS[0].id);
+  const r = await fetch(
+    `https://bedrock-runtime.${REGION}.amazonaws.com/model/${encodeURIComponent(probeId)}/converse`,
+    { method: 'POST',
+      headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: [{ text: 'ok' }] }],
+                             inferenceConfig: { maxTokens: 5 } }) });
+  if (!r.ok) {
+    const body = await r.text();
+    if (/expired/i.test(body)) {
+      console.error('STOPPING: your Bedrock key has expired.');
+      console.error('Generate a new one (AWS Console > Bedrock > API keys, us-west-2)');
+      console.error('and put it in .env as AWS_BEARER_TOKEN_BEDROCK.');
+    } else {
+      console.error(`STOPPING: Bedrock rejected the key (${r.status}): ${body.slice(0, 200)}`);
+    }
+    process.exit(1);
+  }
+}
+await preflight();
+
 const CATEGORIES = ['Maintenance','Security','Outage','Infrastructure','Compliance','Vendor','Application','Network'];
 const STATUSES = ['scheduled','active','updated','resolved'];
 
 const HINT = {
-  Maintenance:'planned work on systems, patching, upgrades, migrations',
-  Security:'security advisories, suspicious activity, credential or access incidents, mandatory security actions',
-  Outage:'something broken or degraded: unavailability, failures, service disruption',
-  Infrastructure:'data centre power, cooling, electrical, physical hardware, cabling, generators',
-  Compliance:'audits, attestations, regulatory freezes, IRS Pub 1075, records retention',
-  Vendor:'a third party is the subject: vendor-led change, vendor incident, contract or support transition',
-  Application:'a named business application is the subject: ERP, payroll, tax portal, GIS, reporting',
-  Network:'connectivity, VPN, fibre, circuits, routing, wireless, bandwidth',
+  // EVENT-TYPE categories. These describe what KIND of event it is, and are
+  // what the taxonomy expects as PRIMARY.
+  Maintenance:'planned work: patching, upgrades, migrations, config changes. Vary the SUBJECT widely - servers, a business application, network gear, a data centre, a vendor-run platform.',
+  Outage:'something is broken or degraded right now, or has just been restored. Vary the SUBJECT - an application, a circuit, a data centre, a vendor service.',
+  Security:'a security incident or advisory: suspicious activity, compromised credentials, mandatory security action, phishing campaign, emergency patch for an exploited vulnerability.',
+  Compliance:'audit, attestation, regulatory freeze, IRS Pub 1075 assessment, records retention, mandatory training deadline.',
+  Vendor:'the THIRD PARTY ITSELF is the story - a vendor outage, a vendor contract or support transition, a vendor security breach, end-of-support announcement. Not merely work a vendor happens to perform.',
+
+  // SUBJECT categories. These are primary ONLY when the notice is purely
+  // informational and no event-type framing applies. Generating these needs an
+  // explicit steer or the model writes a maintenance notice every time.
+  Infrastructure:'a purely INFORMATIONAL facilities or capacity notice with NO maintenance and NO outage: new data centre capacity available, a rack relocation policy, cooling capacity advisory, an equipment refresh programme announcement.',
+  Application:'a purely INFORMATIONAL application notice with NO maintenance and NO outage: a new feature is available, a UI change, a reporting deadline in an application, a licence reallocation, training availability.',
+  Network:'a purely INFORMATIONAL network notice with NO maintenance and NO outage: a new wifi SSID available, a bandwidth usage policy, an IP addressing standard, a change to remote access policy.',
 };
 
 // Style anchors from the real corpus (already anonymised).
@@ -81,7 +111,14 @@ VARY HARD across the batch: different systems, different agencies, different len
 Each notice must hit a DIFFERENT length. Follow these exactly:
 ${spread}
 
-The real corpus has a median of about 280 characters, so do not let everything drift long. Every notice must clearly belong to that category and that status while reading like something a real DTI or DOF staffer typed.`;
+The real corpus has a median of about 280 characters, so do not let everything drift long.
+
+CRITICAL - the category is the KIND OF EVENT, not the thing it touches. Planned work is Maintenance even when it is network gear. A failure is an Outage even when it is an application. So:
+${['Infrastructure','Application','Network'].includes(category)
+  ? `These notices must contain NO planned work and NO failure - they are purely informational, or they will simply read as Maintenance or Outage.`
+  : `Vary what the notice is ABOUT so the classifier does not learn to equate ${category} with one kind of system.`}
+
+Every notice must clearly belong to that category and that status while reading like something a real DTI or DOF staffer typed.`;
 
   const res = await fetch(
     `https://bedrock-runtime.${REGION}.amazonaws.com/model/${encodeURIComponent(gen.id)}/converse`,
