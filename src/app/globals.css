@@ -35,6 +35,59 @@
   --sig-green-bg: #ecfdf3;
   --sig-blue-bg: #eff8ff;
 
+  /* --- ground ---------------------------------------------------------
+     Neutral greys only. Every channel is equal, so nothing tints the lens
+     sitting on top, and the signal colours stay the only saturated things
+     on screen. */
+  --amb-base: #ececed;
+  --amb-hi: #f7f7f8;
+  --amb-lo: #dedee0;
+
+  /* --- liquid glass ---------------------------------------------------
+     Low blur, high saturation. A lens, not a screen: you should be able to
+     see what is behind it, only brighter and slightly displaced. */
+  --lq-blur: 8px;
+  --lq-sat: 210%;
+  --lq-bright: 1.12;
+  --lq-fill: rgba(255, 255, 255, 0.16);
+  --lq-fill-strong: rgba(255, 255, 255, 0.3);
+
+  /* The rim. Four layers: a bright lip top-left where light lands, a softer
+     one bottom-right where it wraps, and an interior bloom. This is the
+     part that reads as glass — not the blur. */
+  --lq-rim:
+    inset 1.5px 1.5px 1px -1px rgba(255, 255, 255, 1),
+    inset -1.5px -1.5px 1px -1px rgba(255, 255, 255, 0.7),
+    inset 0 0 3px 0 rgba(255, 255, 255, 0.45),
+    inset 0 0 26px -6px rgba(255, 255, 255, 0.55);
+  --lq-rim-lg:
+    inset 1px 1px 1px -0.5px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px -0.5px rgba(255, 255, 255, 0.28),
+    inset 0 0 60px -20px rgba(255, 255, 255, 0.4);
+  --lq-cast: 0 2px 8px -2px rgb(16 18 22 / 0.08), 0 12px 32px -12px rgb(16 18 22 / 0.16);
+  --lq-cast-lg: 0 4px 12px -2px rgb(16 18 22 / 0.1), 0 32px 64px -20px rgb(16 18 22 / 0.26);
+  --lq-sheen: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.16) 30%,
+    rgba(255, 255, 255, 0) 54%,
+    rgba(255, 255, 255, 0.38) 100%
+  );
+  /* Large surfaces need a gentler ramp: the same curve that reads as a
+     highlight on a chip becomes a white wedge across a whole window. */
+  --lq-sheen-lg: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.34) 0%,
+    rgba(255, 255, 255, 0.1) 18%,
+    rgba(255, 255, 255, 0) 46%,
+    rgba(255, 255, 255, 0.14) 100%
+  );
+
+  --radius: 14px;
+  --radius-lg: 24px;
+
+  --mark-body: linear-gradient(155deg, #cfcfd2, #8e8e93);
+
   color-scheme: light;
 }
 
@@ -60,12 +113,51 @@
   --sig-green-bg: #0d2419;
   --sig-blue-bg: #101e33;
 
+  --amb-base: #000000;
+  --amb-hi: #17171a;
+  --amb-lo: #000000;
+
+  --mark-body: linear-gradient(155deg, #6e6e73, #1c1c1e);
+
+  /* On black the fill has to be a lightening, and the rim carries even more
+     of the work — there is no bright ground behind it to define the shape. */
+  --lq-blur: 10px;
+  --lq-sat: 200%;
+  --lq-bright: 1.7;
+  --lq-fill: rgba(255, 255, 255, 0.035);
+  --lq-fill-strong: rgba(255, 255, 255, 0.055);
+  --lq-rim:
+    inset 1.5px 1.5px 1px -1px rgba(255, 255, 255, 0.5),
+    inset -1.5px -1.5px 1px -1px rgba(255, 255, 255, 0.2),
+    inset 0 0 3px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 30px -8px rgba(255, 255, 255, 0.16);
+  --lq-rim-lg:
+    inset 1px 1px 1px -0.5px rgba(255, 255, 255, 0.16),
+    inset -1px -1px 1px -0.5px rgba(255, 255, 255, 0.07),
+    inset 0 0 70px -24px rgba(255, 255, 255, 0.1);
+  --lq-cast: 0 2px 8px -2px rgb(0 0 0 / 0.6), 0 12px 32px -12px rgb(0 0 0 / 0.8);
+  --lq-cast-lg: 0 4px 12px -2px rgb(0 0 0 / 0.7), 0 32px 64px -20px rgb(0 0 0 / 0.95);
+  --lq-sheen: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.06) 34%,
+    rgba(255, 255, 255, 0) 56%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+  --lq-sheen-lg: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0) 48%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+
   color-scheme: dark;
 }
 
 html,
 body {
-  background: var(--bg);
+  background: var(--amb-base);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -429,9 +521,9 @@ details > summary::-webkit-details-marker {
   position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 20px 22px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 0 0 / 0.12);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 10px 28px -14px rgb(0 0 0 / 0.16);
   touch-action: pan-y;
   user-select: none;
 }
@@ -467,14 +559,14 @@ details > summary::-webkit-details-marker {
 .reveal {
   border: 1px solid var(--border);
   border-left-width: 3px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--surface);
-  padding: 14px 16px;
+  padding: 15px 17px;
 }
 
 /* --- chips and fields --------------------------------------------------- */
 .chip {
-  padding: 4px 11px;
+  padding: 5px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -515,7 +607,7 @@ details > summary::-webkit-details-marker {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 5px 11px;
+  padding: 5px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -560,4 +652,236 @@ details > summary::-webkit-details-marker {
 @media (prefers-reduced-motion: reduce) {
   .anim-land { animation: none; }
   .stage-live .stage-dot { animation: none; }
+}
+
+/* ======================================================================
+ * Liquid glass
+ *
+ * Frosted glass is milky — heavy blur, opaque wash, whatever is behind it
+ * disappears. Liquid glass is CLEAR. What sells it is not the blur, it is
+ * the EDGE: a bright specular lip where light catches the rim, strongest on
+ * the side facing the light and softer where it wraps around.
+ *
+ * So this is close to the inverse of a frosted panel — less blur, far more
+ * saturation, and most of the work done by the rim and a masked sheen ring.
+ * ==================================================================== */
+
+/* The ground. Fixed, so panels travel across a still backdrop and the depth
+   reads as depth rather than parallax. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -12%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 36% at 16% 8%, var(--amb-hi) 0%, transparent 66%),
+    radial-gradient(38% 32% at 86% 90%, var(--amb-hi) 0%, transparent 64%),
+    radial-gradient(72% 58% at 96% 4%, var(--amb-lo) 0%, transparent 60%),
+    var(--amb-base);
+  animation: drift 52s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-1.5%, 1.2%, 0) scale(1.05); }
+}
+
+.lq {
+  position: relative;
+  isolation: isolate;
+  background: var(--lq-fill);
+  backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  -webkit-backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  border-radius: var(--radius);
+  box-shadow: var(--lq-rim), var(--lq-cast);
+}
+
+.lq-lg {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--lq-rim), var(--lq-cast-lg);
+  background: var(--lq-fill-strong);
+}
+
+/*
+ * The sheen ring. A gradient drawn ONLY on the one-pixel border box, via a
+ * mask that punches out the middle. A glow that bleeds inward reads as fog;
+ * a hairline that traces the shape reads as a lens edge.
+ */
+.lq::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--lq-sheen);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Without backdrop-filter this would be a pale wash with text floating over
+   whatever is behind it. Opt out to a solid surface instead. */
+@supports not (backdrop-filter: blur(1px)) {
+  .lq { background: var(--surface); }
+}
+
+/* The whole app in one lens. */
+.app-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--lq-cast);
+}
+.app-frame[data-glass='on'] {
+  --lq-rim: var(--lq-rim-lg);
+  border: 0;
+  background: var(--lq-fill-strong);
+  backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  -webkit-backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  box-shadow: var(--lq-rim), var(--lq-cast-lg);
+}
+.app-frame[data-glass='on']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--lq-sheen-lg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Rows stay transparent where glass is on, or they cover the lens and the
+   list becomes a slab. Off glass they keep the original solid treatment. */
+[data-glass='on'] .trow { background: transparent; }
+[data-glass='on'] .trow:hover { background: color-mix(in srgb, var(--fg) 5%, transparent); }
+[data-glass='on'] .trow-selected { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+
+/* Cards inherit the lens. */
+/* Glass is opt-in, switched on per route by [data-glass='on']. Everywhere
+   else these surfaces stay flat, which is quieter to work in for an hour and
+   keeps dense pages legible. */
+[data-glass='on'] .card {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--lq-fill);
+  backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  -webkit-backdrop-filter: blur(var(--lq-blur)) saturate(var(--lq-sat)) brightness(var(--lq-bright));
+  box-shadow: var(--lq-rim), var(--lq-cast);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease;
+}
+[data-glass='on'] .card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--lq-sheen);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+[data-glass='on'] .card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lq-rim), var(--lq-cast-lg);
+  /* Without this the neighbouring card's backdrop-filter composites on top of
+     this one's shadow and the two panels appear to bleed into each other. */
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+  .card:hover { transform: none; }
+}
+
+/* ----------------------------------------------------------------------
+ * The sphere on the empty state.
+ *
+ * A real lens: it magnifies and brightens what is behind it, carries a
+ * specular highlight where the light lands, and casts a soft shadow. The
+ * backdrop-filter is what makes it glass rather than a drawn ball.
+ * -------------------------------------------------------------------- */
+.sphere {
+  width: 124px;
+  height: 124px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  isolation: isolate;
+  backdrop-filter: blur(2px) saturate(180%) brightness(1.12);
+  -webkit-backdrop-filter: blur(2px) saturate(180%) brightness(1.12);
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.9) 0%, transparent 34%),
+    radial-gradient(circle at 68% 76%, rgba(255, 255, 255, 0.28) 0%, transparent 40%);
+  box-shadow:
+    inset 2px 2px 3px -1px rgba(255, 255, 255, 0.95),
+    inset -3px -3px 6px -2px rgba(255, 255, 255, 0.5),
+    inset 0 -22px 34px -24px rgb(0 0 0 / 0.5),
+    var(--lq-cast-lg);
+  animation: sphere-float 8s ease-in-out infinite;
+}
+/* The caustic — light focused through the lens onto the surface below. */
+.sphere::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -22%;
+  height: 26%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--amb-hi) 0%, transparent 70%);
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0.85;
+}
+@keyframes sphere-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-7px) scale(1.015); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sphere { animation: none; }
+}
+
+/* ----------------------------------------------------------------------
+ * The mark.
+ *
+ * The same lens as the sphere on the primary page, at 28px. Using one form
+ * for the logo and the hero means the identity is the product's own material
+ * rather than a badge stuck on top of it.
+ * -------------------------------------------------------------------- */
+.mark {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.95) 0%, transparent 38%),
+    radial-gradient(circle at 68% 76%, rgba(255, 255, 255, 0.3) 0%, transparent 44%),
+    var(--mark-body);
+  box-shadow:
+    inset 1px 1px 1px -0.5px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 1px -0.5px rgba(255, 255, 255, 0.4),
+    inset 0 -6px 9px -7px rgb(0 0 0 / 0.6),
+    0 2px 7px -2px rgb(0 0 0 / 0.35);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+a:hover > .mark { transform: scale(1.09); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mark { transition: none; }
+  a:hover > .mark { transform: none; }
 }

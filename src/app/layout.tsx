@@ -5,7 +5,7 @@ import './globals.css';
 import Shell from '@/components/Shell';
 
 export const metadata: Metadata = {
-  title: 'Abnormal Events — DOF',
+  title: 'Emergent',
   description:
     'Notification classification, human approval workflow, and employee/leadership communications for State of Delaware DOF abnormal events.',
 };

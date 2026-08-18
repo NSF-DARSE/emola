@@ -94,16 +94,18 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
   if (!running) {
     return (
       <div className="flex-1 grid place-items-center p-8">
-        <div className="max-w-[46ch] text-center anim-rise">
-          <div className="mx-auto w-11 h-11 rounded-xl border border-border grid place-items-center mb-4">
-            <Icon name="events" size={19} />
-          </div>
-          <h2 className="text-[17px] font-semibold tracking-[-0.01em]">Nothing ingested yet</h2>
-          <p className="text-[13.5px] text-muted mt-2 leading-relaxed">
-            Pull the {mailbox} mailbox in and watch each notice go through triage,
+        <div className="max-w-[50ch] text-center anim-rise">
+          <div className="sphere" aria-hidden="true" />
+          <h2 className="text-[27px] sm:text-[31px] font-semibold tracking-[-0.025em] leading-[1.14] mt-9">
+            Six hundred emails.
+            <br />
+            Seven that matter.
+          </h2>
+          <p className="text-[14.5px] text-muted mt-3 leading-relaxed mx-auto max-w-[40ch]">
+            Pull the {mailbox} mailbox in and watch every notice go through triage,
             classification and routing.
           </p>
-          <button onClick={run} className="btn btn-primary mt-5 mx-auto">
+          <button onClick={run} className="btn btn-primary mt-7 mx-auto">
             <Icon name="events" size={15} />
             Get email from the mailbox
           </button>

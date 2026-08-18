@@ -108,7 +108,7 @@ export default function MetricsPage() {
               categories that barely occur in real mail.
             </Note>
 
-            <div className="mt-3 card overflow-x-auto">
+            <div className="card overflow-x-auto">
               <table className="w-full text-[12.5px] min-w-[440px]">
                 <thead>
                   <tr className="bg-elevated border-b border-border">
@@ -134,7 +134,7 @@ export default function MetricsPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-2 text-[12.5px] text-muted leading-relaxed">
+            <p className="text-[12.5px] text-muted leading-relaxed">
               A category with one or two real notices tells you nothing reliable — a single
               decision moves its score by half. Only Maintenance and Outage have enough real
               examples to judge.
@@ -151,7 +151,7 @@ export default function MetricsPage() {
             round figures that look more precise than they are. The evaluation above is the one
             that means something.
           </Note>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
             <Stat
               label="Category"
               value={`${m.holdout.categoryRate}%`}
@@ -170,7 +170,7 @@ export default function MetricsPage() {
           </div>
 
           {m.holdout.misses.length > 0 && (
-            <div className="mt-3 card overflow-hidden">
+            <div className="card overflow-hidden">
               <table className="w-full text-[12px]">
                 <thead>
                   <tr className="bg-elevated border-b border-border">
@@ -216,7 +216,7 @@ export default function MetricsPage() {
             <Stat label="Status changed" value={String(m.overrides.statusOverrides)} />
           </div>
           {m.overrides.decisions === 0 && (
-            <p className="mt-3 text-[12.5px] text-muted">
+            <p className="text-[12.5px] text-muted">
               No decisions recorded yet — work an item in the review queue and this fills in.
             </p>
           )}

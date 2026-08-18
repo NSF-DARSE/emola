@@ -19,9 +19,14 @@ export default function Nav({ queueCount }: { queueCount: number }) {
   const pathname = usePathname();
 
   return (
-    <nav className="w-14 shrink-0 border-r border-border flex flex-col items-center py-3 gap-1 bg-surface">
-      <Link href="/" className="mb-3 w-8 h-8 rounded-lg bg-fg text-bg grid place-items-center shrink-0">
-        <span className="text-[10px] font-bold tracking-tight font-mono">DE</span>
+    <nav className="w-14 shrink-0 border-r border-border flex flex-col items-center py-3 gap-1">
+      <Link
+        href="/"
+        className="mb-3 shrink-0 grid place-items-center"
+        title="Emergent"
+        aria-label="Emergent — home"
+      >
+        <span className="mark" aria-hidden="true" />
       </Link>
 
       {ITEMS.map((item) => {

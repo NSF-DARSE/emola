@@ -83,20 +83,28 @@ export function Panel({
   children: ReactNode;
 }) {
   return (
-    <div className="px-4 sm:px-8 py-7 max-w-[940px]">
-      <h1 className="text-[19px] font-semibold tracking-[-0.01em] text-fg">{title}</h1>
-      {description && <p className="mt-1.5 text-[13px] text-muted max-w-[72ch]">{description}</p>}
-      <div className="mt-6">{children}</div>
+    <div className="px-4 sm:px-8 py-7 max-w-[940px] flex flex-col gap-7">
+      <div className="flex flex-col gap-1.5">
+        <h1 className="text-[19px] font-semibold tracking-[-0.01em] text-fg">{title}</h1>
+        {description && <p className="text-[13px] text-muted max-w-[72ch] leading-relaxed">{description}</p>}
+      </div>
+      {/* Sections space themselves through this gap rather than each carrying
+          its own top margin, which is what had them drifting out of step. */}
+      <div className="flex flex-col gap-8">{children}</div>
     </div>
   );
 }
 
 export function Section({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
   return (
-    <section className="mt-9">
-      <h2 className="text-[11px] font-semibold uppercase tracking-[0.1em] text-faint">{title}</h2>
-      {hint && <p className="mt-1.5 text-[12.5px] text-muted">{hint}</p>}
-      <div className="mt-3">{children}</div>
+    <section className="flex flex-col gap-3">
+      <div className="flex flex-col gap-1.5">
+        <h2 className="text-[11px] font-semibold uppercase tracking-[0.1em] text-faint">{title}</h2>
+        {hint && <p className="text-[12.5px] text-muted leading-relaxed">{hint}</p>}
+      </div>
+      {/* A column with a gap, so every child is spaced the same whether the
+          section holds one grid or a note, a grid and a table. */}
+      <div className="flex flex-col gap-3">{children}</div>
     </section>
   );
 }

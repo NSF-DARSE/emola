@@ -335,11 +335,18 @@ export default function SwipeDeck({ cards }: { cards: BlindCard[] }) {
                 <span className="text-fg font-medium">
                   {primary} · {status}
                 </span>
+                {/* The percentage belongs to the CATEGORY only. Status comes
+                    from wording rules and carries no probability, so placing
+                    the number after both reads as a confidence the model
+                    never expressed. */}
                 <span className="text-fg font-medium">
-                  {reveal.model.primary} · {reveal.model.status}{' '}
+                  {reveal.model.primary}{' '}
                   <span className="text-faint tabular-nums">
                     {Math.round(reveal.model.confidence * 100)}%
                   </span>
+                  <span className="text-faint"> · </span>
+                  {reveal.model.status}
+                  <span className="text-faint"> (rule)</span>
                 </span>
               </div>
 
