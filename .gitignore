@@ -7,6 +7,11 @@ next-env.d.ts
 .env.local
 data/*.db
 data/*.db-journal
+# SQLite's write-ahead log and its shared-memory index. Both are rewritten on
+# every run, and the -wal is megabytes of binary, so committing them means a
+# large meaningless diff each time the app is opened.
+data/*.db-wal
+data/*.db-shm
 __pycache__/
 *.pyc
 .venv/
@@ -17,4 +22,3 @@ data/model/*.xlsx
 data/model/*.xls
 data/model/*.mapping.json
 data/model/*.review.txt
-data/model/*.mapping.json
