@@ -1,0 +1,2728 @@
+[
+  {
+    "id": "GS-0001",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, January 5th , starting from 6:00 am to 10:00 am. All end users should be out of applications by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-01-01",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0002",
+    "body": "On Sunday, January 12, 2025, from 0700 until 0900, DTI will be performing maintenance on the ERP Production Linux servers that will impact the availability of the PHRST, FSF and Pension applications.",
+    "received_at": "2025-01-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0003",
+    "body": "On Thursday, January 16, 2025, from 1700 until 0200 the following morning, DTI will be performing maintenance on multiple servers. To see a list of services impacted by this event, click the link below.",
+    "received_at": "2025-01-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0004",
+    "body": "On Tuesday, January 14, 2025, from 0900 until 1700, DTI will be performing maintenance on the FirstMap 2.0 TEST ArcGIS system, which will make it unavailable. The below link contains a list of test applications that might be impacted by this work.",
+    "received_at": "2025-01-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0005",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, January 16, starting from 7:00 pm to 10:00 pm. All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0006",
+    "body": "UPDATE: The maintenance window for this event has been delayed one week.\nOn Thursday, January 23, 2025, from 1700 until 0200 the following morning, DTI will be performing maintenance on multiple servers. To see a list of services impacted by this event, click the link below.",
+    "received_at": "2025-01-15",
+    "category": "Maintenance",
+    "status": "updated",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0007",
+    "body": "On Tuesday, January 21, 2025, from 2000 until 0430 the following morning, DTI will perform maintenance to the DTI-managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10-to-15-minute outages as maintenance is performed.",
+    "received_at": "2025-01-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0008",
+    "body": "On Thursday, January 23, 2025, from 1800 until 0430 the following morning, DTI will perform maintenance to the DTI-managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10-to-15-minute outages as maintenance is performed.",
+    "received_at": "2025-01-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0009",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Tuesday, January 21, 2025, starting from 7:00 pm to 10:00 pm. All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0010",
+    "body": "JAMS (batch processes) prod will be undergoing maintenance from Monday, January 20, starting from 11:00 am to 3:00 pm.All end users should be out of applications by 10:45 am, in anticipation of system developments.",
+    "received_at": "2025-01-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0011",
+    "body": "On Wednesday, February 5, 2025, from 0500 until 0700, DTI will be performing maintenance to the State SSL/VPN service. During this time, SSL/VPN will be unavailable intermittently to remote users of the State Network. Disruptions to service and/or Ivanti (Pulse Secure) errors will occur during the maintenance window. Once this work is completed, users may notice visual changes to the login screen, but functionality remains the same.",
+    "received_at": "2025-01-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0012",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Thursday, January 23, 2025, starting from 7:00 pm to 10:00 pm.All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0013",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Friday, January 24, 2025, starting from 7:00 pm to 10:00 pm.All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0014",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Friday, January 24, 2025, starting from 7:00 pm to 10:00 pm. All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0015",
+    "body": "On Thursday, January 30, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center.",
+    "received_at": "2025-01-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0016",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Thursday, January 30, 2025, starting from 7:00 pm to 10:00 pm. All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0017",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Thursday, January 30, 2025, starting from 7:00 pm to 10:00 pm.All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-01-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0018",
+    "body": "On Thursday, February 6, 2025, from 1700 until 0200 the following morning, DTI will be performing maintenance on multiple servers.",
+    "received_at": "2025-01-31",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0019",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, Feburary 2nd, 2025 starting at 6:00 am until 10:00 am. All end users should be out of application by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-01-31",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0020",
+    "body": "We are currently experiencing a system outage affecting random systems and phones located on the 8th floor of the Carvel Building. DTI is aware of the issue and is working to resolve it. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-02-03",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0021",
+    "body": "The issue has been resolved. If you are still experiencing issues please contact the State of Delaware Service Desk by phone at [PHONE_1]",
+    "received_at": "2025-02-03",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0022",
+    "body": "Multiple state agencies are experiencing connection issues with Jabber phones this morning. DTI is actively working to restore service. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-02-05",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0023",
+    "body": "On Sunday, February 9, 2025, from 0700 until 0900, DTI will be performing maintenance on the ERP Production Linux servers that will impact the availability of the PHRST, FSF and Pension applications.",
+    "received_at": "2025-02-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0024",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Tuesday, Feburary 11th, 2025 starting at 7:00 pm until 9:00 pm. All end users should be out of application by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-02-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0025",
+    "body": "We are currently experiencing a known issue with Jabber. DTI is aware of the issue and is working to resolve it. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-02-13",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Outage",
+      "Application"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0026",
+    "body": "The issue impacting Jabber for Multiple state agencies has been resolved.",
+    "received_at": "2025-02-13",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0027",
+    "body": "On Thursday, February 20, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center.",
+    "received_at": "2025-02-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0028",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Tuesday, February 18, 2025 starting at 7:00 pm until 10:00 pm.  All end users should be out of application by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-02-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0029",
+    "body": "There is a known technical issue located on the 9th-floor OUP area in switch closet 9B. Maintenance is being scheduled for the device.",
+    "received_at": "2025-02-19",
+    "category": "Outage",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Outage",
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0030",
+    "body": "On Thursday, February 27, 2025, from 1700 until 0100 the following morning, DTI will be performing maintenance on multiple servers.",
+    "received_at": "2025-02-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0031",
+    "body": "On Thursday, February 27, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Production servers at the William Penn Data Center.",
+    "received_at": "2025-02-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0032",
+    "body": "We are currently experiencing a system issue affecting legacy applications that use Oracle databases. DTI is aware of the issue and is working to resolve it.",
+    "received_at": "2025-02-24",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0033",
+    "body": "We are currently experiencing a system issue affecting legacy applications that use Oracle databases. DTI is aware of the issue and is working to resolve it. The following applications listed below may be experiencing issues:….",
+    "received_at": "2025-02-24",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0034",
+    "body": "On Monday, March 3, 2025, from 1630 until 1830, DTI will be performing maintenance to the ERP non-production Linux servers that will impact the availability of the PHRST, FSF and Pension non-production applications.",
+    "received_at": "2025-02-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0035",
+    "body": "IRAS Production and the Portal will be undergoing maintenance on Sunday , March 2, 2025, starting from 6:00 am to 10:00 am. All end users should be out of applications by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-02-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0036",
+    "body": "We are currently experiencing a system outage affecting Ivanti VPN. DTI is aware of the issue and is working to resolve it. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-03-11",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0037",
+    "body": "Multiple state agencies are not able to connect to SSL/VPN resources. DTI is actively working to restore service. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-03-11",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Outage",
+      "Network"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0038",
+    "body": "SSL/VPN resources have been restored.  If you are still experiencing and issue or have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1]",
+    "received_at": "2025-03-11",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Network",
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0039",
+    "body": "On Tuesday, March 18, 2025, from 1630 until 1700, DTI will be applying patches to the DTI SFTP servers. As a result, DTI SFTP services will be unavailable while this work is being performed.",
+    "received_at": "2025-03-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0040",
+    "body": "On Tuesday, March 18, 2025, from 2000 until 0430 the following morning, DTI will perform maintenance to the DTI-managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10-to-15-minute outages as maintenance is performed.",
+    "received_at": "2025-03-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0041",
+    "body": "On Friday, March 21, 2025, from 1700 until 2000, DTI will be performing maintenance on the DTI-managed production Microsoft SQL servers at the William Penn Data Center. To see the services impacted by this event",
+    "received_at": "2025-03-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0042",
+    "body": "Starting Monday, March 24, 2025, until Sunday, April 13, 2025, DTI will be applying patches to the DTI-managed Oracle production database servers. There will be intermittent outages during this window.",
+    "received_at": "2025-03-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0043",
+    "body": "On Thursday, March 20, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center.",
+    "received_at": "2025-03-19",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0044",
+    "body": "On Thursday, March 27, 2025, from 1700 until 1000 the following morning, DTI will be performing maintenance on multiple servers.",
+    "received_at": "2025-03-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0045",
+    "body": "On Wednesday, March 26, 2025, from 1030 until 1045, DTI will be performing maintenance that may affect the availability of the Public Integrity Reporting System (PIRS) application on [URL_1]",
+    "received_at": "2025-03-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0046",
+    "body": "On Thursday, March 27, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center.",
+    "received_at": "2025-03-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0047",
+    "body": "Today, Monday, March 24, 2025, between 12:00 PM and 12:30 PM, DTI will be performing necessary maintenance to the mainframe TN3270 application. A brief outage to TN3270 connections will occur as the services are recycled.",
+    "received_at": "2025-03-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0048",
+    "body": "On Tuesday, April 1, 2025, from 0500 until 0515, DTI will be performing maintenance on network equipment that will cause a brief outage to the DTI Enterprise Voice System. The outage should last no more than 10 minutes and will affect both inbound and outbound phone calls for devices dependent on DTI's Enterprise Voice services. This will not impact Verizon PRI, Centrex, or POTS lines.",
+    "received_at": "2025-03-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0049",
+    "body": "UPDATE: This maintenance has been extended until Monday, March 31, 2025 at 8:00 PM On Wednesday, March 26, 2025, from 0900 until 1100, DTI and Advantech will be performing maintenance on the Enterprise ProWatch System. All security features will work as expected; however, administrators will be unable to make changes to the ProWatch System while this work is being performed.",
+    "received_at": "2025-03-28",
+    "category": "Maintenance",
+    "status": "updated",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0050",
+    "body": "On Sunday, April 6, 2025, from 0700 until 0900, DTI will be performing maintenance on the ERP Production Linux servers at the William Penn Data Center. This work will impact the availability of the PHRST, FSF, and Pension applications.",
+    "received_at": "2025-03-31",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0051",
+    "body": "UPDATE: This maintenance has been extended until Tuesday, April 1, 2025 at 8:00 PM On Wednesday, March 26, 2025, from 0900 until 1100, DTI and Advantech will be performing maintenance on the Enterprise ProWatch System. All security features will work as expected; however, administrators will be unable to make changes to the ProWatch System while this work is being performed.",
+    "received_at": "2025-03-31",
+    "category": "Maintenance",
+    "status": "updated",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0052",
+    "body": "On Tuesday, April 8, 2025, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. During this process, the affected systems will experience intermittent outages lasting approximately 10 to 15 minutes as patches are applied.",
+    "received_at": "2025-04-01",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0053",
+    "body": "UPDATE: This maintenance has been extended until Friday, April 4, 2025 at 8:00 PM. We appreciate your patience as our teams work through issues with this migration. On Wednesday, March 26, 2025, from 0900 until 1100, DTI and Advantech will be performing maintenance on the Enterprise ProWatch System. All security features will work as expected; however, administrators will be unable to make changes to the ProWatch System while this work is being performed.",
+    "received_at": "2025-04-02",
+    "category": "Maintenance",
+    "status": "updated",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0054",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, April 6th , starting from 6:00 am to 10:00 am.All end users should be out of applications by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-04-02",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0055",
+    "body": "On Tuesday, April 8, 2025, from 2355 until 1100 the following morning, DTI will be performing maintenance on multiple servers",
+    "received_at": "2025-04-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0056",
+    "body": "Today, Friday, April 4, 2025, from 1700 until Saturday, April 5, 2025, at 1200, DTI will be performing maintenance to the Phish Alert Button (PAB) plugin for Outlook. During this time, the PAB will be unavailable in both the Outlook desktop client and webmail.",
+    "received_at": "2025-04-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0057",
+    "body": "On Sunday, April 13, 2025, from 0400 until 0600, DTI will be performing scheduled maintenance to network equipment. During this time, intermittent disruptions to service from the State network and/or network errors may occur.",
+    "received_at": "2025-04-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0058",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, April 10th, starting from 7:00 pm to 10:00 pm.All end users should be out of applications by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-04-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0059",
+    "body": "Please be advised that there is a known issue with the printers, anything printed will likely print directly, no secure or stored print options may be available. DTI is aware of the issue and is actively working to resolve it. A notification will be sent once the issue has been resolved.",
+    "received_at": "2025-04-09",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0060",
+    "body": "Please follow the instructions below to refresh your printer configuration via the Taskbar….",
+    "received_at": "2025-04-09",
+    "category": "Maintenance",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0061",
+    "body": "On Tuesday, April 15, 2025, from 1630 until 1700, DTI will be applying patches to the DTI SFTP servers. As a result, DTI SFTP services will be unavailable while this work is being performed.",
+    "received_at": "2025-04-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0062",
+    "body": "On Tuesday, April 15, 2025, from 2000 until 0430 the following morning, DTI will perform maintenance to the DTI-managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10-to-15-minute outages as maintenance is performed.",
+    "received_at": "2025-04-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0063",
+    "body": "On Wednesday, April 16, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Development and Test servers at the William Penn Data Center.",
+    "received_at": "2025-04-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0064",
+    "body": "On Thursday, April 24, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Production servers at the William Penn Data Center.",
+    "received_at": "2025-04-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0065",
+    "body": "On Monday, April 28, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications….",
+    "received_at": "2025-04-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0066",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, April 24, 2025 starting at 7:00 pm until 10:00 pm.All end users should be out of application by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-04-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0067",
+    "body": "On Thursday, May 1, 2025, from 1700 until 1000 the following morning, DTI will be performing maintenance on multiple servers.",
+    "received_at": "2025-04-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0068",
+    "body": "On Sunday, May 4, 2025, from 7:00am until 9:00am, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications:",
+    "received_at": "2025-04-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0069",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, May 4th , starting from 6:00 am to 10:00 am.All end users should be out of applications by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-04-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0070",
+    "body": "On Monday, May 12, 2025, from 1700 until 2000, DTI will be performing database maintenance related to the Mobius View application. During this time, Mobius View may be unavailable.",
+    "received_at": "2025-05-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0071",
+    "body": "On Tuesday, May 13, 2025, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. During this process, the affected systems will experience intermittent outages lasting approximately 10 to 15 minutes as patches are applied.",
+    "received_at": "2025-05-09",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0072",
+    "body": "On Thursday, May 23, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Development and Test servers at the William Penn Data Center.",
+    "received_at": "2025-05-19",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0073",
+    "body": "Please be advised that the IRAS PPE Environment will undergo scheduled maintenance today, Monday, May 19, 2025, at 2:00 PM. All end users are requested to exit applications by 1:45 PM to facilitate the necessary system updates. A follow-up email will be sent once the IRAS PPE Environment is back online. Should you have any questions or concerns regarding this maintenance period, please reach out to the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2025-05-19",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0074",
+    "body": "On Thursday, May 29, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center.",
+    "received_at": "2025-05-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0075",
+    "body": "On Sunday, June 1, 2025, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications…",
+    "received_at": "2025-05-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0076",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, May 29th, 2025, starting at 7:00 pm until 10:00 pm. All end users should be out of application by 6:45 pm, in anticipation of system developments.",
+    "received_at": "2025-05-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0077",
+    "body": "Please be advised that the Cognos Reporting system will be upgraded to a new version this evening at 4:30 PM. Following the upgrade, a new link will be required to access the system.",
+    "received_at": "2025-05-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Maintenance",
+      "Application"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0078",
+    "body": "Please be advised that the IRAS Production will undergo scheduled maintenance today, Thursday, May 29, 2025, at 7:00 PM. All end users are requested to exit applications by 6:45 PM to facilitate the necessary system updates.",
+    "received_at": "2025-05-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0079",
+    "body": "On Tuesday, June 10, 2025, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. During this process, the affected systems will experience intermittent outages lasting approximately 10 to 15 minutes as patches are applied. To see a list of services impacted by this event, click the following link:\n\n\n[URL_2]\n\n\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-06-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0080",
+    "body": "On Tuesday, June 17, 2025, from 2000 until 0430 the following morning, DTI will perform maintenance to the DTI managed Linux Production servers at the William Penn Data Center. Each system will experience intermittent 10 to 15 minute outages as maintenance is performed. To see the services impacted by this event, please click on the following link:",
+    "received_at": "2025-06-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0081",
+    "body": "On Tuesday, June 17, 2025, from 1630 until 1700, DTI will be applying patches to the DTI SFTP servers. As a result, DTI SFTP services will be unavailable while this work is being performed.",
+    "received_at": "2025-06-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0082",
+    "body": "On Wednesday, June 18, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:",
+    "received_at": "2025-06-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0083",
+    "body": "On Tuesday, June 17, 2025, from 1700 until 1800, DTI will perform maintenance to the FirstMap 2.0 Production system, which will make it unavailable. To see a list of the services impacted by this event, please click the link below.",
+    "received_at": "2025-06-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0084",
+    "body": "On Wednesday, June 25, 2025, from 1500 until 1630, DTI will be performing maintenance to the DTI-managed MSSQL database servers at the William Penn Data Center. Visit the link below to view the servers and applications that will be unavailable during this window.\n[URL_3]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-06-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0085",
+    "body": "On Sunday, June 22, 2025, from 0800 until 1000, DTI will be performing maintenance on servers that will impact the below applications. These systems will be unavailable during this window.\n•\tDTC PeopleSoft Financials \no\tdtcfsprd.erp.state.de.us \n•\tDTC PeopleSoft HCM \no\tdtchrprd.erp.state.de.us\no\tdtchcmerp.dti.delaware.gov\no\tcandidate.dtc.deldot.gov\n•\tPensions PeopleSoft HCM (eCRIS) \no\tpenprd.erp.state.de.us\no\tpenprderp.dti.delaware.gov\no\tecriserp.dti.delaware.gov\no\tpenprderpcitizen.dti.delaware.gov\no\tecriserpcitizen.dti.delaware.gov\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-06-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0086",
+    "body": "Good Morning,\nOn Thursday, June 26, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_4]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-06-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0087",
+    "body": "On Wednesday, July 2, 2025, from 1730 until 1830, DTI will be performing maintenance on servers impacting CyberArk PSM services. As a result, these services will be unavailable while the work is being performed.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-07-01",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0088",
+    "body": "Starting Monday, July 7, 2025, until Sunday, July 13, 2025, DTI will be applying patches to the DTI-managed Oracle production database servers. There will be intermittent outages during this window. Click on the link below for the schedule and list of servers, databases, and applications that will be impacted:\n[URL_5]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]",
+    "received_at": "2025-07-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0089",
+    "body": "On Sunday, July 13, 2025, from 0500 until 0900, DTI will be performing an upgrade to the William Penn Mainframe System. During this window, all mainframe services will be unavailable. \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-07-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0090",
+    "body": "On Friday, July 11, 2025, starting at 1700, DTI will be updating the Ivanti Secure AOVPN on State-owned devices. An email was sent to the impacted users, who will need to leave their device on and connected to the VPN during this timeframe.",
+    "received_at": "2025-07-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0091",
+    "body": "On Tuesday, July 15, 2025, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux Production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. Visit the link below for outage details and timeline.",
+    "received_at": "2025-07-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0092",
+    "body": "On Thursday, July 24, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center.",
+    "received_at": "2025-07-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0093",
+    "body": "On Sunday, July 27, 2025, from 0900 until 1100, DTI will be performing maintenance on servers that will impact the below applications. These systems will be unavailable during this window.",
+    "received_at": "2025-07-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0094",
+    "body": "This evening, Tuesday, July 22, 2025, from 2100 to 2130, DTI will be performing server maintenance to PRT3AAPPEONDB, impacting DelDOT's PowerBuilder Facility (Appeon). The service will be unavailable during this window.",
+    "received_at": "2025-07-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0095",
+    "body": "On Thursday, July 31, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:",
+    "received_at": "2025-07-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0096",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, August 3rd, 2025 starting at 6:00 am until 10:00 am.",
+    "received_at": "2025-07-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0097",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Thursday, July 31st, from 7:00 pm to 10:00 pm.",
+    "received_at": "2025-07-28",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0098",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Wednesday, August 6th, from 5:00 pm to 7:00 pm.",
+    "received_at": "2025-08-05",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0099",
+    "body": "IRAS PPE and the Portal will experience scheduled maintenance today from 4:30 pm to 6:30 pm.",
+    "received_at": "2025-08-05",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0100",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Saturday, August 16, 2025 starting at 9:00 am until 5:00 pm.",
+    "received_at": "2025-08-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0101",
+    "body": "On Monday, August 18, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production",
+    "received_at": "2025-08-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0102",
+    "body": "Tomorrow, Thursday, August 21, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI managed Windows Development and Test servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:",
+    "received_at": "2025-08-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0103",
+    "body": "On Friday, August 22, 2025, from 1700 until 2300, DTI will be performing maintenance on the FirstMap database server. As a result, FirstMap services will be unavailable during this window. Please visit the link below to view the list of FirstMap services.",
+    "received_at": "2025-08-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0104",
+    "body": "On Sunday, August 24, 2025, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications:",
+    "received_at": "2025-08-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0105",
+    "body": "On Thursday, August 28, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:",
+    "received_at": "2025-08-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0106",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, August 28, 2025 starting at 7:00 pm until 10:00 pm.",
+    "received_at": "2025-08-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0107",
+    "body": "One Stop and Govolution (portal credit card payments)  will be undergoing maintenance from Tuesday, August 26, 2025 starting at 5:00 pm until 7:00 pm.",
+    "received_at": "2025-08-26",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0108",
+    "body": "IRAS Production will be undergoing maintenance from Friday, September 26th, 2025 starting at 6:00 pm until October 6th, 2025 9:00 am.",
+    "received_at": "2025-09-02",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0109",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, September 7, 2025 starting at 6:00 am until 11:00 am.",
+    "received_at": "2025-09-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0110",
+    "body": "On Tuesday, September 9, 2025, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center.",
+    "received_at": "2025-09-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0111",
+    "body": "On Monday, September 15, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:",
+    "received_at": "2025-09-09",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0112",
+    "body": "On Tuesday, September 16, 2025, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux Production servers at the William Penn Data Center.",
+    "received_at": "2025-09-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0113",
+    "body": "There is a planned outage for document download and upload functionalities in IRAS from Friday, September 12, 2025 starting at 5:00 pm until 6:00 pm.",
+    "received_at": "2025-09-12",
+    "category": "Outage",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Maintenance",
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0114",
+    "body": "Please be advised that there will be a scheduled outage for production and non-production environments on Thursday, September 18, 2025, from 6:00 pm to 11:00 pm.",
+    "received_at": "2025-09-12",
+    "category": "Outage",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Maintenance",
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0115",
+    "body": "On Thursday, September 25, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_4]",
+    "received_at": "2025-09-19",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0116",
+    "body": "This Saturday, September 27, 2025, from 0600 until 2000, DTI will have a vendor on site performing maintenance to the electrical infrastructure at the Biggs Data Center. While no outage is anticipated, there is a risk of power loss that comes with this maintenance.",
+    "received_at": "2025-09-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0117",
+    "body": "On Tuesday, September 30, 2025, from 1730 until 2000, DTI will be performing maintenance on the DTI-managed production MSSQL database servers at the William Penn Data Center. Visit the link below to view the servers and applications that will be unavailable during this window.",
+    "received_at": "2025-09-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0118",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Friday, September 26, 2025 starting at 6:00 pm until Monday October 10,2025 9:00 am.",
+    "received_at": "2025-09-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0119",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Friday, September 26, 2025 starting at 6:00 pm until Monday October 6,2025 9:00 am.",
+    "received_at": "",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0120",
+    "body": "Multiple state agencies are not able to connect to network resources DTI is actively working to restore service. A notification will be sent once the issue has been resolved. If you have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1]",
+    "received_at": "2025-10-02",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0121",
+    "body": "All state agencies are now able to connect to network resources If you are still experiencing and issue or have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2025-10-02",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Outage",
+      "Network"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0122",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, October 12th, 2025 starting at 6:00 am until 10:00 am.\n \nAll end users should be out of application by 5:45 am, in anticipation of system developments.",
+    "received_at": "2025-10-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0123",
+    "body": "IRAS Portal will be undergoing maintenance from Monday, October 6th, 2025 starting at 6:00 pm until 7:00 pm.",
+    "received_at": "2025-10-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0124",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Tuesday, October 7th, from 6:00 pm to 8:00 pm.",
+    "received_at": "2025-10-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0125",
+    "body": "On Tuesday, October 14, 2025, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn",
+    "received_at": "2025-10-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0126",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance on Thursday, October 9th, from 6:00 pm to 8:00 pm.",
+    "received_at": "2025-10-09",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0127",
+    "body": "On Sunday, October 19, 2025, from 0500 until 0700, DTI will be performing scheduled maintenance to network equipment.",
+    "received_at": "2025-10-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0128",
+    "body": "On Monday, October 13, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability",
+    "received_at": "2025-10-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0129",
+    "body": "Good Morning,\nOn Sunday, October 26, 2025, from 0600 until 1500, DTI will be performing maintenance on the production PeopleSoft application. As a result, the following URLs will be unavailable during this time:\n•\tportal.erp.state.de.us\n•\tesupplier.erp.delaware.gov\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \nThank you, \nDOF_IT Support",
+    "received_at": "2025-10-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0130",
+    "body": "Good Afternoon,\nOn Monday, October 27, 2025, from 1700 until 2100, DTI will be performing maintenance on the FirstMap 2.0 Production system, which will make it unavailable. The below link contains a list of applications that might be impacted by this outage.\n \n[URL_6]\n \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \n\nThank you,\n\nDOF IT Support",
+    "received_at": "2025-10-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0131",
+    "body": "Good Morning, \nOn Wednesday, October 29, 2025, from 0600 until 1800, DTI will be performing maintenance on production First State Financials (FSF) and Payroll/Human Resource System Technology (PHRST). As a result, the following URLs will be unavailable during this time:\n•\tfsfpd.erp.state.de.us\n•\tesupplier.erp.delaware.gov\n•\tphrstpd.erp.state.de.us\n•\teapps.dti.delaware.gov\n\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \nThank you, \nDOF_IT Support",
+    "received_at": "2025-10-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0132",
+    "body": "Good Afternoon,\nOn Thursday, October 30, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_7]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \n\n\nThank you,\n\nDOF IT Support",
+    "received_at": "2025-10-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0133",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance Sunday , November 2nd, 2025 from 6:00 am to 10:00 am. \n\nAll end users are requested to log out of applications by 5:45 am to facilitate system updates. \n\nFor any inquiries or concerns regarding the maintenance schedule, please reach out to the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2025-10-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0134",
+    "body": "On Thursday, November 6 starting at 4:30pm, DTI will be moving some of DOR’s production servers to another data center.  During the migration, the following environments will experience outages:\n•\tFairfax\n•\tMST The work is expected be completed by late in the evening on Thursday, and Friday should be business as usual.  If you experience any issues with the above listed systems on Friday, please contact the DTI Help Desk.",
+    "received_at": "2025-11-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0135",
+    "body": "On Monday, November 10, 2025, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:   \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-11-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0136",
+    "body": "IRAS Production and the Portal will experience scheduled maintenance Thursday, November 6th, 2025 from 6:00 pm to 8:00 pm. \n\nAll end users are requested to log out of applications by 5:45 pm to facilitate system updates. \n\nFor any inquiries or concerns regarding the maintenance schedule, please reach out to the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2025-11-05",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0137",
+    "body": "Good Morning, \nOn Sunday, November 16, 2025, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-11-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0138",
+    "body": "Good Morning,\nOn Thursday, November 20, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:   \n[URL_8] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-11-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0139",
+    "body": "Good Morning,\nOn Wednesday, November 26, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_7]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-11-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0140",
+    "body": "On Tuesday, December 2, 2025, from 2130 until 2330, DTI will be performing maintenance to databases that will affect TMC applications, including TMC Electronic Operations (eOPS) and TMC Incident Management Tracker (TRACKER).\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-11-26",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0141",
+    "body": "UPDATE: On Tuesday, December 9, 2025, from 2130 until 2330, DTI will be performing maintenance to databases that will affect TMC applications, including TMC Electronic Operations (eOPS) and TMC Incident Management Tracker (TRACKER).\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-01",
+    "category": "Maintenance",
+    "status": "updated",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0142",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, December 7, 2025 starting at 5:00 am until 11:00 am.\n \nAll end users should be out of application by 4:45 am, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2025-12-01",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0143",
+    "body": "Multiple state agencies are not able to connect to Mainframe when connected directly to the state network. Connection to Mainframe from AOVPN computers is still working. DTI is actively working to restore service. A notification will be sent once the issue has been resolved. If you have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2025-12-03",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0144",
+    "body": "The issue impacting Mainframe services has been resolved. If you have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2025-12-03",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0145",
+    "body": "On Sunday, December 14, 2025, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_4]",
+    "received_at": "2025-12-09",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0146",
+    "body": "On Tuesday, December 16, 2025, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. Visit the link below for outage details and timeline.\n[URL_9]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-09",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0147",
+    "body": "On Tuesday, December 23, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:\n[URL_8]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0148",
+    "body": "Some users are reporting an on-screen error when then attempt to access Adobe Pro. This message indicates that some licenses have expired but the users can continue to access their Adobe Pro accounts for the next four (4) days. \n\nPlease be advised that DTI is approaching the final deadline for our Adobe Renewals, and some users are seeing that their license is going to expire in 4-6 days.  If this is the message you are seeing, then you are fine. Your Agency has completed its Adobe Renewal, and your licenses will continue to work after the last day. There is no need to open a ticket with DTI or contact DOF IT Support",
+    "received_at": "2025-12-17",
+    "category": "Application",
+    "status": "active",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Vendor",
+      "Application"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0149",
+    "body": "UPDATE: On Monday, December 22, 2025, from 1600 until 1900, DTI will be performing maintenance to servers that will impact the Splunk Enterprise Logging Solution. During this window, Splunk services such as dashboards, logging, alerts, and other system metrics will be unavailable. \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0150",
+    "body": "On Tuesday, December 30, 2025, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link:\n[URL_7] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0151",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, January 4, 2026 starting at 6:00 am until 10:00 am.\n All end users should be out of application by 5:45 am, in anticipation of system developments.\n If you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2025-12-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0152",
+    "body": "On Monday, January 5, 2026, from 1630 until 1830, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:   \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2025-12-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0153",
+    "body": "On Sunday, January 11, 2026, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications:\n•\tERP Portal\n•\tPayroll Human Resources Statewide Technology (PHRST)\n•\tFirst State Financials (FSF)\n•\tPensions PeopleSoft HCM (eCRIS)\n•\tDTC PeopleSoft HCM\n•\tDTC PeopleSoft Financials\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]",
+    "received_at": "2026-01-05",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0154",
+    "body": "On Tuesday, January 13, 2026, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. During this process, the affected systems will experience intermittent outages lasting approximately 10 to 15 minutes as patches are applied. To see a list of services impacted by this event, click the following link: \n[URL_2]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]",
+    "received_at": "2026-01-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0155",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Wednesday, January 14,  2026 starting at 6:00 pm until 8:00 pm.\n\nAll end users should be out of application by 5:45 pm, in anticipation of system developments.\n\nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1]",
+    "received_at": "2026-01-12",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0156",
+    "body": "On Tuesday, January 20, 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline. \n•\tCI/CD Servers: Tuesday 1200 until 1300 \n•\tSFTP Server: Tuesday 1630 until 1700 \n•\tProduction Servers: Tuesday 20:00 until Wednesday 05:00 \n•\tFirstMap Reboot: Wednesday between 00:00 and 05:00 \n[URL_9]",
+    "received_at": "2026-01-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0157",
+    "body": "Starting Tuesday, January 20, 2026, through Wednesday, January 28, 2026, DTI will be applying patches to the DTI-managed Oracle production database servers. There will be intermittent outages during this window. Click on the link below for the schedule and list of servers, databases, and applications that will be impacted:\n[URL_10]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-01-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0158",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, January 22, 2026 starting at 7:00 pm until 10:00 pm.\n \nAll end users should be out of application by 6:45 pm, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-01-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0159",
+    "body": "On Thursday, January 29, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI managed Windows Production servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_7]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-01-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0160",
+    "body": "IRAS System and the Portal will experience scheduled maintenance on Sunday, February 1st, from 1:00 AM to 10:00 AM EST. \n\nAll end users are requested to log out of applications by 12:45 AM to facilitate system updates. \n\nFor any inquiries or concerns regarding the maintenance schedule, please reach out to the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-01-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0161",
+    "body": "On Sunday, February 8, 2026, from 0900 until 1200, DTI will be performing maintenance on servers that will impact the below URLs. These systems will be unavailable during this window. \n•\tfsfpd.erp.state.de.us \n•\tesupplier.erp.delaware.gov \n•\tdtcfsprd.erp.state.de.us \n•\tdtchrprd.erp.state.de.us \n•\tcandidate.dtc.deldot.gov \n•\twww.dtchcmerp.dti.delaware.gov\n•\tphrstpd.erp.state.de.us \n•\twww.eapps.dti.delaware.gov\n•\tpenprd.erp.state.de.us \n•\tpenprderp.dti.delaware.gov \n•\tpenprderpcitizen.dti.delaware.gov\n•\twww.ecriserpcitizen.dti.delaware.gov\n•\twww.ecriserp.dti.delaware.gov \n•\tportal.erp.state.de.us \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-02-02",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0162",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Wednesday, February 4, 2026 starting at 6:00 pm until 8:00 pm.\n \nAll end users should be out of application by 5:45 pm, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-02-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0163",
+    "body": "On Sunday, February 8, 2026, from 0700 until 0900, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-02-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0164",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Friday, February 6, 2026 starting at 6:00 pm until 8:00 pm.\n \nAll end users should be out of application by 5:45 pm, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-02-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0165",
+    "body": "On Tuesday, February 10, 2026, from 0500 until 1630, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers at the William Penn Data Center. To see the services impacted by this event, please click on the following link: \n[URL_2]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \nView Abnormal Events",
+    "received_at": "2026-02-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0166",
+    "body": "On Tuesday, February 17, 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline.  \n•\tCI/CD Servers: Tuesday 1200 until 1300\n•\tSFTP Server: Tuesday 1630 until 1700\n•\tProduction Servers: Tuesday 20:00 until Wednesday 05:00\n•\tFirstMap Reboot: Wednesday between 00:00 and 05:00\n[URL_9]  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-02-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0167",
+    "body": "A project is underway to increase the security and IRS compliance of the database server that is used by several applications in the DOR environment.  As a result of changes that are being made to the security configuration, you may encounter unforeseen errors in applications.  Changes in the project are typically made weekly on Thursday mornings, and the project is expected to complete in mid-March.  Please report any issues you may encounter to the DTI Service Desk at  [EMAIL_3]. \n\nPlease note that IRAS is unaffected by this effort.",
+    "received_at": "2026-02-12",
+    "category": "Maintenance",
+    "status": "active",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Security",
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0168",
+    "body": "On Thursday, February 19, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers. To see the services impacted by this event, please click on the following link:\n[URL_8]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-02-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0169",
+    "body": "On Thursday, February 26, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers. To see the services impacted by this event, please click on the following link: \n[URL_7] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-02-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0170",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, March 1, 2026 starting at 2:00 am until 9:00 am.\n \nAll end users should be out of application by 1:45 am, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-02-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0171",
+    "body": "On Sunday, March 8, 2026, from 0700 until 1100, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials",
+    "received_at": "2026-03-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0172",
+    "body": "On Tuesday, March 10, 2026, from 0500 until 1630, DTI will be performing maintenance on the DTI-managed Linux test and development servers. To see the services impacted by this event, please click on the following link:\n[URL_2] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-03-03",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0173",
+    "body": "IRAS System and the Portal will experience scheduled maintenance on Saturday, March 7th, from 9:00 am to 3:00 pm. \n\nAll end users are requested to log out of applications by 8:45 am to facilitate system updates. \n\nFor any inquiries or concerns regarding the maintenance schedule, please reach out to the DOF IT Support Team at [EMAIL_1].\n\nThank you,\n\nDOF IT Support",
+    "received_at": "2026-03-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0174",
+    "body": "What’s Happening\nStarting on 3/17, we will be working with DTI to reduce the number of Windows accounts with Local Administrator access as part of a statewide effort to strengthen and protect our systems. This effort ensures our compliance with IRS requirements.  Thank you for your cooperation and support as we work to keep our technology secure.\n________________________________________\nWhy This is Happening\nReducing Local Administrator rights is a necessary security best practice that helps protect State systems by:\n•\tProtecting the State Against Online Threats: Helps keep your computer safe from viruses, ransomware, and other harmful attacks.\n•\tKeeping Settings Secure: Prevents accidental or unauthorized changes that could affect how your system works.\n•\tReducing Mistakes and Misuse: Lowers the chance of downloading dangerous apps, sharing passwords, or misusing privileged access.\nCyberArk Endpoint Privilege Manager (EPM) is already in place to provide administrative access to applications that require it.\n________________________________________\nAction Needed\nNo action is required from you.\nIf an application needs administrative access, CyberArk Endpoint Privilege Manager (EPM) will prompt you. If the prompt blocks the application from opening, you can request a review using the provided link within the CyberArk EPM message.\n\n\n\n\n\n\nIf you believe you need Local Administrator rights for your job duties, please contact The DOF IT Support team at [EMAIL_1] to have your request routed to an Information Security Officer (ISO).  Requests sent directly to the DTI Service Desk without ISO approval will be redirected to DOR’s ISOs.",
+    "received_at": "2026-03-12",
+    "category": "Security",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Security",
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0175",
+    "body": "On Thursday, March 19, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers. To see the services impacted by this event, please click on the following link:    \n[URL_8]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-03-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0176",
+    "body": "Why This is Happening\nReducing Local Administrator rights is a necessary security best practice that helps protect State systems by:\n•\tProtecting the State Against Online Threats: Helps keep your computer safe from viruses, ransomware, and other harmful attacks.\n•\tKeeping Settings Secure: Prevents accidental or unauthorized changes that could affect how your system works.\n•\tReducing Mistakes and Misuse: Lowers the chance of downloading dangerous apps, sharing passwords, or misusing privileged access.\nCyberArk Endpoint Privilege Manager (EPM) is already in place to provide administrative access to applications that require it.\n________________________________________\nAction Needed\nNo action is required from you.\nIf an application needs administrative access, CyberArk Endpoint Privilege Manager (EPM) will prompt you. If the prompt blocks the application from opening, you can request a review using the provided link within the CyberArk EPM message.\n\n\n\n\n\n\nIf you believe you need Local Administrator rights for your job duties, please contact The DOF IT Support team at [EMAIL_1] to have your request routed to an Information Security Officer (ISO).  Requests sent directly to the DTI Service Desk without ISO approval will be redirected to DOR’s ISOs.",
+    "received_at": "2026-03-16",
+    "category": "Security",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Security"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0177",
+    "body": "On Thursday, March 26, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers. To see the services impacted by this event, please click on the following link: \n[URL_7]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-03-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0178",
+    "body": "Good Morning,\nOn Monday, March 30, 2026, from 1630 until 2030, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:   \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-03-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0179",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Thursday, March 26, 2026 starting at 7:00 pm until 10:00 pm.\n \nAll end users should be out of application by 6:45 pm, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-03-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0180",
+    "body": "Good Morning, \n \nIRAS Production and the Portal will be undergoing maintenance from Sunday, April 5, 2026 starting at 6:00 am until 10:00 am.\n \nAll end users should be out of application by 5:45 am, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].\n \nThank you, \nDOF_IT Support",
+    "received_at": "2026-03-30",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0181",
+    "body": "Good Afternoon,\nOn Sunday, April 5, 2026, from 0700 until 1100, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-02",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0182",
+    "body": "On Wednesday, April 15, 2026, from 0600 until 1800, DTI will be performing maintenance on servers that will impact the below URLs. These production systems will be unavailable during this window.\n•\tfsfpd.erp.state.de.us\n•\tesupplier.erp.delaware.gov\n•\tphrstpd.erp.state.de.us\n•\twww.eapps.dti.delaware.gov\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0183",
+    "body": "On Wednesday, April 15, 2026, from 1700 until 2200, DTI will be performing maintenance on the DTI-managed production MSSQL database servers. To see the services impacted by this event, please click on the following link:\n[URL_11]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]",
+    "received_at": "2026-04-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0184",
+    "body": "On Thursday, April 16, 2026, from 1700 until 2200, DTI will be performing maintenance on the DTI-managed production MSSQL database servers. To see the services impacted by this event, please click on the following link:\n[URL_12]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0185",
+    "body": "On Monday, April 20, 2026, from 0600 until 1800, DTI will be performing maintenance on servers that will impact the below URLs. These production systems will be unavailable during this window.\n•\tdtchrprd.erp.state.de.us (DTC HR)\n•\tdtcfsprd.erp.state.de.us (DTC FS)\n•\tcandidate.dtc.deldot.gov\n•\tdtchcmerp.dti.delaware.gov\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0186",
+    "body": "On Thursday, April 23, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the DTI-managed Windows Test and Development servers. To see the services impacted by this event, please click on the following link:    \n[URL_8]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0187",
+    "body": "On Friday, April 17, 2026, from 1900 until 2359, ServiceNow and DTI will be performing an upgrade of the platform. During this time, the ServiceNow platform will not be available for any functions including viewing or updating tickets.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0188",
+    "body": "On Monday, April 27, 2026, from 1630 until 2030, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:    \n•\tERP Portal  \n•\tPayroll Human Resources Statewide Technology (PHRST)  \n•\tFirst State Financials (FSF)  \n•\tPensions PeopleSoft HCM (eCRIS)  \n•\tDTC PeopleSoft HCM  \n•\tDTC PeopleSoft Financials  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0189",
+    "body": "On Wednesday, April 29, 2026, from 0600 until 1800, DTI will be performing maintenance on servers that will impact the availability of the eCRIS System (Pensions).\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0190",
+    "body": "On Wednesday, April 29, 2026, from 1600 until 1900, DTI will have a vendor on site performing electrical maintenance at the Biggs Data Center as part of a required fire inspection. This work requires the building to operate on generator power. While no outage is anticipated, there is a risk of power loss during this maintenance.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement Team at [EMAIL_2].",
+    "received_at": "2026-04-24",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Maintenance",
+      "Vendor"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0191",
+    "body": "On Thursday, April 30, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers. To see the services impacted by this event, please click on the following link:\n[URL_7]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0192",
+    "body": "On Sunday, May 3, 2026, from 0700 until 1100, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal\n•\tPayroll Human Resources Statewide Technology (PHRST)\n•\tFirst State Financials (FSF)\n•\tPensions PeopleSoft HCM (eCRIS)\n•\tDTC PeopleSoft HCM\n•\tDTC PeopleSoft Financials\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-04-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0193",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, May 3, 2026 starting at 6:00 am until 10:00 am.\n\nAll end users should be out of application by 5:45 am, in anticipation of system developments.\n\nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-04-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0194",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Friday, May 1, 2026 starting at 7:00 pm until 10:00 pm.\n\nAll end users should be out of application by 6:45 pm, in anticipation of system developments.\n\nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-04-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0195",
+    "body": "On Tuesday, May 12, 2026, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux Test and Development servers. To see the services impacted by this event, please click on the following link:\n[URL_2]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0196",
+    "body": "A network outage if affecting the Dover area, multiple state agencies are not able to connect to network resources. Crown Castle is actively working to restore service. A notification will be sent once the issue has been resolved. If you have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2026-05-07",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0197",
+    "body": "A Crown Castle network outage if affecting the Dover area, multiple state agencies are not able to connect to network resources. Crown Castle is actively working to restore service. A notification will be sent once the issue has been resolved. If you have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2026-05-07",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0198",
+    "body": "On Tuesday, May 19, 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline.  \n•\tCI/CD Servers: Tuesday 1200 until 1300  \n•\tSFTP Server: Tuesday 1630 until 1700  \n•\tProduction Servers: Tuesday 2000 until Wednesday 0500  \n•\tFirstMap Reboot: Wednesday between 0000 and 0500  \n[URL_9]  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0199",
+    "body": "On Monday, May 25, 2026, from 1630 until 2030, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:    \n•\tERP Portal  \n•\tPayroll Human Resources Statewide Technology (PHRST)  \n•\tFirst State Financials (FSF)  \n•\tPensions PeopleSoft HCM (eCRIS)  \n•\tDTC PeopleSoft HCM  \n•\tDTC PeopleSoft Financials  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-19",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0200",
+    "body": "The Following State Agencies are currently experiencing issues with Webex. (OMB, DHR, DTI, DNREC, OST, DSHS)\nCalls can still be made and received through the Teams Webex plugin.\n \nIf you need help, please contact the State of Delaware Service Desk at [PHONE_1] or email [EMAIL_3]\nView Abnormal Events",
+    "received_at": "2026-05-20",
+    "category": "Outage",
+    "status": "active",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0201",
+    "body": "On Thursday, May 28, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers. To see the services impacted by this event, please click on the following link:\n[URL_7] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-22",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0202",
+    "body": "On Sunday, May 31, 2026, from 0700 until 1100, DTI will be performing maintenance on Linux production servers that will impact the availability of the following applications: \n•\tERP Portal \n•\tPayroll Human Resources Statewide Technology (PHRST) \n•\tFirst State Financials (FSF) \n•\tPensions PeopleSoft HCM (eCRIS) \n•\tDTC PeopleSoft HCM \n•\tDTC PeopleSoft Financials \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0203",
+    "body": "Starting Monday, June 1, 2026, through Monday, June 8, 2026, DTI will be applying patches to the DTI-managed Oracle production database servers. There will be intermittent outages during this window. Click on the link below for the schedule and list of servers, databases, and applications that will be impacted: \n[URL_10] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-05-29",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0204",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, June 7, 2026 starting at 6:00 am until 10:00 am.\n\nAll end users should be out of application by 5:45 am, in anticipation of system developments.\n\nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-06-01",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0205",
+    "body": "On Wednesday, June 10, 2026, from 1800 to 1900, DTI will be performing scheduled maintenance on network equipment at the Carvel State Office Building. During this maintenance window, all devices connected to the State network at Carvel will be unable to access internet or network resources until the work is complete. Connectivity is expected to be restored once the equipment replacement has been finalized and verified.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-06-04",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0206",
+    "body": "On Thursday, June 11, 2026, from 1700 until 2100, DTI will perform maintenance to the FirstMap 2.0 Production system, which will make it unavailable. To see a list of the services impacted by this event, please click the link below.\n[URL_6]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-06-08",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0207",
+    "body": "On Tuesday, June 16 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline.  \n•\tCI/CD Servers: Tuesday 1200 until 1300  \n•\tSFTP Server: Tuesday 1630 until 1700  \n•\tProduction Servers: Tuesday 2000 until Wednesday 0500  \n•\tFirstMap Reboot: Wednesday between 0000 and 0500\n[URL_9] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-06-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0208",
+    "body": "On Thursday, June 25, 2026, from 1700 until 2200, DTI will be performing maintenance on the DTI-managed production MSSQL database servers. To see the services impacted by this event, please click on the following link:\n[URL_11]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-06-18",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0209",
+    "body": "IRAS Production and the Portal will be undergoing maintenance from Sunday, June 28, 2026 starting at 6:00 am until 10:00 am.\n \nAll end users should be out of application by 5:45 am, in anticipation of system developments.\n \nIf you have any questions or concerns regarding the scheduled maintenance, please contact the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-06-23",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0210",
+    "body": "On Wednesday, July 1, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance on the Windows production servers for Legislative Hall. As a result, the following applications will be unavailable during this window:\n•\tDelaware Legislative Information System (DELIS)\n•\tDelaware Services for Constituents (DESC, CRM) \n•\tRegulations Management System (LegHall, RMS) \n•\tLegislative Information System (LIS) - Legacy \n•\tLegHall Domino\n•\tLegHall File Server\n•\tLEGIS Terminal Server\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-06-25",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0211",
+    "body": "On Sunday, July 12, 2026, from 0630 until 0730, DTI will be performing scheduled maintenance on network equipment at the Townsend Building. This outage effects the Townsend Building and all buildings within the campus:\n•\tLegislative Hall\n•\tTatnall Building\n•\tArchives\n•\tKent County Courthouse\n•\tHaslet Armory\n•\tJesse S. Cooper Building\n•\tMargaret O'Neill Building\nDuring this maintenance window, all devices connected to the State network at these locations, wired or wireless, will be unable to access internet or network resources until the work is complete. Connectivity is expected to be restored once the equipment replacement has been finalized and verified.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-07-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0212",
+    "body": "On Tuesday, July 14, 2026, from 5:00am until 1:30pm, DTI will be performing maintenance on the DTI-managed Linux test and development servers. To see the services impacted by this event, please click on the following link:\n[URL_2]",
+    "received_at": "2026-07-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0213",
+    "body": "The network issue impacting multiple agencies is resolved. Crown Castle has repaired the broken fiber.  If you are still experiencing an issue or have any questions, please contact the State of Delaware Service Desk by phone at [PHONE_1] or email at [EMAIL_3]",
+    "received_at": "2026-07-13",
+    "category": "Outage",
+    "status": "resolved",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Outage",
+      "Network"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0214",
+    "body": "On Monday, July 20, 2026, from 4:30pm to 8:30pm , DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:    \n•\tERP Portal  \n•\tPayroll Human Resources Statewide Technology (PHRST)  \n•\tFirst State Financials (FSF)  \n•\tPensions PeopleSoft HCM (eCRIS)  \n•\tDTC PeopleSoft HCM  \n•\tDTC PeopleSoft Financials  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-07-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0215",
+    "body": "Please be advised that the IRAS Production and Portal systems will be undergoing essential maintenance on Thursday, July 23, 2026, from 6:00 pm to 8:00 pm est.\n\nAll end users should be out of the applications by 5:45 pm, in anticipation of system developments.\n\nIf you have any questions or concerns regarding this scheduled maintenance, feel free to reach out to the DOF IT Support Team at [EMAIL_1].",
+    "received_at": "2026-07-16",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0216",
+    "body": "On Sunday, July 26, 2026, from 0400 until 0600, DTI will be performing scheduled maintenance to network equipment. During this time, intermittent disruptions to service from the State network and/or network errors may occur.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-07-17",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0217",
+    "body": "On Monday, July 27, 2026, from 1700 until 2100, DTI will perform maintenance to the FirstMap production system, which will make it unavailable. To see a list of the services impacted by this event, please click the link below\n[URL_6]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-07-21",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0218",
+    "body": "On Tuesday, July 28, 2026, from 2100 to 2359, DTI will perform maintenance on servers that support the Delaware.gov website and several subdomains. No outage is expected; however, there is a possibility of brief downtime if issues arise during the upgrade. Click the link below to see a full list of impacted URLs. \n[URL_13] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-07-27",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0219",
+    "body": "On Saturday, August 15, 2026, beginning at 8:00 AM, vendors will be reattempting a conduit repair on the Legislative Mall fiber loop. During this window, agencies located around Legislative Mall should expect a loss of network connectivity. The work is anticipated to be completed by 6PM on Sunday, August 16.\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement Team at [EMAIL_2].",
+    "received_at": "2026-08-06",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "majority",
+    "acceptableCategories": [
+      "Maintenance",
+      "Outage"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0220",
+    "body": "On Tuesday, August 11, 2026, from 0500 until 1330, DTI will be performing maintenance on the DTI-managed Linux test and development servers. To see the services impacted by this event, please click on the following link:   \n[URL_2]  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-08-07",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0221",
+    "body": "On Sunday, August 16, 2026, from 9:00 AM until 12:00 PM, DTI will perform maintenance to production environments that will impact the below applications. These systems will be unavailable during this window.\n•\tDTC PeopleSoft Financials \no\tdtcfsprd.erp.state.de.us\n•\tDTC PeopleSoft Human Resource Management \no\tdtchrprd.erp.state.de.us\n•\tDTC Employee Self Service  \no\twww.dtchcmerp.dti.delaware.gov\n•\tCareer Site at Delaware Transit Corporation \no\tcandidate.dtc.deldot.gov\n•\teCRIS System (Pensions) \no\tpenprd.erp.state.de.us\no\tpenprderp.dti.delaware.gov\no\tpenprderpcitizen.dti.delaware.gov\no\twww.ecriserp.dti.delaware.gov\no\twww.ecriserpcitizen.dti.delaware.gov\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-08-10",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0222",
+    "body": "On Monday, August 17, 2026, from 1630 until 2030, DTI will be performing maintenance on Linux non-production servers that will impact the availability of the following non-production applications:    \n•\tERP Portal  \n•\tPayroll Human Resources Statewide Technology (PHRST)  \n•\tFirst State Financials (FSF)  \n•\tPensions PeopleSoft HCM (eCRIS)  \n•\tDTC PeopleSoft HCM  \n•\tDTC PeopleSoft Financials  \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2].",
+    "received_at": "2026-08-11",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0223",
+    "body": "Please be advised that the IRAS Application and Portal will be unavailable tonight, Thursday, August 13, 2026, from 6:00 PM to 9:00 PM ET due to scheduled system maintenance.\nTo ensure a smooth maintenance process and prevent any potential loss of work, all users should save their work and be completely logged out of the IRAS system no later than 5:45 PM.\n\nMaintenance Window:\nDate: Thursday, August 13, 2026\nSystem: IRAS Application and Portal\nDowntime: 6:00 PM – 9:00 PM ET\nUser Logoff Deadline: 5:45 PM ET\n\nPlease plan your work accordingly and ensure that you have exited the system before the scheduled maintenance window begins.",
+    "received_at": "2026-08-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0224",
+    "body": "DTI will be performing maintenance on Revenue’s primary Oracle database server from 5PM – 6PM this evening (8/13/2026).  Applications that use this server, including CAGE and the Rebate application,  will not be fully functional during this timeframe.",
+    "received_at": "2026-08-13",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0225",
+    "body": "On Tuesday, January 20, 2026, from 1200 until 0500 the following morning, DTI will be performing maintenance on the DTI-managed Linux production servers at the William Penn Data Center. During this time, several systems and services will be intermittently unavailable as patches are being applied, including SFTP and FirstMap services. See below for outage details and timeline. \n•\tCI/CD Servers: Tuesday 1200 until 1300 \n•\tSFTP Server: Tuesday 1630 until 1700 \n•\tProduction Servers: Tuesday 20:00 until Wednesday 05:00 \n•\tFirstMap Reboot: Wednesday between 00:00 and 05:00 \n[URL_9]\nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]",
+    "received_at": "2026-01-14",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  },
+  {
+    "id": "GS-0226",
+    "body": "On Thursday, February 26, 2026, from 1800 until 0600 the following morning, DTI will be performing maintenance to the DTI-managed Windows Production servers. To see the services impacted by this event, please click on the following link: \n[URL_7] \nIf you have any questions or concerns about this event, please contact the DTI Change Enablement team at [EMAIL_2]. \nCHG0059475",
+    "received_at": "2026-02-20",
+    "category": "Maintenance",
+    "status": "scheduled",
+    "agreement": "unanimous",
+    "acceptableCategories": [
+      "Maintenance"
+    ],
+    "humanLabel": null
+  }
+]

@@ -38,3 +38,85 @@ labelling 474 notices with 3 models
   175/474 saved
   180/474 saved
   185/474 saved
+  190/474 saved
+  195/474 saved
+  200/474 saved
+  205/474 saved
+  210/474 saved
+  215/474 saved
+  220/474 saved
+  225/474 saved
+  230/474 saved
+  235/474 saved
+  240/474 saved
+  245/474 saved
+  250/474 saved
+  255/474 saved
+  260/474 saved
+  265/474 saved
+  270/474 saved
+  275/474 saved
+  280/474 saved
+  285/474 saved
+  290/474 saved
+  295/474 saved
+  300/474 saved
+  305/474 saved
+  310/474 saved
+  315/474 saved
+  320/474 saved
+  325/474 saved
+  330/474 saved
+  335/474 saved
+  340/474 saved
+  345/474 saved
+  350/474 saved
+  355/474 saved
+  360/474 saved
+  365/474 saved
+  370/474 saved
+  375/474 saved
+  380/474 saved
+  385/474 saved
+  390/474 saved
+  395/474 saved
+  400/474 saved
+  405/474 saved
+  410/474 saved
+  415/474 saved
+  420/474 saved
+  425/474 saved
+  430/474 saved
+  435/474 saved
+  440/474 saved
+  445/474 saved
+  450/474 saved
+  455/474 saved
+  460/474 saved
+  465/474 saved
+  470/474 saved
+  474/474 saved
+
+
+=== agreement ===
+  unanimous   248  52.3%
+  majority    212  44.7%
+  split        14  3.0%
+
+=== per-model availability ===
+  Claude Opus 4.6    474/474 classified
+  Llama 4 Maverick   473/474 classified
+  Nova Pro           473/474 classified
+
+=== consensus category spread ===
+  Maintenance      103
+  Compliance       80
+  Security         76
+  Outage           64
+  Application      45
+  Infrastructure   37
+  Network          37
+  Vendor           32
+
+written to data/model/synthetic.labelled.json
+226 notices need a human look.
