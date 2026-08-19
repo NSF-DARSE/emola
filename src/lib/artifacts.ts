@@ -94,7 +94,12 @@ export function buildInfographic(n: NotificationRecord, parent?: NotificationRec
   return {
     kind: 'infographic',
     eyebrow: n.model.status === 'resolved' ? 'Service restored' : 'Service notice',
-    headline: n.extracted.eventType,
+    headline: buildHeadline({
+      systems: n.extracted.affectedSystems,
+      category: n.model.primary,
+      status: n.model.status,
+      fallback: n.extracted.eventType,
+    }),
     category: n.model.primary,
     status: n.model.status,
     when: w
@@ -194,4 +199,67 @@ export function buildExecSummary(
       'the original email is the system of record.',
     generatedAt: new Date().toISOString(),
   };
+}
+
+/**
+ * A headline, built rather than sliced.
+ *
+ * The previous version took the first 120 characters of the body, which at
+ * poster size produced a sentence severed mid-word. What a reader needs from
+ * a headline is two things: which systems, and what is happening to them.
+ * Both are already extracted, so compose them.
+ */
+export function buildHeadline(input: {
+  systems: string[];
+  category: string;
+  status: string;
+  fallback: string;
+}): string {
+  const { systems, category, status, fallback } = input;
+
+  const event =
+    status === 'resolved'
+      ? 'service restored'
+      : category === 'Security'
+        ? 'security advisory'
+        : category === 'Outage'
+          ? 'service disruption'
+          : category === 'Compliance'
+            ? 'compliance notice'
+            : 'maintenance';
+
+  if (systems.length === 1) return `${systems[0]} ${event}`;
+  if (systems.length === 2) return `${systems[0]} and ${systems[1]} ${event}`;
+  // Listing five system names is a paragraph, not a headline. Lead with the
+  // event so it does not read like a count with a word stuck on the end.
+  if (systems.length > 2) {
+    return `${event.charAt(0).toUpperCase()}${event.slice(1)} across ${systems.length} systems`;
+  }
+
+  return truncateAtWord(fallback, 78);
+}
+
+/** Cuts at the last word boundary before the limit, never through a word. */
+function truncateAtWord(text: string, limit: number): string {
+  const clean = text.trim();
+  if (clean.length <= limit) return clean;
+  const cut = clean.slice(0, limit);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${cut.slice(0, lastSpace > 20 ? lastSpace : limit).replace(/[,;:\-–—]$/, '')}…`;
+}
+
+/**
+ * "Tue, Jan 20, 2026 · 12:00 PM" twice in one row is the same date printed
+ * twice. Drop the repeat when the range stays inside a day — and keep both
+ * when it does not, because crossing midnight is the thing people misread.
+ */
+export function compactRange(start: string, end: string): string {
+  const split = (s: string) => {
+    const [datePart, timePart] = s.split(' · ');
+    return { date: (datePart ?? s).replace(/,\s*\d{4}$/, ''), time: timePart ?? '' };
+  };
+  const a = split(start);
+  const b = split(end);
+  if (a.date === b.date) return `${a.date} · ${a.time} — ${b.time}`;
+  return `${a.date} · ${a.time} — ${b.date} · ${b.time}`;
 }

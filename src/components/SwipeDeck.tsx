@@ -1,8 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Icon from '@/components/Icon';
+import Odometer from '@/components/Odometer';
 import { CATEGORIES, STATUSES, type Category, type Status } from '@/lib/taxonomy';
 
 /**
@@ -53,6 +55,7 @@ const RELAY_REASONS = [
 const COMMIT_AT = 0.28;
 
 export default function SwipeDeck({ cards }: { cards: BlindCard[] }) {
+  const router = useRouter();
   const [index, setIndex] = useState(0);
   const [call, setCall] = useState<Call | null>(null);
   const [primary, setPrimary] = useState<Category | null>(null);
@@ -70,6 +73,9 @@ export default function SwipeDeck({ cards }: { cards: BlindCard[] }) {
 
   const card = cards[index];
   const done = index >= cards.length;
+  /** Decided here since mount. Counted locally so it updates the moment a
+      decision is written, rather than on the server's next render. */
+  const remaining = Math.max(0, cards.length - index);
 
   // The reviewer's name is the same all session; asking once is enough.
   useEffect(() => {
@@ -156,6 +162,12 @@ export default function SwipeDeck({ cards }: { cards: BlindCard[] }) {
       return;
     }
     setReveal({ model: json.reveal.model, routeReasons: json.reveal.routeReasons });
+
+    // The queue badge and the "N waiting" header are rendered on the server,
+    // so they keep the count from page load until something tells them
+    // otherwise. Without this a reviewer works through ten notices and every
+    // number on screen still says ten.
+    router.refresh();
   }
 
   function next() {
@@ -191,8 +203,12 @@ export default function SwipeDeck({ cards }: { cards: BlindCard[] }) {
     <div className="flex-1 min-h-0 overflow-y-auto">
       <div className="mx-auto w-full max-w-[720px] px-4 sm:px-6 py-6 flex flex-col gap-4">
         <div className="flex items-center justify-between text-[12.5px] text-faint">
-          <span className="tabular-nums">
-            {index + 1} of {cards.length}
+          <span className="flex items-center gap-1.5">
+            <Odometer value={index + 1} />
+            <span>of {cards.length}</span>
+            <span className="ml-2">
+              <Odometer value={remaining} /> left
+            </span>
           </span>
           {!call && !reveal && (
             <span className="hidden sm:block">Drag the card, or use the arrow keys</span>

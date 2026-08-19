@@ -885,3 +885,125 @@ a:hover > .mark { transform: scale(1.09); }
   .mark { transition: none; }
   a:hover > .mark { transform: none; }
 }
+
+/* --- reorderable sections ---------------------------------------------- */
+.sortable {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 2px;
+  transition: border-color 160ms ease, opacity 160ms ease, background 160ms ease;
+}
+.sortable-dragging { opacity: 0.45; }
+/* A line where the section will land, rather than a highlight on the thing
+   being hovered — the reader needs to know the destination, not the target. */
+.sortable-over {
+  border-color: var(--fg);
+  background: color-mix(in srgb, var(--fg) 4%, transparent);
+}
+.sortable-grip {
+  color: var(--faint);
+  cursor: grab;
+  display: inline-flex;
+}
+.sortable:active .sortable-grip { cursor: grabbing; }
+
+.sortable-move {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  color: var(--faint);
+  transform: rotate(-90deg);
+  transition: color 140ms ease, background 140ms ease;
+}
+.sortable-move-down { transform: rotate(90deg); }
+.sortable-move:hover:not(:disabled) { color: var(--fg); background: var(--hover); }
+.sortable-move:disabled { opacity: 0.25; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sortable { transition: none; }
+}
+
+/* --- resizable pane ----------------------------------------------------- */
+/* The grab area is wider than the line it draws: a 1px target is a target
+   people miss. The visible rule stays thin. */
+.resize-handle {
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 9px;
+  cursor: col-resize;
+  z-index: 20;
+  touch-action: none;
+}
+.resize-handle::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+  transition: background 140ms ease, width 140ms ease, left 140ms ease;
+}
+.resize-handle:hover::after,
+.resize-handle:focus-visible::after,
+.resize-handle-active::after {
+  background: var(--fg);
+  width: 2px;
+  left: 3.5px;
+}
+.resize-handle:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resize-handle::after { transition: none; }
+}
+
+/* --- calendar rubber band ------------------------------------------------ */
+/* Fixed rather than absolute: it is drawn from viewport coordinates, so it
+   stays put if the list scrolls under the cursor mid-drag. */
+.marquee {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  border: 1px solid var(--fg);
+  background: color-mix(in srgb, var(--fg) 10%, transparent);
+  border-radius: 3px;
+}
+
+/* --- odometer ----------------------------------------------------------- */
+.odometer {
+  display: inline-flex;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+/* Each slot is one digit tall and clips its strip. The height is set in ems so
+   the odometer inherits whatever size it is placed at. */
+.odometer-slot {
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.odometer-strip {
+  display: flex;
+  flex-direction: column;
+  /* Slightly overshooting easing, so a digit lands rather than slides to a
+     stop — that is what makes it read as mechanical. */
+  transition: transform 420ms cubic-bezier(0.22, 1.1, 0.36, 1);
+  will-change: transform;
+}
+.odometer-digit {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odometer-strip { transition: none; }
+}

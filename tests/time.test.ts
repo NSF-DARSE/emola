@@ -8,6 +8,7 @@ import {
   normalizeSchedule,
   parseClock,
 } from '../src/lib/time';
+import { shortDate } from '../src/lib/mail';
 
 test('parseClock handles 24-hour, colon, and 12-hour forms', () => {
   assert.equal(parseClock('1800'), 18 * 60);
@@ -131,4 +132,31 @@ test('formatDuration', () => {
   assert.equal(formatDuration(30), '30 min');
   assert.equal(formatDuration(120), '2 hr');
   assert.equal(formatDuration(630), '10 hr 30 min');
+});
+
+/**
+ * shortDate split an ISO string on "-" and read the third piece as the day.
+ * That works for "2026-07-28" and breaks for "2026-07-28T09:14:00", where the
+ * day becomes Number("28T09:14:00") — NaN. The inbox carries timestamps, so
+ * every row in it read "Aug NaN".
+ */
+test('formats a plain date', () => {
+  assert.equal(shortDate('2026-07-28', new Date('2026-01-01')), 'Jul 28, 2026');
+});
+
+test('formats a full timestamp without producing NaN', () => {
+  const out = shortDate('2026-07-28T09:14:00', new Date('2026-01-01'));
+  assert.ok(!out.includes('NaN'), `got ${out}`);
+  assert.equal(out, 'Jul 28, 2026');
+});
+
+test('drops the year for dates in the current year', () => {
+  assert.equal(shortDate('2026-07-28T09:14:00', new Date('2026-05-05')), 'Jul 28');
+});
+
+test('an unparseable date says so rather than rendering NaN', () => {
+  for (const bad of ['', 'not a date', '2026', '2026-13-99']) {
+    const out = shortDate(bad, new Date('2026-01-01'));
+    assert.ok(!out.includes('NaN') && !out.includes('undefined'), `${bad} gave ${out}`);
+  }
 });

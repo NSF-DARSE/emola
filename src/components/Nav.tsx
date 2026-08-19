@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import Icon, { type IconName } from '@/components/Icon';
+import { Mark } from '@/components/Mark';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const ITEMS: Array<{ href: string; icon: IconName; label: string; match: (p: string) => boolean }> = [
   { href: '/inbox', icon: 'events', label: 'Mail', match: (p) => p === '/' || p.startsWith('/inbox') },
   { href: '/review', icon: 'queue', label: 'Review queue', match: (p) => p.startsWith('/review') },
   { href: '/reports', icon: 'metrics', label: 'Reports', match: (p) => p.startsWith('/reports') },
-  { href: '/precedents', icon: 'precedents', label: 'Precedents', match: (p) => p.startsWith('/precedents') },
   { href: '/metrics', icon: 'metrics', label: 'Evaluation', match: (p) => p.startsWith('/metrics') },
   { href: '/workflow', icon: 'workflow', label: 'How it works', match: (p) => p.startsWith('/workflow') },
 ];
@@ -26,7 +26,7 @@ export default function Nav({ queueCount }: { queueCount: number }) {
         title="Emergent"
         aria-label="Emergent — home"
       >
-        <span className="mark" aria-hidden="true" />
+        <Mark size={28} on="dark" />
       </Link>
 
       {ITEMS.map((item) => {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import Icon from '@/components/Icon';
+import Odometer from '@/components/Odometer';
 import PeriodReport from '@/components/PeriodReport';
 import { Note } from '@/components/ui';
 import type { PeriodReportPayload } from '@/lib/llm/period-report';
@@ -68,6 +69,23 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
   const dragMode = useRef<'add' | 'remove' | null>(null);
   const [dragging, setDragging] = useState(false);
 
+  /*
+   * Marquee selection.
+   *
+   * Dragging across cells one at a time only works within a month grid — the
+   * months are separate boxes, so a drag that leaves one never reaches the
+   * next. A rubber-band rectangle over the whole area selects across months
+   * the way selecting files in a folder does.
+   *
+   * Cells are found by their data-date attribute at drag time rather than
+   * kept in a ref map: the grid re-flows with the window and stale
+   * coordinates would select the wrong days.
+   */
+  const gridRef = useRef<HTMLDivElement>(null);
+  const marqueeStart = useRef<{ x: number; y: number } | null>(null);
+  const [marquee, setMarquee] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
+  const baseSelection = useRef<Set<string>>(new Set());
+
   const byDate = useMemo(() => new Map(days.map((d) => [d.date, d])), [days]);
   const months = useMemo(() => [...new Set(days.map((d) => d.date.slice(0, 7)))].sort(), [days]);
 
@@ -97,6 +115,70 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
     window.addEventListener('mouseup', end);
     return () => window.removeEventListener('mouseup', end);
   }, []);
+
+  /**
+   * Starts a rubber band. Additive when a modifier is held, so an existing
+   * selection can be extended rather than replaced.
+   */
+  function startMarquee(e: React.PointerEvent) {
+    // Only a plain left-button drag on empty space: clicks on a day cell or a
+    // month header are handled by those elements.
+    if (e.button !== 0) return;
+    const target = e.target as HTMLElement;
+    if (target.closest('[data-date]') || target.closest('button')) return;
+
+    e.preventDefault();
+    marqueeStart.current = { x: e.clientX, y: e.clientY };
+    baseSelection.current = e.shiftKey || e.metaKey || e.ctrlKey ? new Set(selected) : new Set();
+    setMarquee({ left: e.clientX, top: e.clientY, width: 0, height: 0 });
+    setHover(null);
+  }
+
+  useEffect(() => {
+    if (!marquee) return;
+
+    function onMove(e: PointerEvent) {
+      const origin = marqueeStart.current;
+      if (!origin) return;
+
+      const box = {
+        left: Math.min(origin.x, e.clientX),
+        top: Math.min(origin.y, e.clientY),
+        width: Math.abs(e.clientX - origin.x),
+        height: Math.abs(e.clientY - origin.y),
+      };
+      setMarquee(box);
+
+      const next = new Set(baseSelection.current);
+      for (const el of gridRef.current?.querySelectorAll<HTMLElement>('[data-date]') ?? []) {
+        const r = el.getBoundingClientRect();
+        const hits =
+          r.right >= box.left &&
+          r.left <= box.left + box.width &&
+          r.bottom >= box.top &&
+          r.top <= box.top + box.height;
+        if (hits) {
+          const date = el.dataset.date;
+          if (date) next.add(date);
+        }
+      }
+      setSelected(next);
+    }
+
+    function onUp() {
+      marqueeStart.current = null;
+      setMarquee(null);
+    }
+
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    document.body.style.userSelect = 'none';
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      document.body.style.userSelect = '';
+    };
+  }, [marquee]);
 
   function startDrag(date: string, e: React.MouseEvent) {
     e.preventDefault(); // stop the browser starting a text selection
@@ -194,7 +276,10 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
         />
         {rangeCount !== null && (
           <span className="text-[12.5px] text-muted">
-            {rangeCount} notification{rangeCount === 1 ? '' : 's'} in range
+            <span className="inline-flex items-center gap-1.5">
+              <Odometer value={rangeCount} />
+              <span>notice{rangeCount === 1 ? '' : 's'} in range</span>
+            </span>
           </span>
         )}
         {(from || to) && (
@@ -217,16 +302,19 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
       {/* toolbar */}
       <div className="shrink-0 border-b border-border flex flex-wrap items-center gap-3 px-4 sm:px-6 py-3">
         <div className="text-[13.5px]">
-          {selectedIds.length === 0 ? (
-            <span className="text-muted">Pick dates above, or drag across the calendar</span>
-          ) : (
-            <span>
-              <span className="font-semibold">{selectedIds.length}</span> notification
-              {selectedIds.length === 1 ? '' : 's'} across{' '}
-              <span className="font-semibold">{selected.size}</span> day
-              {selected.size === 1 ? '' : 's'}
-            </span>
-          )}
+          {/* Always on screen, including at zero: the point of a rolling
+              counter is watching it climb while you drag, and a figure that
+              only appears once it is non-zero never gets to climb from
+              nothing. */}
+          <span className="flex items-center gap-1.5">
+            <Odometer value={selectedIds.length} className="font-semibold" />
+            <span>notice{selectedIds.length === 1 ? '' : 's'} across</span>
+            <Odometer value={selected.size} className="font-semibold" />
+            <span>day{selected.size === 1 ? '' : 's'}</span>
+            {selectedIds.length === 0 && (
+              <span className="text-faint ml-1.5">— drag a box across the calendar</span>
+            )}
+          </span>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <button
@@ -276,7 +364,22 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
           </div>
         )}
 
+        {marquee && (
+          <div
+            className="marquee"
+            aria-hidden="true"
+            style={{
+              left: marquee.left,
+              top: marquee.top,
+              width: marquee.width,
+              height: marquee.height,
+            }}
+          />
+        )}
+
         <div
+          ref={gridRef}
+          onPointerDown={startMarquee}
           className="grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(236px, 1fr))' }}
         >
@@ -318,6 +421,7 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
                     return (
                       <div
                         key={date}
+                        data-date={n > 0 ? date : undefined}
                         role={n > 0 ? 'button' : undefined}
                         tabIndex={n > 0 ? 0 : undefined}
                         onMouseDown={n > 0 ? (e) => startDrag(date, e) : undefined}

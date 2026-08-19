@@ -3,9 +3,14 @@ import Link from 'next/link';
 import { Badge, CategoryLabel, Empty, Note, Panel, StatusBadge } from '@/components/ui';
 import { listPrecedents } from '@/lib/db';
 
-export const dynamic = 'force-dynamic';
-
-export default function PrecedentsPage() {
+/**
+ * Past human rulings.
+ *
+ * Lives inside Reports rather than on its own route: it is something a
+ * reviewer consults, not somewhere they work, and a whole navigation entry for
+ * one read-only table was more prominence than that deserves.
+ */
+export default function PrecedentList() {
   const rows = listPrecedents();
   const seeded = rows.filter((r) => r.seeded).length;
 

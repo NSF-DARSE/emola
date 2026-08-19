@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import GenerateBar from '@/components/GenerateBar';
 import Icon from '@/components/Icon';
+import Resizable from '@/components/Resizable';
 import { Badge, CategoryLabel, Dot, Field, Meter, Note, StatusBadge } from '@/components/ui';
 import { getArtifact, getDecisionFor, getNotification } from '@/lib/db';
 import { subjectFor } from '@/lib/mail';
@@ -33,7 +34,8 @@ export default function DetailPanel({
   );
 
   return (
-    <aside className="w-full lg:w-[520px] xl:w-[560px] shrink-0 lg:border-l border-border bg-surface flex flex-col min-h-0 anim-slide">
+    <Resizable id="detail" defaultWidth={560}>
+    <aside className="w-full lg:border-l border-border bg-surface flex flex-col min-h-0 anim-slide">
       <div className="h-14 shrink-0 border-b border-border flex items-center gap-2.5 px-4">
         <span
           className="w-[3px] h-5 rounded-full"
@@ -219,5 +221,6 @@ export default function DetailPanel({
         </details>
       </div>
     </aside>
+    </Resizable>
   );
 }

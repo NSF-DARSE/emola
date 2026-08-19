@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import Tabs from '@/components/Tabs';
-import { Dot, Empty } from '@/components/ui';
+import Odometer from '@/components/Odometer';
+import { Dot, Empty, Note } from '@/components/ui';
 import { listNotifications } from '@/lib/db';
 import { inboxStats, listInbox } from '@/lib/inbox';
 import { shortDate } from '@/lib/mail';
@@ -17,10 +18,11 @@ const FILTERS: Array<{ key: Filter; label: string }> = [
   { key: 'disagree', label: 'Filter disagrees' },
 ];
 
-function href(p: { filter?: string; tag?: string }): string {
+function href(p: { filter?: string; tag?: string; selected?: string }): string {
   const q = new URLSearchParams();
   if (p.filter && p.filter !== 'all') q.set('filter', p.filter);
   if (p.tag) q.set('tag', p.tag);
+  if (p.selected) q.set('selected', p.selected);
   const s = q.toString();
   return s ? `/inbox?${s}` : '/inbox';
 }
@@ -28,7 +30,7 @@ function href(p: { filter?: string; tag?: string }): string {
 export default function InboxPage({
   searchParams,
 }: {
-  searchParams: { filter?: string; tag?: string };
+  searchParams: { filter?: string; tag?: string; selected?: string };
 }) {
   const all = listInbox();
   const stats = inboxStats();
@@ -40,6 +42,10 @@ export default function InboxPage({
   if (filter === 'routine') rows = rows.filter((r) => !r.taggedAbnormal);
   if (filter === 'disagree') rows = rows.filter((r) => r.disagrees);
   if (tag) rows = rows.filter((r) => r.mailboxTag === tag);
+
+  const selected = searchParams.selected
+    ? (all.find((r) => r.id === searchParams.selected) ?? null)
+    : null;
 
   const counts: Record<Filter, number> = {
     all: all.length,
@@ -53,6 +59,7 @@ export default function InboxPage({
   return (
     <div className="flex-1 flex flex-col min-h-0">
       <Tabs counts={{ inbox: all.length, abnormal: listNotifications().length }} />
+      <div className="flex-1 flex min-h-0 flex-col">
 
       {/* The headline: what stage 1 is actually up against. */}
       <div className="shrink-0 border-b border-border px-4 sm:px-6 py-4 flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -112,9 +119,12 @@ export default function InboxPage({
       {/* list */}
       <div className="flex-1 min-h-0 overflow-y-auto">
         {rows.map((r, i) => (
-          <div
+          <Link
             key={r.id}
-            className={`trow anim-rise ${r.taggedAbnormal ? 'trow-flagged' : ''}`}
+            href={href({ filter, tag, selected: selected?.id === r.id ? undefined : r.id })}
+            className={`trow anim-rise ${r.taggedAbnormal ? 'trow-flagged' : ''} ${
+              selected?.id === r.id ? 'trow-selected' : ''
+            }`}
             style={{ animationDelay: `${Math.min(i, 10) * 18}ms` }}
           >
             <span
@@ -150,9 +160,66 @@ export default function InboxPage({
             <span className="hidden sm:block shrink-0 text-[13px] text-faint w-[74px] text-right">
               {r.receivedAt ? shortDate(r.receivedAt) : '—'}
             </span>
-          </div>
+          </Link>
         ))}
         {rows.length === 0 && <Empty>Nothing matches those filters.</Empty>}
+      </div>
+
+      {selected && (
+        <aside className="shrink-0 border-t border-border bg-surface px-4 sm:px-6 py-5 flex flex-col gap-4 anim-rise">
+          <div className="flex items-start gap-3">
+            <div className="min-w-0 flex-1 flex flex-col gap-1">
+              <div className="label">Subject</div>
+              <div className="text-[14.5px] text-fg font-medium break-words">{selected.subject}</div>
+            </div>
+            <Link href={href({ filter, tag })} className="btn shrink-0">
+              Close
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <Detail label="From" value={selected.sender || '—'} />
+            <Detail label="Received" value={selected.receivedAt ? selected.receivedAt.replace('T', ' ') : 'not recorded'} />
+            <Detail label="Mailbox tag" value={titleCase(selected.mailboxTag)} />
+            <Detail
+              label="Stage 1 verdict"
+              value={selected.taggedAbnormal ? 'Abnormal event' : 'Routine'}
+            />
+          </div>
+
+          {/* The point of this panel: the rule is explainable, so show the
+              reasoning rather than only the verdict. */}
+          <div className="flex flex-col gap-1">
+            <div className="label">Why</div>
+            <div className="text-[13.5px] text-muted leading-relaxed">{selected.triage.reason}</div>
+          </div>
+
+          {selected.disagrees && (
+            <Note tone="amber" icon="warning">
+              <div>
+                <strong>The filter and the mailbox tag disagree here.</strong> Rows like this one
+                are where the rule needs a second look.
+              </div>
+            </Note>
+          )}
+
+          <p className="text-[12.5px] text-faint">
+            The mailbox export carries subject lines only — there is no message body to show. Full
+            text exists for the notices under Abnormal events.
+          </p>
+        </aside>
+      )}
+      </div>
+    </div>
+  );
+}
+
+function Detail({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-col gap-1 min-w-0">
+      <div className="label">{label}</div>
+      <div className="text-[13.5px] text-fg truncate" title={value}>
+        {value}
       </div>
     </div>
   );
@@ -183,7 +250,9 @@ function Summary({
   return (
     <div className="shrink-0">
       <div className="flex items-baseline gap-2">
-        <span className="text-[26px] font-semibold tabular-nums tracking-[-0.02em]">{value}</span>
+        <span className="text-[26px] font-semibold tabular-nums tracking-[-0.02em]">
+          {/^\d+$/.test(value) ? <Odometer value={Number(value)} /> : value}
+        </span>
         {signal && <Dot signal={signal} />}
       </div>
       <div className="text-[13px] text-fg mt-0.5">{label}</div>

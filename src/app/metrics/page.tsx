@@ -1,3 +1,4 @@
+import Odometer from '@/components/Odometer';
 import { Note, Panel, Section } from '@/components/ui';
 import {
   categoriesTooRareToJudge,
@@ -11,11 +12,15 @@ import { CATEGORIES } from '@/lib/taxonomy';
 export const dynamic = 'force-dynamic';
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
+  // A value that is purely a number rolls; anything with a percent sign, a
+  // slash or a decimal is left alone, because rolling "9/10" digit by digit
+  // reads as nonsense.
+  const rolls = /^\d+$/.test(value);
   return (
     <div className="card px-4 py-3">
       <div className="label">{label}</div>
       <div className="text-[24px] font-semibold tracking-[-0.02em] tabular-nums mt-1 text-fg">
-        {value}
+        {rolls ? <Odometer value={Number(value)} /> : value}
       </div>
       {sub && <div className="font-mono text-[11px] text-faint mt-0.5">{sub}</div>}
     </div>

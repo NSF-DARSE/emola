@@ -5,7 +5,15 @@ out/
 next-env.d.ts
 .env
 .env.local
+# Google Cloud service-account credentials. A private key in the repo is a
+# credential leak that survives every future clone, so these never get added.
+gcloud-key.json
+*-service-account*.json
+application_default_credentials.json
 data/*.db
+# Cached poster images from the generative path. Regenerable, and megabytes of
+# binary that would churn on every run.
+data/generated/
 data/*.db-journal
 # SQLite's write-ahead log and its shared-memory index. Both are rewritten on
 # every run, and the -wal is megabytes of binary, so committing them means a

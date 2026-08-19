@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import Icon from '@/components/Icon';
-import Infographic from '@/components/Infographic';
+import Infographic, { PosterOrigin, type Engine } from '@/components/Infographic';
 import { Badge } from '@/components/ui';
 import type { InfographicPayload } from '@/lib/artifacts';
 import type { ArtifactKind, ArtifactRecord } from '@/lib/types';
@@ -36,6 +36,9 @@ export default function GenerateBar({
   );
   const [busy, setBusy] = useState<ArtifactKind | null>(null);
   const [approver, setApprover] = useState('');
+  // Mirrors the toggle inside Infographic, so the provenance note below the
+  // approval buttons describes the engine actually being previewed.
+  const [engine, setEngine] = useState<Engine>('rendered');
   const [error, setError] = useState<string | null>(null);
 
   async function generate(kind: ArtifactKind) {
@@ -125,10 +128,8 @@ export default function GenerateBar({
 
       {activeKind && payload && current && (
         <div className="mt-4">
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-3">
             <span className="label">{AUDIENCE[activeKind]}</span>
-            <span className="text-faint text-[11px]">·</span>
-            <span className="text-[11px] text-faint">AI-drafted</span>
             <span className="ml-auto">
               <Badge
                 signal={
@@ -139,57 +140,74 @@ export default function GenerateBar({
                       : 'amber'
                 }
               >
-                {current.approvalState}
+                {current.approvalState === 'draft'
+                  ? 'not approved yet'
+                  : current.approvalState}
               </Badge>
             </span>
           </div>
 
-          <Infographic data={payload as InfographicPayload} />
+          <div className="flex flex-col gap-4">
+            <Infographic
+              data={payload as InfographicPayload}
+              notificationId={notificationId}
+              onEngineChange={setEngine}
+            />
 
-          <div className="card mt-2.5 px-3.5 py-3">
-            {current.approvalState === 'draft' ? (
-              <div className="space-y-2.5">
-                <div className="text-[12px] text-muted">
-                  Nothing here can be sent until a named person approves it.
+            {/* Approval sits directly under the picture: the decision is the
+                point of the panel, and it should not be below a paragraph
+                explaining provenance. */}
+            <div className="card px-4 py-3.5 flex flex-col gap-2.5">
+              {current.approvalState === 'draft' ? (
+                <>
+                  <div className="text-[13px] text-muted">
+                    Nobody sees this until you say so. Put your name on it and choose.
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <input
+                      type="text"
+                      value={approver}
+                      onChange={(e) => setApprover(e.target.value)}
+                      placeholder="Your name"
+                    />
+                    <button
+                      type="button"
+                      className="btn btn-primary shrink-0"
+                      disabled={busy !== null || !approver.trim()}
+                      onClick={() => decide(activeKind, 'approved')}
+                    >
+                      <Icon name="check" size={15} />
+                      Looks right, send it
+                    </button>
+                    <button
+                      type="button"
+                      className="btn shrink-0"
+                      disabled={busy !== null || !approver.trim()}
+                      onClick={() => decide(activeKind, 'rejected')}
+                    >
+                      Not right, hold it
+                    </button>
+                  </div>
+                </>
+              ) : current.approvalState === 'approved' ? (
+                <div className="text-[13px]" style={{ color: 'var(--sig-green)' }}>
+                  {current.approvedBy} approved this on{' '}
+                  {new Date(current.approvedAt!).toLocaleString()}. It can go out.
                 </div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    value={approver}
-                    onChange={(e) => setApprover(e.target.value)}
-                    placeholder="Your name"
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-primary shrink-0"
-                    disabled={busy !== null || !approver.trim()}
-                    onClick={() => decide(activeKind, 'approved')}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    type="button"
-                    className="btn shrink-0"
-                    disabled={busy !== null || !approver.trim()}
-                    onClick={() => decide(activeKind, 'rejected')}
-                  >
-                    Reject
-                  </button>
+              ) : (
+                <div className="text-[13px]" style={{ color: 'var(--sig-red)' }}>
+                  {current.approvedBy} held this back. Only the original email can be forwarded.
                 </div>
-              </div>
-            ) : current.approvalState === 'approved' ? (
-              <div className="text-[12px]" style={{ color: 'var(--sig-green)' }}>
-                Approved by {current.approvedBy} on{' '}
-                {new Date(current.approvedAt!).toLocaleString()} — cleared for distribution.
-              </div>
-            ) : (
-              <div className="text-[12px]" style={{ color: 'var(--sig-red)' }}>
-                Rejected by {current.approvedBy}. Only the original email can be forwarded.
-              </div>
-            )}
+              )}
+            </div>
+
+            <p className="text-[12.5px] text-muted leading-relaxed">
+              <PosterOrigin engine={engine} />
+            </p>
           </div>
         </div>
       )}
+
     </div>
   );
 }

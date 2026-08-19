@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Icon from '@/components/Icon';
+import Odometer from '@/components/Odometer';
 
 /**
  * The empty state, and the pipeline running.
@@ -136,10 +137,10 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
         </div>
 
         {shown > 0 && (
-          <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3 text-[12.5px] text-muted tabular-nums">
-            <span>{shown} ingested</span>
-            <span>{sent} forwarded unchanged</span>
-            <span>{held} held for a person</span>
+          <div className="flex flex-wrap items-baseline gap-x-7 gap-y-1 mt-4">
+            <Tally n={shown} label="ingested" />
+            <Tally n={sent} label="forwarded unchanged" signal="var(--sig-green)" />
+            <Tally n={held} label="held for a person" signal="var(--sig-amber)" />
           </div>
         )}
       </div>
@@ -180,5 +181,20 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
         ))}
       </div>
     </div>
+  );
+}
+
+/** A rolling count with its label, used while notices are landing. */
+function Tally({ n, label, signal }: { n: number; label: string; signal?: string }) {
+  return (
+    <span className="flex items-baseline gap-2">
+      <Odometer
+        value={n}
+        className="text-[20px] font-semibold tracking-[-0.02em]"
+      />
+      <span className="text-[12.5px] text-muted" style={signal ? { color: signal } : undefined}>
+        {label}
+      </span>
+    </span>
   );
 }

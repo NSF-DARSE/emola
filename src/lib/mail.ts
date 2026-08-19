@@ -57,12 +57,29 @@ export function snippetFor(n: NotificationRecord): string {
 }
 
 /** "Jan 20" for this year, "Jan 20, 2025" otherwise. */
+const MONTHS = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+];
+
+/**
+ * "Jul 28", or "Jul 28, 2025" outside the current year.
+ *
+ * Takes only the date portion: this split the whole string on "-" and read the
+ * third piece as the day, which turned "2026-07-28T09:14:00" into
+ * Number("28T09:14:00") — NaN. Every row in the inbox read "Aug NaN", because
+ * the mailbox export carries times and the notices do not.
+ *
+ * An unreadable date returns an em dash rather than a broken string. A date
+ * that cannot be parsed is missing information, and "—" says that; "NaN" says
+ * the software is broken, which is a different claim.
+ */
 export function shortDate(iso: string, now = new Date()): string {
-  const [y, m, d] = iso.split('-').map(Number);
-  const month = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-  ][m - 1];
+  const [y, m, d] = (iso ?? '').slice(0, 10).split('-').map(Number);
+  if (!Number.isFinite(y) || !Number.isFinite(m) || !Number.isFinite(d)) return '—';
+  if (m < 1 || m > 12 || d < 1 || d > 31) return '—';
+
+  const month = MONTHS[m - 1];
   return y === now.getFullYear() ? `${month} ${d}` : `${month} ${d}, ${y}`;
 }
 

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",
+    "@google/genai": "^2.17.1",
     "better-sqlite3": "^11.10.0",
     "next": "14.2.30",
     "react": "^18.3.1",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4.6",
     "tsx": "^4.16.2",
     "typescript": "^5.5.3"

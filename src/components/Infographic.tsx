@@ -1,124 +1,150 @@
+'use client';
+
+import { useState } from 'react';
+
 import Icon from '@/components/Icon';
 import type { InfographicPayload } from '@/lib/artifacts';
-import { SIGNAL_VAR, type Signal } from '@/lib/severity';
-import type { Status } from '@/lib/taxonomy';
-
-const STATUS_SIGNAL: Record<string, Signal> = {
-  scheduled: 'blue',
-  active: 'red',
-  updated: 'amber',
-  resolved: 'green',
-};
 
 /**
- * Employee-facing template. Fixed layout — the model fills slots, it never
- * decides the design. Question it answers: what do I do, and when.
+ * The poster preview.
+ *
+ * Shows the actual image that would be sent, not an HTML re-creation of it.
+ * There was a version that laid the same JSON out in the DOM and it drifted:
+ * what a reviewer approved on screen was not what got attached. One renderer,
+ * one output.
+ *
+ * Two engines with opposite failure modes, so both are offered:
+ *   Built here    text comes from the notice, so it cannot be wrong
+ *   Drawn by AI   the layout is inventive, the words are not guaranteed
  */
-export default function Infographic({ data }: { data: InfographicPayload }) {
-  const signal = STATUS_SIGNAL[data.status as Status] ?? 'neutral';
-  const color = SIGNAL_VAR[signal];
+
+const STYLES = [
+  { key: '', label: 'Pick automatically' },
+  { key: 'maintenance', label: 'Maintenance' },
+  { key: 'timeline', label: 'Timeline' },
+  { key: 'outage', label: 'Outage' },
+  { key: 'security', label: 'Security' },
+  { key: 'resolved', label: 'All clear' },
+] as const;
+
+export type Engine = 'rendered' | 'generated';
+
+export default function Infographic({
+  data,
+  notificationId,
+  onEngineChange,
+}: {
+  data: InfographicPayload;
+  notificationId: string;
+  /** Reported upward so the provenance note can describe the right engine. */
+  onEngineChange?: (engine: Engine) => void;
+}) {
+  const [engine, setEngine] = useState<Engine>('rendered');
+  const [style, setStyle] = useState('');
+  const [failed, setFailed] = useState<string | null>(null);
+  // Changing anything must bust the browser's cache for the same URL.
+  const [nonce, setNonce] = useState(0);
+
+  const src = `/api/infographic/${notificationId}?v=${nonce}${
+    style ? `&template=${style}` : ''
+  }${engine === 'generated' ? '&engine=generated' : ''}`;
+
+  function change(fn: () => void) {
+    fn();
+    setFailed(null);
+    setNonce((n) => n + 1);
+  }
 
   return (
-    <article className="card overflow-hidden">
-      <div className="px-5 py-4 border-b border-border relative">
-        <span className="absolute left-0 top-0 bottom-0 w-[3px]" style={{ background: color }} />
-        <div className="label" style={{ color }}>
-          {data.eyebrow}
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="seg">
+          {(
+            [
+              ['rendered', 'Built here'],
+              ['generated', 'Drawn by AI'],
+            ] as const
+          ).map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() =>
+                change(() => {
+                  setEngine(key);
+                  onEngineChange?.(key);
+                })
+              }
+              className={`seg-item ${engine === key ? 'seg-item-active' : ''}`}
+            >
+              {label}
+            </button>
+          ))}
         </div>
-        <h3 className="mt-1.5 text-[15px] font-semibold leading-snug tracking-[-0.01em] text-fg">
-          {data.headline}
-        </h3>
-        <div className="mt-2.5 flex flex-wrap items-center gap-2.5">
-          <span className="cat">{data.category}</span>
-          <span className={`badge badge-${signal}`}>{data.status}</span>
-        </div>
+
+        <a href={src} download={`${notificationId}.png`} className="btn ml-auto">
+          Open full size
+        </a>
       </div>
 
-      <div className="px-5 py-4 space-y-5">
-        {data.callouts.length > 0 && (
-          <div className="space-y-1.5">
-            {data.callouts.map((c, i) => (
-              <div key={i} className="note note-amber">
-                <span className="shrink-0 mt-px" style={{ color: 'var(--sig-amber)' }}>
-                  <Icon name="warning" size={14} />
-                </span>
-                <span>{c}</span>
-              </div>
-            ))}
+      {/* The style picker only changes how the poster looks, which is a
+          decision the AI makes for itself. Showing it under that engine would
+          offer a control that does nothing much. */}
+      {engine === 'rendered' && (
+        <div className="flex flex-wrap items-center gap-1.5">
+          {STYLES.map((s) => (
+            <button
+              key={s.key}
+              onClick={() => change(() => setStyle(s.key))}
+              className={`chip ${style === s.key ? 'chip-active' : ''}`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {failed ? (
+        <div className="note note-red">
+          <span className="shrink-0 mt-px" style={{ color: 'var(--sig-red)' }}>
+            <Icon name="alert" size={15} />
+          </span>
+          <div className="min-w-0">
+            <strong>This could not be made.</strong> {failed}
           </div>
-        )}
-
-        <div>
-          <div className="label mb-2">When</div>
-          {data.when ? (
-            <div className="border border-border rounded-lg p-3.5 bg-elevated">
-              <div className="font-mono text-[12.5px] text-fg">{data.when.start}</div>
-              <div className="flex items-center gap-2 my-1.5">
-                <span className="w-px h-3.5 bg-border-strong ml-[3px]" />
-                <span className="text-[11px] text-muted">{data.when.duration}</span>
-              </div>
-              <div className="font-mono text-[12.5px] text-fg">{data.when.end}</div>
-              <div className="mt-2 text-[11px] text-faint">
-                {data.when.timezone}
-                {data.when.crossesMidnight && ' · ends the following day'}
-              </div>
-            </div>
-          ) : (
-            <div className="text-[12.5px] text-faint">No window published in the notice.</div>
-          )}
         </div>
+      ) : (
+        <img
+          src={src}
+          alt={`Poster for ${data.headline}`}
+          className="w-full h-auto rounded-[10px] border border-border"
+          onError={async () => {
+            // A non-image response means the safety check refused, or the
+            // model failed. Read the reason rather than showing a broken icon.
+            try {
+              const res = await fetch(src);
+              const json = await res.json();
+              setFailed(json.error ?? 'Something went wrong making it.');
+            } catch {
+              setFailed('Could not reach the server.');
+            }
+          }}
+        />
+      )}
+    </div>
+  );
+}
 
-        {data.timeline.length > 0 && (
-          <div>
-            <div className="label mb-2">System by system</div>
-            <ul className="space-y-1.5">
-              {data.timeline.map((t, i) => (
-                <li key={i} className="flex gap-3 text-[12.5px] border-l border-border pl-3">
-                  <span className="font-medium w-[130px] shrink-0 text-fg">{t.label}</span>
-                  <span className="font-mono text-[11.5px] text-muted">
-                    {t.start} → {t.end}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <div>
-          <div className="label mb-2">What&apos;s affected</div>
-          {data.systems.length ? (
-            <div className="flex flex-wrap gap-1.5">
-              {data.systems.map((s) => (
-                <span key={s} className="badge">
-                  {s}
-                </span>
-              ))}
-            </div>
-          ) : (
-            <div className="text-[12.5px] text-faint">Not itemised in the notice.</div>
-          )}
-          <p className="mt-2.5 text-[12.5px] text-fg">{data.impact}</p>
-        </div>
-
-        <div>
-          <div className="label mb-2">What you need to do</div>
-          <ul className="space-y-1.5">
-            {data.actions.map((a, i) => (
-              <li key={i} className="flex gap-2 text-[12.5px] text-fg">
-                <span className="text-faint mt-px shrink-0">
-                  <Icon name="chevronRight" size={12} />
-                </span>
-                <span>{a}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <footer className="px-5 py-2.5 border-t border-border bg-elevated flex justify-between gap-4 text-[11px] text-faint">
-        <span>{data.contact ? `Questions: ${data.contact}` : 'State of Delaware Service Desk'}</span>
-        <span>AI-drafted · requires approval</span>
-      </footer>
-    </article>
+/** Plain-language note about where a poster came from. Shown after approval. */
+export function PosterOrigin({ engine }: { engine: Engine }) {
+  return engine === 'rendered' ? (
+    <>
+      <strong>Built here from the email.</strong> Every date, time and system name is copied
+      straight out of the original notice, so the words cannot be wrong.
+    </>
+  ) : (
+    <>
+      <strong>Drawn by AI.</strong> Read every date and name against the original before you
+      approve it — AI can get words wrong. Personal details, server names and addresses were
+      removed before anything was sent.
+    </>
   );
 }

@@ -34,8 +34,19 @@ for (const file of walk(ROOT)) {
       emojiHits++;
       console.log(`EMOJI  ${rel}:${i + 1}  ${line.trim().slice(0, 80)}`);
     }
-    // globals.css is where the tokens are defined; everywhere else must use them.
-    if (!rel.endsWith('globals.css') && HEX.test(line)) {
+    // globals.css is where the tokens are defined; everywhere else must use
+    // them. poster.ts is the one exception: it holds DTI's brand palette for
+    // the PNG renderer, which rasterises outside the DOM and so has no
+    // cascade to read custom properties from. It is also not the app's theme
+    // — it is the State's letterhead, and does not follow dark mode.
+    // Mark.tsx is exempt for the same reason as poster.ts: it renders inside
+    // satori as well as the DOM, and satori has no cascade to resolve a custom
+    // property from — a themed colour would silently come out black there.
+    const isPalette =
+      rel.endsWith('globals.css') ||
+      rel.endsWith(path.join('lib', 'poster.ts')) ||
+      rel.endsWith(path.join('components', 'Mark.tsx'));
+    if (!isPalette && HEX.test(line)) {
       hexHits++;
       console.log(`HEX    ${rel}:${i + 1}  ${line.trim().slice(0, 80)}`);
     }

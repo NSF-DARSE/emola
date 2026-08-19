@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import SwipeDeck, { type BlindCard } from '@/components/SwipeDeck';
+import Odometer from '@/components/Odometer';
 import { Note } from '@/components/ui';
 import { getReviewQueue, listNotifications } from '@/lib/db';
 import { subjectFor } from '@/lib/mail';
@@ -37,10 +38,13 @@ export default function ReviewQueuePage() {
     <div className="flex-1 flex flex-col min-h-0">
       <div className="h-14 shrink-0 border-b border-border flex items-center gap-3 px-4 sm:px-6">
         <h1 className="text-[15px] font-semibold tracking-[-0.01em]">Review</h1>
-        <span className="text-[13px] text-faint tabular-nums">{queue.length} waiting</span>
+        <span className="text-[13px] text-faint flex items-center gap-1.5">
+          <Odometer value={queue.length} />
+          <span>waiting</span>
+        </span>
         {decided.length > 0 && (
           <Link
-            href="/precedents"
+            href="/reports?view=precedents"
             className="ml-auto text-[13px] text-muted hover:text-fg transition-colors"
           >
             {decided.length} already decided

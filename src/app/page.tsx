@@ -76,9 +76,6 @@ export default function EventsPage({
             Relayed to staff
           </h1>
           <span className="text-[13px] text-faint">{rows.length}</span>
-          <span className="hidden md:block text-[12.5px] text-faint ml-auto">
-            Classified into categories, then routed
-          </span>
         </div>
 
         {/* filters */}
