@@ -6,6 +6,7 @@ import Tabs from '@/components/Tabs';
 import { CategoryLabel, Dot, Empty } from '@/components/ui';
 import { getNotification, listNotifications } from '@/lib/db';
 import { listInbox } from '@/lib/inbox';
+import { notesWithGeneratedPoster } from '@/lib/poster-nano';
 import { shortDate, subjectFor } from '@/lib/mail';
 import { eventSignal, reviewSignal, SIGNAL_VAR } from '@/lib/severity';
 import { CATEGORIES, isCategory } from '@/lib/taxonomy';
@@ -47,6 +48,11 @@ export default function EventsPage({
   if (category) rows = rows.filter((n) => n.model.primary === category);
 
   const selected = searchParams.selected ? getNotification(searchParams.selected) : null;
+
+  // Notices whose AI poster is already on disk. Marked in the list so a demo
+  // can go straight to one that appears instantly rather than waiting ten
+  // seconds in front of an audience.
+  const warmed = notesWithGeneratedPoster();
 
   const counts = {
     all: all.length,
@@ -126,7 +132,9 @@ export default function EventsPage({
               <Link
                 key={n.id}
                 href={href({ filter, category, selected: isSelected ? undefined : n.id })}
-                className={`trow anim-rise ${isSelected ? 'trow-selected' : ''}`}
+                className={`trow anim-rise ${isSelected ? 'trow-selected' : ''} ${
+                  warmed.has(n.id) ? 'trow-warm' : ''
+                }`}
                 // Stagger only the first rows on screen; past that it just
                 // delays content someone is waiting to read.
                 style={{ animationDelay: `${Math.min(i, 10) * 22}ms` }}
@@ -143,6 +151,14 @@ export default function EventsPage({
                     {n.extracted.affectedSystems.join(', ')}
                   </span>
                 </span>
+                {warmed.has(n.id) && (
+                  <span
+                    className="badge badge-warm shrink-0"
+                    title="An AI-drawn poster is already cached for this one, so it appears instantly"
+                  >
+                    AI ready
+                  </span>
+                )}
                 {n.synthetic && (
                   <span className="badge shrink-0" title="Written by us to test the system">
                     Example

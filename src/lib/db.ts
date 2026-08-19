@@ -18,7 +18,24 @@ import type {
   PrecedentRecord,
 } from './types';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'pipeline.db');
+/**
+ * Where the database file lives.
+ *
+ * Serverless hosts (Vercel, Lambda) mount the deployment read-only and give
+ * you only /tmp to write to. That directory belongs to a single instance and
+ * is wiped when it recycles, so on those platforms the notices reseed on cold
+ * start and human decisions survive only as long as the instance does.
+ *
+ * That is acceptable for a demo and NOT acceptable for real use — see
+ * docs/DEPLOY.md for the Postgres path. Anywhere with a real disk (a
+ * container on App Runner, Cloud Run with a mount, a VM) keeps the file in
+ * the project and nothing is lost.
+ */
+const WRITABLE_ROOT = process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME
+  ? '/tmp'
+  : process.cwd();
+
+const DB_PATH = path.join(WRITABLE_ROOT, 'data', 'pipeline.db');
 const SCHEMA_PATH = path.join(process.cwd(), 'src', 'lib', 'schema.sql');
 const EVENTS_PATH = path.join(process.cwd(), 'data', 'events.json');
 /**

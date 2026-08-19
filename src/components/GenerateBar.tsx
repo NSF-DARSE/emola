@@ -147,7 +147,7 @@ export default function GenerateBar({
             </span>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5 pb-4">
             <Infographic
               data={payload as InfographicPayload}
               notificationId={notificationId}

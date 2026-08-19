@@ -26,7 +26,14 @@ import { assertPosterIsSafe, TEMPLATE_EYEBROW, type PosterTemplate } from './pos
 
 export const NANO_MODEL = 'nano-banana-pro-preview';
 
-const CACHE_DIR = path.join(process.cwd(), 'data', 'generated');
+// Read-only deployment roots on serverless hosts; /tmp is the only writable
+// place, and it is per-instance. A cache miss there costs a generation, so on
+// those platforms this is a best-effort cache rather than a guarantee.
+const CACHE_DIR = path.join(
+  process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME ? '/tmp' : process.cwd(),
+  'data',
+  'generated',
+);
 
 export class NanoError extends Error {}
 
@@ -158,4 +165,28 @@ export async function generatePoster(
   }
 
   throw new NanoError('The model returned no image.');
+}
+
+
+/**
+ * Notice ids that already have a generated poster on disk.
+ *
+ * Used to mark them in the list. Generating one takes about ten seconds, so in
+ * a demo you want to know which notices are warm before you click rather than
+ * after — and reading the directory is cheaper than remembering.
+ */
+export function notesWithGeneratedPoster(): Set<string> {
+  try {
+    if (!fs.existsSync(CACHE_DIR)) return new Set();
+    return new Set(
+      fs
+        .readdirSync(CACHE_DIR)
+        .filter((f) => f.endsWith('.png'))
+        // "EVT-004-timeline.png" -> "EVT-004". The template suffix is dropped
+        // because the marker answers "is anything ready here", not which style.
+        .map((f) => f.replace(/\.png$/, '').replace(/-[a-z]+$/, '')),
+    );
+  } catch {
+    return new Set();
+  }
 }

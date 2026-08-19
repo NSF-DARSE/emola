@@ -86,6 +86,14 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
   const [marquee, setMarquee] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
   const baseSelection = useRef<Set<string>>(new Set());
 
+  /*
+   * The report renders above the calendar, and drafting takes a few seconds —
+   * long enough that a reviewer has usually scrolled down among the months by
+   * the time it lands. Without this it appears off-screen and reads as nothing
+   * having happened.
+   */
+  const reportRef = useRef<HTMLDivElement>(null);
+
   const byDate = useMemo(() => new Map(days.map((d) => [d.date, d])), [days]);
   const months = useMemo(() => [...new Set(days.map((d) => d.date.slice(0, 7)))].sort(), [days]);
 
@@ -237,6 +245,15 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Could not draft the report.');
       setReport(data.report as PeriodReportPayload);
+      // Wait a frame so the element exists before scrolling to it.
+      requestAnimationFrame(() => {
+        reportRef.current?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+          block: 'start',
+        });
+      });
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.');
     } finally {
@@ -359,7 +376,7 @@ export default function CalendarClient({ days, maxPerDay }: { days: DayCell[]; m
           </div>
         )}
         {report && (
-          <div className="mb-8 max-w-[900px] anim-rise">
+          <div ref={reportRef} className="mb-8 max-w-[900px] anim-rise scroll-mt-4">
             <PeriodReport data={report} />
           </div>
         )}

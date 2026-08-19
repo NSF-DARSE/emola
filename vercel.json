@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "src/app/api/infographic/[id]/route.tsx": {
+      "maxDuration": 60,
+      "memory": 2048
+    },
+    "src/app/api/reports/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/artifacts/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+.next
+.git
+.env
+.env.local
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/generated
+data/model/*.xlsx
+data/model/*.mapping.json
+data/model/*.review.txt
+data/model/*.vectors.json
+public/review
+scripts/__pycache__
+*.pyc

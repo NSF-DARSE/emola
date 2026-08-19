@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+
 import { ImageResponse } from 'next/og';
 import { NextResponse } from 'next/server';
 
@@ -29,6 +31,55 @@ import {
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+
+/**
+ * Rendered posters are cached in memory.
+ *
+ * Rasterising a 1000x1700 image takes about two seconds, and the result is a
+ * pure function of the payload and the template — the same inputs always give
+ * the same pixels. Re-doing that on every view made switching styles feel
+ * broken.
+ *
+ * Keyed on a hash of the payload, not just the notice id, so an edited
+ * artifact renders fresh rather than serving a stale picture. Bounded, because
+ * an unbounded cache in a long-running server is a leak with a nice name.
+ */
+/*
+ * Held on globalThis rather than as a module constant: the dev server
+ * re-evaluates modules between requests, so a module-level Map is empty every
+ * time and the cache silently never hits. Production keeps one module
+ * instance, but the same code has to work in both or the thing you test is
+ * not the thing that ships.
+ */
+const RENDER_CACHE: Map<string, Buffer> =
+  ((globalThis as { __posterCache?: Map<string, Buffer> }).__posterCache ??= new Map());
+const RENDER_CACHE_MAX = 40;
+
+function cacheKey(
+  id: string,
+  template: string,
+  payload: InfographicPayload,
+  approved: boolean,
+): string {
+  // Approval is in the key because the footer changes with it — without this,
+  // approving a poster would keep serving the one stamped "DRAFT".
+  //
+  // generatedAt is stripped first: buildInfographic stamps it with the current
+  // time, so leaving it in made every payload unique and the cache never once
+  // hit. It is also not drawn on the poster, so it cannot affect the pixels.
+  const { generatedAt: _ignored, ...stable } = payload as { generatedAt?: string };
+  const hash = createHash('sha1').update(JSON.stringify(stable)).digest('hex');
+  return `${id}:${template}:${approved ? 'ok' : 'draft'}:${hash}`;
+}
+
+function remember(key: string, buf: Buffer): void {
+  // Oldest out first. Map preserves insertion order, so the first key is it.
+  if (RENDER_CACHE.size >= RENDER_CACHE_MAX) {
+    const oldest = RENDER_CACHE.keys().next().value;
+    if (oldest) RENDER_CACHE.delete(oldest);
+  }
+  RENDER_CACHE.set(key, buf);
+}
 
 const W = 1000;
 
@@ -163,7 +214,15 @@ export async function GET(
   const art = heroArt(template);
   const backdrop = backdropArt(template);
 
-  return new ImageResponse(
+  const key = cacheKey(params.id, template, payload, approved);
+  const hit = RENDER_CACHE.get(key);
+  if (hit) {
+    return new Response(new Uint8Array(hit), {
+      headers: { 'Content-Type': 'image/png', 'X-Poster-Engine': 'rendered-cached' },
+    });
+  }
+
+  const image = new ImageResponse(
     (
       <div
         style={{
@@ -479,4 +538,13 @@ export async function GET(
     ),
     { width: W, height: posterHeight(payload) },
   );
+
+  // ImageResponse is a stream; buffer it once so it can be both cached and
+  // returned. Reading it twice is not possible.
+  const bytes = Buffer.from(await image.arrayBuffer());
+  remember(key, bytes);
+
+  return new Response(new Uint8Array(bytes), {
+    headers: { 'Content-Type': 'image/png', 'X-Poster-Engine': 'rendered' },
+  });
 }
