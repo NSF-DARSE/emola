@@ -43,6 +43,7 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
   const [notices, setNotices] = useState<IngestedNotice[]>([]);
   const [shown, setShown] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [handingOver, setHandingOver] = useState(false);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
@@ -84,8 +85,25 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
       data.notices.forEach((_, i) => {
         after(i * ROW_INTERVAL_MS, () => setShown(i + 1));
       });
-      // Let the last row settle before handing over to the real list.
-      after(data.notices.length * ROW_INTERVAL_MS + 900, () => router.refresh());
+      // Let the last row settle, then hand over to the real list.
+      after(data.notices.length * ROW_INTERVAL_MS + 900, () => {
+        setHandingOver(true);
+        router.refresh();
+
+        /*
+         * router.refresh() is a soft refetch and it does not always land — in
+         * dev especially, the server component tree can come back cached and
+         * this component stays mounted showing its own list, which is exactly
+         * the "nothing happens after classifying" complaint.
+         *
+         * So: give the soft path a moment, and if we are still here, navigate
+         * properly. A hard load is worse than a refresh and much better than
+         * a screen that never moves.
+         */
+        after(1800, () => {
+          window.location.assign('/');
+        });
+      });
     });
   }
 
@@ -136,7 +154,14 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
           ))}
         </div>
 
-        {shown > 0 && (
+        {handingOver && (
+          <div className="flex items-center gap-2.5 mt-4 text-[13px] text-muted">
+            <span className="spinner" aria-hidden="true" />
+            <span>Opening the list…</span>
+          </div>
+        )}
+
+        {shown > 0 && !handingOver && (
           <div className="flex flex-wrap items-baseline gap-x-7 gap-y-1 mt-4">
             <Tally n={shown} label="ingested" />
             <Tally n={sent} label="forwarded unchanged" signal="var(--sig-green)" />
