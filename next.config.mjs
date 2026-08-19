@@ -6,6 +6,15 @@ const nextConfig = {
 
   experimental: {
     /*
+     * The supported way to keep a native addon out of the bundle.
+     *
+     * A webpack `externals` entry stops it being bundled but does NOT tell the
+     * file tracer to ship it, so on a serverless host the require resolves to
+     * nothing and every page touching the database 500s. This does both.
+     */
+    serverComponentsExternalPackages: ['better-sqlite3'],
+
+    /*
      * Files read at runtime with fs, rather than imported.
      *
      * Next decides what to ship by following imports. Anything opened with
@@ -17,6 +26,9 @@ const nextConfig = {
      * finishing.
      */
     outputFileTracingIncludes: {
+      // The compiled binary itself. Tracing follows JS imports and will not
+      // find a .node file on its own.
+      '/**': ['./node_modules/better-sqlite3/build/Release/*.node'],
       '/api/infographic/[id]': [
         './data/events.json',
         './data/events.vectors.json',
@@ -35,11 +47,6 @@ const nextConfig = {
     },
   },
 
-  // better-sqlite3 is a native addon; keep it out of the bundler.
-  webpack: (config) => {
-    config.externals = [...(config.externals || []), 'better-sqlite3'];
-    return config;
-  },
 };
 
 export default nextConfig;
