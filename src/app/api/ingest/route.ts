@@ -14,6 +14,36 @@ export const dynamic = 'force-dynamic';
  * not a re-enactment of it.
  */
 export async function POST(request: Request) {
+  try {
+    return ingest(request);
+  } catch (err) {
+    /*
+     * Without this the route threw straight through Next and came back as a
+     * bare 500 with no body, so the client could only report the status code.
+     * On a serverless host that is the difference between "something broke"
+     * and "better_sqlite3.node is missing from the bundle".
+     */
+    const message = err instanceof Error ? err.message : String(err);
+    console.error('Ingest failed:', err);
+    return NextResponse.json(
+      {
+        error: message,
+        // Named separately because the message alone rarely says which of the
+        // three usual serverless causes it was.
+        hint: message.includes('better_sqlite3') || message.includes('bindings')
+          ? 'The SQLite native binary is not in the deployed bundle.'
+          : message.includes('ENOENT')
+            ? 'A data file the server reads at runtime was not deployed.'
+            : message.includes('EROFS') || message.includes('read-only')
+              ? 'The filesystem is read-only; the database path is not writable here.'
+              : undefined,
+      },
+      { status: 500 },
+    );
+  }
+}
+
+function ingest(request: Request) {
   const url = new URL(request.url);
   if (url.searchParams.get('reset') === '1') resetMailbox();
 

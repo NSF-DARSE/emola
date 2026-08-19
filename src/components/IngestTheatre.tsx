@@ -69,7 +69,16 @@ export default function IngestTheatre({ mailbox }: { mailbox: string }) {
     let data: { notices: IngestedNotice[] };
     try {
       const res = await fetch('/api/ingest?reset=1', { method: 'POST' });
-      if (!res.ok) throw new Error(`The mailbox returned ${res.status}.`);
+      if (!res.ok) {
+        // Read the body: the route reports the real cause, and a bare status
+        // code sends whoever is debugging on a hunt they do not need.
+        const detail = await res.json().catch(() => null);
+        throw new Error(
+          detail?.hint
+            ? `${detail.hint} (${detail.error})`
+            : detail?.error ?? `The mailbox returned ${res.status}.`,
+        );
+      }
       data = await res.json();
     } catch (e) {
       timers.current.forEach(clearTimeout);
